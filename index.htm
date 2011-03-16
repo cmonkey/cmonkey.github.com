@@ -1,7 +1,13 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>cmonkey.github.com</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+    <!-- 960 Grid CSS -->
+    <link rel="stylesheet" type="text/css" href="css/960/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/960/text.css" />
+    <link rel="stylesheet" type="text/css" href="css/960/960.css" />
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
     <script type="text/javascript">
       $(function() {
         var limit = 10        // how many repos to list
@@ -24,11 +30,14 @@
     </script>
   </head>
   <body>
-    <!-- <p>You probably want <a href="http://github.com/cmonkey">this</a>.</p> -->
-    <!-- <p>But here's the repos.</p> -->
-    My repo's:
-    <ul id="repos"></ul>
+      <dir class="container_12">
+          <div class="grid_8 prefix_2">
+            My repo's:
+            <ul id="repos"></ul>
+          </div>
+          <div class="clear">&nbsp;</div>
+      </div>
     <!-- GitHub Ribbon -->
-    <img style="position:abslute;top:0;left:0;border:0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub " />
+<a href="http://github.com/cmonkey/cmonkey.github.com"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub" /></a>
   </body>
 </html>
