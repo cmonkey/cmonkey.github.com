@@ -25,6 +25,11 @@ h4. RDiscount 安装
    </br>
    <code> jekyll --rdiscount </code>
 
+h4. RedCloth 安装
+
+   <code> gem install RedCloth </code>
+   </br>
+
 h4. Pygments 安装
 
    <code> pip install --upgrade distribute </code>
