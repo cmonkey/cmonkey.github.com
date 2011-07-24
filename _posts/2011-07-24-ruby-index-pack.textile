@@ -1,0 +1,13 @@
+---
+layout: post
+title: Get Ruby Source Code Error 
+---
+
+h1. {{ page.title }}
+
+h4. Get Ruby Source Code Error
+
+fatal: failed to read object 22120bccebc230657fa7e6481bb078ee9e6043dc: Invalid argument
+fatal: index-pack failed
+
+
