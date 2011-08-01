@@ -11,33 +11,38 @@ h1. {{ page.title }}
 
 h4. Jekyll 获取
 
-   Jekyll 源码托管在 "github":https://github.com/. 你可以通过<code>git clone git://github.com/mojombo/jekyll.git </code> 获取源码.
+   Jekyll 源码托管在 "github":https://github.com/. 你可以通过
+   <pre class="prettyprint">
+   <code>git clone git://github.com/mojombo/jekyll.git </code> 
+   </pre>
+   获取源码.
 
 h4. Jekyll 安装
 
+   <pre class="prettyprint">
    <code>gem install jekyll</code>
-   </br>
    <code>gem update --system </code>
+   </pre>
 
 h4. RDiscount 安装
 
+   <pre class="prettyprint">
    <code> gem install rdiscount </code>
-   </br>
    <code> jekyll --rdiscount </code>
+   </pre>
 
 h4. RedCloth 安装
 
+   <pre class="prettyprint">
    <code> gem install RedCloth </code>
-   </br>
+   </pre>
 
 h4. Pygments 安装
 
+   <pre class="prettyprint">
    <code> pip install --upgrade distribute </code>
-   </br>
    <code> pip install Pygements </code> 
+   </pre>
 
 h4. 创建个人Blog(略) 
-
-
-   
 
