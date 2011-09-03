@@ -1,0 +1,10 @@
+---
+layout: post
+title: 更快的马
+---
+
+h1. {{ page.title }}
+
+
+“如果我要是问人们想要什么，他们一定会说要更快的马。” – Henry Ford
+
