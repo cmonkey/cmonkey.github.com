@@ -1,0 +1,32 @@
+---
+layout: post
+title: 增加man路径
+---
+
+h1. {{ page.title }}
+
+
+在*nix系统中，可能有一些用户自定义编译安装的软件，由于MANPATH的路径没有指定,
+执行man XXX 会无效。
+
+这时候就需要定义MANPATH这个环境变量，如下所示:
+假如自定义安装memcached这个分布式缓存服务器在
+<pre class="prettyprint">
+   /usr/local/memcached
+</pre>
+目录，没有指定MANPATH的时候，执行命令
+<pre class="prettyprint">
+   man memcached 
+</pre>
+是找不到memcached 的man信息的，
+这种情况可以在.profile 文件中指定:
+<pre class="prettyprint">
+   export MANPATH=/usr/local/memcached/share/man:$MANPATH
+</pre>
+也可以手动临时指定:
+
+<pre class="prettyprint">
+   man -M /usr/local/memcached/share/man memcached
+</pre>
+
+
