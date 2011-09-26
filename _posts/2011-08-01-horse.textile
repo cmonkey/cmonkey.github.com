@@ -3,9 +3,6 @@ layout: post
 title: 李承鹏:这是一匹马
 ---
 
-h1. {{ page.title }}
-
-
 h4. 来源: "李承鹏":http://blog.sina.com.cn/s/blog_46e7ba410102drms.html.
 
 

@@ -3,8 +3,6 @@ layout: post
 title: 有口难言
 ---
 
-h1. {{ page.title }}
-
  !/images/HpcG0.jpg!
 
 

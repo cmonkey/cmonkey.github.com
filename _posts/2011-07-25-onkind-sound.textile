@@ -3,8 +3,6 @@ layout: post
 title: 李承鹏:这是一个奇迹
 ---
 
-h1. {{ page.title }}
-
 h4. 来源: "李承鹏":http://blog.sina.com.cn/s/blog_46e7ba410102drgu.html.
 
 大约十几天前，就是京沪高铁特别喜欢跟雷公玩偏瘫的时候，我看过一个冷静的技术帖：

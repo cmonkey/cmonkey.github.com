@@ -3,8 +3,6 @@ layout: post
 title: 萧瀚:从费曼到"7.23"
 ---
 
-h1. {{ page.title }}
-
 h4. 来源:"追遠堂":http://blog.sina.com.cn/s/blog_4a5a2c160102drc4.html.
 
  !/images/JY53J.jpg!

@@ -3,9 +3,7 @@ layout: post
 title: 《三体》系列:高潮遍地，BUG永生
 ---
 
-h1. {{ page.title }}
-
-h4.来源:"宇宙的心弦":http://www.eaglefantasy.com/archives/1383 .
+h4. 来源:"宇宙的心弦":http://www.eaglefantasy.com/archives/1383 .
 
 有剧透，慎入！！！
 

@@ -2,12 +2,13 @@ body{
   font-family: Arial, "MS Trebuchet", sans-serif;
   font-size: 18px;
   background-color: #eeeeee;
+	color: #2f2f2f;
 }
 
 #posts h1{
   font-size: 30px;
   text-align: center;
-  margin: 10px 0 5px 0;
+  margin: 40px 0 20px 0;
 }
 
 h1{
@@ -16,10 +17,30 @@ h1{
 }
 
 h2{
+	font-size: 24px;
+	margin: 40px 0 15px 0;
+}
+
+blockquote{
+	border-left: 6px solid #454545;
+	padding-left: 10px;
+	font-style: italic;
+}
+
+#header h1{
+	margin: 10px 0 5px 0;
+}
+
+#header h2{
   margin: 0 0 10px 0;
   text-align: center;
   font-size:16px;
   color: #999;
+}
+
+#header p{
+	margin: 0 0 10px 0;
+	line-height: 20px;
 }
 
 a{
@@ -31,6 +52,10 @@ h2 a{
   color: #999;
 }
 
+ul li{
+	margin-bottom: 10px;
+}
+
 img.avatar{
   float: left;
   margin: 0 10px 5px 0;
@@ -38,7 +63,8 @@ img.avatar{
 }
 
 p{
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
+	line-height: 26px;
 }
 
 .name {
@@ -51,11 +77,47 @@ p{
 }
 
 img.centered{
-display: block;
-margin-left: auto;
-margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #footer{
-  margin-bottom: 100px;
+  margin: 60px 0 40px 0;
 }
+
+#footer h3{
+	border-bottom: 1px solid #454545;
+	color: #454545;
+}
+
+#footer img{
+	position: relative;
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+#footer p{
+	margin: 0 0 20px 60px;
+	font-size: 14px;
+}
+
+#footer .twitter-follow-button{
+  width: 75px !important;
+}
+
+
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  }
+
+
+
+

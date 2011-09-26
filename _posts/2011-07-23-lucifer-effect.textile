@@ -3,8 +3,6 @@ layout: post
 title: 一个普通人离杀人有多远--梁文道讲(路西法效应)
 ---
 
-h1. {{ page.title }}
-
 h4. 来源: "萝卜网":http://luo.bo/11484/.
 
 h4. 一

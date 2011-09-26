@@ -3,8 +3,6 @@ layout: post
 title:  致那位挪威失足青年
 ---
 
-h1. {{ page.title }}
-
 h4. 来源:"胖花的日记":http://www.douban.com/note/163506127/ .
 
 

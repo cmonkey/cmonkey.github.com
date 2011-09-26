@@ -3,9 +3,6 @@ layout: post
 title: 723悲歌:伊伊，等你长大的时候
 ---
 
-
-h1. {{ page.title }}
-
 h4. 来源: "经济观察网":http://epaper.eeo.com.cn/shtml/jjgcb/20110801/v01.shtml. 作者: 文钊
 
 

@@ -3,8 +3,6 @@ layout: post
 title: VirtualBox 4.1 for Solaris hosts Error log 
 ---
 
-h1. {{ page.title }}
-
 h4. VirtualBox 4.1 for Solaris hosts Error log 
 
 <pre class="prettyprint">
