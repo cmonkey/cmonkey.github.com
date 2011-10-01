@@ -1,0 +1,55 @@
+---
+layout: post
+title: Compile tmux on Solaris 10 (x86)
+---
+
+解压tmux-1.5.tar.gz 文件
+<pre class="prettyprint">
+gunzip -c tmux-1.5.tar.gz | tar xvf -
+</pre>
+
+cd 到解压出来的目录tmux-1.5
+<pre class="prettyprint">
+cd tmux-1.5
+</pre>
+
+执行configure
+<pre class="prettyprint">
+CPPFLAGS="-I/usr/local/libevent/include -I/usr/local/ncurses/include" \
+LDFLAGS="-L/usr/local/libevent/lib -L/usr/local/ncurses/lib" \
+./configure --prefix=/usr/local/tmux \
+"CC=/opt/csw/gcc4/bin/gcc " \
+"CXX=/opt/csw/gcc4/bin/g++ " \
+</pre>
+
+更改Makefile文件中的
+<pre class="prettyprint">
+am_append_2 = -std=c99  ===>>> am_append_2 = -std=gnu89
+</pre>
+
+执行make
+<pre class="prettyprint">
+make
+</pre>
+获得root特权
+<pre class="prettyprint">
+su - root
+</pre>
+执行最后安装
+<pre class="prettyprint">
+make install
+</pre>
+
+<p>
+好了，这样tmux就在solaris 10 x86 上编译并安装成功。
+</p>
+<p>
+看书，写点代码，编译软件，看看tweet。
+</p>
+<p>
+这个十一就这样过去了。
+</p>
+<p>
+当某一天回忆起来，权作纪念吧 ！！！
+</p>
+
