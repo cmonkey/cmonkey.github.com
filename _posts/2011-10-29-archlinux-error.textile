@@ -1,0 +1,19 @@
+---
+layout: post
+title: yaourt -Syua error
+---
+
+在archlinux 中使用yaourt -Syua 更新系统，出现下列错误:
+
+<pre class="prettyprint">
+error: failed to commit transaction (conflicting files)
+initscripts: /etc/profile.d/locale.sh exists in filesystem
+Errors occurred, no packages were upgraded.
+</pre>
+
+可以使用
+<pre class="prettyprint">
+sudo mv /etc/profile.d/locale.sh{,-backup}
+</pre>
+然后重新执行yaourt -Syua 更新系统。
+
