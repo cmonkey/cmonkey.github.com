@@ -1,0 +1,25 @@
+---
+layout: post
+title: "del txt"
+date: 2013-10-01 10:35
+comments: true
+categories: 
+---
+
+    #lang racket
+    (define path (path->directory-path "/tmp"))
+    (define pathStr (path->string path))
+    (define file-list (filter 
+                        (lambda (f)
+                        (regexp-match #rx"[^-ms]\\.txt" f)) (directory-list path)))
+    (define (del-file file-list)
+    (cond [(empty? file-list) '()]
+            [else 
+            (define f (string->path (string-append pathStr (path->string (car file-list)))))
+            (if (file-exists? f)
+                (delete-file f)
+                (displayln f)
+                )
+            (del-file (cdr file-list))
+            ]))
+    (del-file file-list)

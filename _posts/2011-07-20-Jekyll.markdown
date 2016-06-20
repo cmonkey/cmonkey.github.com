@@ -1,0 +1,37 @@
+---
+layout: post
+title: 使用jekyll在github上搭建个人Blog
+comments: true
+---
+
+### 什么是Jekyll ?
+   Jekyll 也许你没有听过，不过你应该知道github page,其使用的就是jekyll这个工具。
+   它实际上是一个页面生成工具，每次根据你的文章，生成静态页面。
+
+### Jekyll 获取
+
+   Jekyll 源码托管在GitHub.com。
+   你可以通过
+    git clone git://github.com/mojombo/jekyll.git
+   获取源码。
+
+### Jekyll 安装
+
+    gem install jekyll
+    gem update --system
+<!-- more -->
+### RDiscount 安装
+
+    gem install rdiscount
+    jekyll --rdiscount
+
+### RedCloth 安装
+
+    gem install RedCloth
+
+### Pygments 安装
+
+    pip install --upgrade distribute
+    pip install Pygements
+
+### 创建个人Blog(略)

@@ -1,0 +1,13 @@
+---
+layout: post
+title: "protobuf"
+date: 2013-06-15 12:43
+comments: true
+categories: 
+---
+
+尝试使用了一下ProtoBuf  
+写proto 文件，然后通过命令编译为java的桩代码  
+写Write/Read测试，照着google 的文档，倒是很简单。  
+但是有一些疑惑，为什么要通过这种桩代码呢？ 不能是通过api来调用么？ 直接将要序列化的对象丢到某个方法里不行么？  
+

@@ -1,0 +1,32 @@
+# Site settings
+title: 芝兰生于深谷，不以无人而不芳;君子修道立德，不为困穷而改节。
+email: echo "NDIuY29kZW1vbmtleUBnbWFpbC5jb20K" | base64 -d
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "cmonkey.github.io" # the base hostname & protocol for your site
+twitter_username: 42cmonkey
+github_username:  cmonkey
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+theme: Mjolvim
+# Default extension for new posts and pages
+post_ext: markdown
+page_ext: html
+
+# Default templates for posts and pages
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+# Change default template file (in _templates/)
+post_template: post
+page_template: page
+draft_template: draft

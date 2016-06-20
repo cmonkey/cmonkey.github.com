@@ -1,0 +1,24 @@
+---
+layout: post
+title: tig使用
+date: Sun Apr  1 09:39:31 CST 2012
+comments: true
+---
+
+link:[dongsheng](http://log.dongsheng.org/2011/05/02/tig真好用)
+
+tig是git的浏览器,可以查看commants的历史.
+
+视图切换：
+在主界面按大写S可以察看当前分支的状态，按t打开文件树，在文件树上按B可以察看blame界面，按H显示本地分支，按l显示log summery，在commit上按d显示commit内容。
+
+显示选项：
+在察看commit的界面里按.可以切换行号。
+在主界面按大写D可以调整commit日期显示。
+主界面按A选择显示committer的方式
+
+其他：
+方便的cherry-pick，用H切换到别的分支，选中commit然后按大写C就能完成cherry-pick了！
+
+
+<!-- more -->

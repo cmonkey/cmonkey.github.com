@@ -1,0 +1,16 @@
+---
+layout: post
+title: VirtualBox 4.1 for Solaris hosts Error log
+comments: true
+---
+
+    Jul 21 12:27:56 home-solaris vboxdrv:
+    [ID 694835 kern.notice] NOTICE: kthread_t::t_preempt at 42
+
+    Jul 21 12:27:56 home-solaris vboxdrv:
+    [ID 694835 kern.notice] NOTICE: cpu_t::cpu_runrun at 232
+
+    Jul 21 12:27:56 home-solaris vboxdrv:
+    [ID 694835 kern.notice] NOTICE: cpu_t::cpu_kprunrun at 233
+
+<!-- more -->

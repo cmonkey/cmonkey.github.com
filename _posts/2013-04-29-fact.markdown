@@ -1,0 +1,42 @@
+---
+layout: post
+title: "fact"
+date: 2013-04-29 22:44
+comments: true
+categories: 
+---
+
+为什么没有如此实现斐波拉契呢？
+斐波拉契是一个天然的序对。
+初始是 (0 1),然后  
+    (1 1)  
+    (1 2)  
+    (2 3)  
+    (3 5)  
+    (5 8)  
+    (8 13)  
+    (13 21)  
+    (21 34)  
+    (34 55)  
+    (55 89)  
+
+规律是下一个序对的car 是上一个序对的cdr,
+下一个序对的cdr 是上一个序对的(+ car cdr)。
+基本表达式是:  
+
+    #lang racket
+
+    (define (fact lst)
+    (cons (cadr lst) (+ (car lst) (cadr lst))))
+
+    (fact '(0 1))
+    (fact '(1 1))
+    (fact '(1 2))
+    (fact '(2 3))
+    (fact '(3 5))
+    (fact '(5 8))
+    (fact '(8 13))
+    (fact '(13 21))
+    (fact '(21 34))
+    (fact '(34 55))
+

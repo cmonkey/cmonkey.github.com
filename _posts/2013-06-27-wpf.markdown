@@ -1,0 +1,22 @@
+---
+layout: post
+title: "WPF"
+date: 2013-06-27 20:34
+comments: true
+categories: 
+---
+
+Web Platform Factory 简称WPF,该平台是构建在WebSpace上的一个java框架。   
+在上面做一个项目，就是在web页面上进行操作。   
+比如一个业务场景，就是一个ActionList,一个ActionList中可以有多个Action,每个Action可以是一个执行Sql的动作，或者是执行JMS的。   
+开发人员主要的开发工作就是定义这些Action。   
+一个ActionList就是一个webservice服务。页面通过Dojo框架来调用webservice.   
+正对Action的逻辑基本上是没有什么逻辑，直接在配置页面的文本框中写sql等。   
+一点java的代码可能是对Action的拦截器。   
+
+前端是通过xml来生成页面的。
+
+开发人员不在关注以前的MVC等模型，只是一个业务转换器。
+
+所以很是疑问的开发人员的路在何方？
+

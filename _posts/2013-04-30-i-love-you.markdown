@@ -1,0 +1,361 @@
+---
+layout: post
+title: "I love you"
+date: 2013-04-30 15:52
+comments: true
+categories: 
+---
+
+
+    #lang racket 
+
+    ;;; 1 构造list 的基本手段: quote和list
+
+    '(I love you)
+
+    (quote (I love you))
+
+    (list 'I 'love 'you)
+
+    (list (quote I) (quote love) (quote you))
+
+    ;;; 2 用cons 连接单元
+
+    (cons 'I (cons 'love (cons 'you '())))
+
+    (cons 'I (cons 'love (list 'you)))
+
+    (cons 'I (list 'love 'you))
+
+    (cons 'I '(love you))
+
+    ;;; 3 加点list 记号(Dotted list notation)
+
+    '(I love . (you))
+
+    '(I . (love . (you)))
+
+    '(I . (love . (you . ())))
+
+    '(I . (love you))
+
+    ;;; 4 反引号表示list (Quasiquoted lists)
+
+    `(I love you)
+    `(I , 'love you)
+
+    (quasiquote (I , 'love you))
+
+    (quasiquote (I (unquote 'love) you))
+
+    `(I ,`love you)
+
+    (let ([verb 'love])
+    `(I ,verb you))
+
+    `(I , (string->symbol "love" )you)
+
+    `(I ,(string->symbol (list->string '(#\l #\o #\v #\e)))you)
+
+    `(I love . (you))
+
+    `(I love . , (list 'you))
+
+    `(I love ,@'(you))
+
+    `(I love (unquote-splicing '(you)))
+
+    `(I ,@(list 'love 'you))
+
+    `(,@(list 'I 'love)you)
+
+    `(,@'(I love you))
+
+    `, '(I love you)
+
+    `(I love you . , '())
+
+    ;;; 5 car 和cdr 
+
+    (car (list '(I love you)))
+    (cdr '(Hark! I love you))
+
+    ;;; 6 let 帮顶形式(let-binding forms)
+
+    (let ([words '(love you I)])
+    (list (car (cdr (cdr words)))
+            (car words)
+            (car (cdr words))))
+
+    (let ([words '(love you I)])
+    (list (caddr words)
+            (car words)
+            (cadr words)))
+
+    (let* ([c '(you)]
+        [b (cons 'love c)]
+        [a (cons 'I b)])
+    a)
+
+    (let () 
+    '(I love you not)
+    '(I love you))
+
+    ;;; 7 vector 
+    (vector->list (vector 'I 'love 'you))
+
+    (vector->list #(I love you))
+
+    ;;; 8 stream 
+    (stream->list (stream 'I 'love 'you))
+
+    ;;; 9 匿名函数(Anonymous functions)
+
+    ((lambda args args) 'I 'love 'you)
+
+    ((lambda (one two . rest)rest) 'You 'believe 'I 'love 'you)
+
+    ((lambda (a c b)(list a b c)) 'I 'you 'love)
+
+    (apply (lambda (a c b)(list a b c))
+        (list 'I 'you 'love))
+
+    ((lambda (a b [c 'you]) (list a b c)) 'I 'love)
+
+    ((lambda (#:foo b #:bar c #:baz a)
+    (list a b c))
+    #:baz 'I #:bar 'you #:foo 'love)
+
+    ((lambda (a b #:key [c 'me]) (list a b c)) #:key 'you 'I 'love)
+
+    ;;; 10 柯里化(Currying)
+
+    (let ([f (λ (x)
+            (λ (y)
+            (λ (z)
+                (list x y z))))])
+    (((f 'I)'love)'you))
+
+    ;;; 11 case-lambda 
+
+    (let ([f (case-lambda 
+            [() 'I]
+            [(x) 'love]
+            [(x y) 'you])])
+    (list (f) (f 1) (f 1 2)))
+
+    ;;; 12 基础list 操作
+
+    (append '(I love)'(you))
+
+    (append '(I) '(love) '(you))
+
+    (flatten '((I)(love you)))
+
+    (flatten '((I) (love)(you) ()))
+
+    (reverse '(you love I))
+
+    (remove 'cannot '(I cannot love you))
+
+    (remove-duplicates '(I love love love you))
+
+    (take '(I love you not)3)
+
+    (take-right '(I think I love you)3)
+
+    (drop '(She knows I love you)2)
+
+    (drop-right '(I love you no more) 2)
+
+    ;;; 13 高阶list操作(map, filter和reduce)
+
+    (map (lambda (x) (if (eq? x 'hate)'love x))
+        '( I hate you))
+
+    (map (λ(i)(vector-ref #(love you I)i))
+        '( 2 0 1))
+
+    (map (λ (k)(hash-ref #hash(("foo" . I)
+                                ("baz" . you)
+                                ("bar" . love)) k))
+        '("foo" "bar" "baz"))
+
+    (map string->symbol (sort (list "love" "you" "I") string<?))
+
+    (map string->symbol (string-split "I-love-you" "-"))
+
+    (flatten (map (λ ( a b) (cons  a b))
+                    '(I love you)
+                    '(() () ())))
+
+    (filter (lambda (x) (not (eq? x 'cannot)))
+            '(I cannot love you))
+
+    (foldr cons '() '(I love you))
+
+    (foldl cons '() '(you love I))
+
+    ;;; 14 迭代(Iterations)
+
+    (for/list ([world #(I love you)])
+            world)
+
+    ;;; 15 条件式(Conditionals)
+    (cond 
+    [(even? 3) '(Not me)]
+    [(odd? 3) '(I love you)])
+
+    (cond 
+    [(even? 3) '(Not me)]
+    [(odd? 2) '(Nor I)]
+    [else '(I love you)])
+
+    (case 1
+    [(a b c) '(Not me)]
+    [(3 2 1) '(I love you)])
+
+
+    ;;; 16 结构化模式匹配(Structural pattern-matching)
+
+    (match #t
+        [#f '(Not me)]
+        [#t '(I love you)])
+
+    (match #t 
+        [#f '(Not me)]
+        [_ '(I love you)])
+
+    (match 'you 
+        ['me '(Not me)]
+        [x `(I love ,x)])
+
+    (match '(foo bar)
+        ['(foo bar)'(I love you)])
+
+    (match '(I cannot lift you)
+        [(list 'I 'cannot _ c) `(I love ,c)])
+
+    (match '(2 3 1)
+        [(list-no-order 3 1 2)
+            '(I love you)])
+
+    (match '(love you I)
+        [(list-no-order 'I 'love foo)
+            `(I love , foo)])
+
+    (match '(3 . 4)
+        [(cons 3 4)
+            '(I love you)])
+
+    (match '(3 love 1)
+        [(cons 3 (cons x (cons 1 '())))
+            `(I , x you)])
+
+    (match '(3 love 1)
+        [(cons 3 (cons x (cons 1 '())))
+            `(I (unquote x) you)])
+
+    (match 3 
+        [(? symbol?) '(Not me)]
+        [(? string?) '(Me neither)]
+        [(? number?) '(I love you)])
+
+    (match 3 
+        [(not 4) '(I love you)]
+        [3   'unreachable])
+
+    (match '(you love I)
+        [`(,c love ,a)
+            `(,a love ,c)])
+
+    (match '(We love you)
+        [`(,_ . , rest)
+            `(I . , rest)])
+
+    (match '(We love you)
+        [`(,_ ,rest ...)
+            `(I ,@rest)])
+
+    (match '(We love you)
+        [(list _ rest ...)
+            `(I ,@rest)])
+
+    (match #(1 love 3)
+        [(vector (? number?) b (? number?))
+            `(I ,b you)])
+
+    (match #hash((1 . I) (3 . you) (5 . love))
+        [(hash-table (1 a) (5 b)(3 c))
+            (list a b c)])
+
+    (match 'you
+        [(and x (? symbol?)) `(I love ,x)])
+
+    (match '100 
+        [(app (λ (n) (- n 1)) 99)
+            '(I love you)])
+
+    ;;; 17 续延(Continuation)
+
+    (list 'I 
+        (call/cc (λ (cc) 
+                    (error (cc 'love))))
+        'you)
+
+    ;;; 18 异常(Exceptions)
+
+    (with-handlers ([symbol? (lambda (p) 
+                                    `(I ,p you))])
+                (raise 'love))
+
+    ;;; 19 延迟求值(Delayed evaluation)
+
+    (let ([problem (delay (car '()))])
+    '(I love you))
+
+    `(I ,(force (delay 'love)) you)
+
+    (letrec ([x (delay (list a b c))]
+            [a 'I]
+            [c 'you]
+            [b 'love])
+    (force x))
+
+    ;;; 20 变更 (Mutation)
+
+    (let ([word 'know])
+    (set! word 'love)
+    `(I ,word you))
+
+    (let ([word-box (box 'know)])
+    (set-box! word-box 'love)
+    `(I ,(unbox word-box )you))
+
+    ;;; 21 宏(Macros)
+    (let-syntax ([un-yoda-list 
+                (syntax-rules () 
+                    [(_ c a b) (list 'a 'b 'c)])])
+    (un-yoda-list you I love))
+
+    ;;; 22 端口(Ports)
+
+    (let ((in (open-input-string "I love you")))
+    (cons (read in)
+            (cons (read in)
+                (cons (read in) '()))))
+
+    ;;; 23 未来(Futures)
+    (list (touch (future (λ () 'I))) 'love 'you)
+
+    ;;; 24 参数化(Parameterization)
+
+    (let ([a (make-parameter "a")]
+        [b (make-parameter "b")]
+        [c (make-parameter "c")])
+    (parameterize ([a 'I] [b 'love] [c 'you])
+        (list (a)
+            ((parameterize ([b 'dislike])
+                (λ () (b))))
+        (c))))
+

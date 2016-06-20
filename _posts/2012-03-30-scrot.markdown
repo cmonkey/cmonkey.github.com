@@ -1,0 +1,32 @@
+---
+layout: post
+title:  scort 屏幕抓图工具使用
+date: Fri Mar 30 16:05:46 CST 2012
+comments: true
+---
+
+scrot 主要用于命令行下, 它使用imlib2库抓取并保存图片,在archlinux 中直接可以用:
+    yaourt scrot
+
+进行安装.
+
+<!-- more -->
+
+抓取桌面:
+    scrot desktop.png
+
+抓取窗口:
+    scrot -bs window.png
+
+抓取区域:
+    scrot -s rectangle.png
+
+延迟抓取:
+    scrot -cd 10 menu.png
+
+生成缩略图:
+    scrot -t 50% thumb.png
+更改品质:
+    scrot -q 70 quality.png
+操作抓图:
+    scrot action.png -e 'mv $f ~/images/'
