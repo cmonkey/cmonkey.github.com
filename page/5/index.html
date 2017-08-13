@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://cmonkey.github.com/page/5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2016-06-20-countdownlatchwating" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/2016-06-20-countdownlatchwating/" class="article-date">
+  <time datetime="2016-06-19T22:26:50.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/2016-06-20-countdownlatchwating/">CountDownLatchWating</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class CountDownLatchWating {
+
+    private final static Logger logger = LoggerFactory.getLogger(CountDownLatchWating.class);
+
+    public static void main(String[] args) {
+        ExecutorService service = Executors.newCachedThreadPool();
+
+        final CountDownLatch cdl = new CountDownLatch(3);
+
+        service.execute(()-&gt; {
+            try {
+                logger.info(&quot;working...&quot;);
+
+                cdl.await();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                logger.error(&quot;Exception = {}&quot;, e);
+            }
+        });
+
+        for (int i = 0; i &lt; 3; i++) {
+            final int tid = i;
+            service.execute(() -&gt; {
+                try {
+                    Thread.sleep((long) (Math.random() * 5000));
+
+                    cdl.countDown();
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+        service.shutdown();
+    }
+
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2016/06/20/2016-06-20-countdownlatchwating/" data-id="cj6ajxgll002x1qpti9dy0j66" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-10-01-del-txt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/01/2013-10-01-del-txt/" class="article-date">
+  <time datetime="2013-10-01T02:35:00.000Z" itemprop="datePublished">2013-10-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/01/2013-10-01-del-txt/">del txt</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#lang racket
+(define path (path-&gt;directory-path &quot;/tmp&quot;))
+(define pathStr (path-&gt;string path))
+(define file-list (filter 
+                    (lambda (f)
+                    (regexp-match #rx&quot;[^-ms]\\.txt&quot; f)) (directory-list path)))
+(define (del-file file-list)
+(cond [(empty? file-list) &apos;()]
+        [else 
+        (define f (string-&gt;path (string-append pathStr (path-&gt;string (car file-list)))))
+        (if (file-exists? f)
+            (delete-file f)
+            (displayln f)
+            )
+        (del-file (cdr file-list))
+        ]))
+(del-file file-list)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/10/01/2013-10-01-del-txt/" data-id="cj6ajxglk002v1qpt1e44rpq9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-08-10-jiao-yu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/08/10/2013-08-10-jiao-yu/" class="article-date">
+  <time datetime="2013-08-10T09:28:00.000Z" itemprop="datePublished">2013-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/08/10/2013-08-10-jiao-yu/">教育</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>引用<a href="http://cn.nytimes.com/education/20130810/cc10jiangxueqin/" target="_blank" rel="external">学歌经历给我的启迪</a></p>
+<p>这正是我们目前养育和教育孩子的方式的问题所在。<br>我们花一大笔钱让6岁大的孩子上钢琴课，还时不时带他们去欧洲旅行，但他们真正想要和需要的是，发现自身面临的挑战，并努力克服。<br>我们认为，我们的孩子必须立刻学会一切本领，否则的话，他们永远也学不会，这种看法是完全错误的。<br>当他们准备学的时候，他们就会学，如果我们催得太紧，他们就永远也不想学。</p>
+<p>在这样一个竞争激烈，消费主义盛行的社会中，我们忘记了学习并不是为了进入一所好学校，获得一份好工作，或者给其他人留下好印象。<br>从本质上说，学习的意义在于发现我们自身潜能，突破各种想象的和自我强加的藩篱。那是世界上最美妙，最令人愉悦，最能给予人力量的感受。</p>
+<p>如果作为家长和老师的我们再次为自己开始学习，我们将铭记于心的是，当孩子们在我们身上看到这种学习欲望的时候，他们就将真正萌生学习的念头。</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/08/10/2013-08-10-jiao-yu/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/08/10/2013-08-10-jiao-yu/" data-id="cj6ajxglj002u1qptge5pa2a9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-07-31-right" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/07/31/2013-07-31-right/" class="article-date">
+  <time datetime="2013-07-31T13:10:00.000Z" itemprop="datePublished">2013-07-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/07/31/2013-07-31-right/">right</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近的阅读方式是通过订阅<br><a href="http://hikindle.com/" target="_blank" rel="external">hikindle</a>，然后在kindle上阅读一些新闻和短篇。</p>
+<p>近期看到一个很有意思的文章是左岸读书的<br><a href="http://www.zreading.cn/archives/3923.html" target="_blank" rel="external">放诸古今皆准的权力规则</a></p>
+<p>这个短篇感觉应该强烈推荐，至少从另一个角度来看整个政治行为。<br>是很有意思的短篇文章。</p>
+<p>关于读书，有一些认识，比如在SICP中没有搞清楚的问题，可能在读具体数学的时候就搞清楚了。  </p>
+<p>真是很有意思的问题，在关于无穷问题上可以这本书是这么写的，但是在量子力学史话中可能关于无穷有一些不同的看法。 </p>
+<p>多读书，哪怕当时的一些问题搞不清楚，但是没有关系，以后就清楚了，那知识在脑海中形成了一个求解的函数，在后台默默的运行。   </p>
+<p>当有关于该知识的信息出现的时候，整个知识就连贯起来了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/07/31/2013-07-31-right/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/07/31/2013-07-31-right/" data-id="cj6ajxglj002t1qptkndasllc" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-06-27-wpf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/06/27/2013-06-27-wpf/" class="article-date">
+  <time datetime="2013-06-27T12:34:00.000Z" itemprop="datePublished">2013-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/27/2013-06-27-wpf/">WPF</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web Platform Factory 简称WPF,该平台是构建在WebSpace上的一个java框架。<br>在上面做一个项目，就是在web页面上进行操作。<br>比如一个业务场景，就是一个ActionList,一个ActionList中可以有多个Action,每个Action可以是一个执行Sql的动作，或者是执行JMS的。<br>开发人员主要的开发工作就是定义这些Action。<br>一个ActionList就是一个webservice服务。页面通过Dojo框架来调用webservice.<br>正对Action的逻辑基本上是没有什么逻辑，直接在配置页面的文本框中写sql等。<br>一点java的代码可能是对Action的拦截器。   </p>
+<p>前端是通过xml来生成页面的。</p>
+<p>开发人员不在关注以前的MVC等模型，只是一个业务转换器。</p>
+<p>所以很是疑问的开发人员的路在何方？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/06/27/2013-06-27-wpf/" data-id="cj6ajxgli002s1qpttvppz6m4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-06-15-protobuf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/06/15/2013-06-15-protobuf/" class="article-date">
+  <time datetime="2013-06-15T04:43:00.000Z" itemprop="datePublished">2013-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/15/2013-06-15-protobuf/">protobuf</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>尝试使用了一下ProtoBuf<br>写proto 文件，然后通过命令编译为java的桩代码<br>写Write/Read测试，照着google 的文档，倒是很简单。<br>但是有一些疑惑，为什么要通过这种桩代码呢？ 不能是通过api来调用么？ 直接将要序列化的对象丢到某个方法里不行么？  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/06/15/2013-06-15-protobuf/" data-id="cj6ajxgli002r1qptp6mfcjah" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-06-01-racket-on-ffi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/06/01/2013-06-01-racket-on-ffi/" class="article-date">
+  <time datetime="2013-06-01T15:28:00.000Z" itemprop="datePublished">2013-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/01/2013-06-01-racket-on-ffi/">Racket on ffi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link:<a href="http://www.cs.grinnell.edu/~rebelsky/Glimmer/Summer2012/RacketFFI/tutorial.html" target="_blank" rel="external">The Racke tForeign-Function Interface</a><br>    // mylib1.c</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+// Square an integer
+int isquare (int i){
+    return i * i;
+}
+</code></pre><p>command 中执行:    </p>
+<pre><code>gcc --shared -o mylib1.so mylib1.c
+</code></pre><p>mylib.rkt  </p>
+<pre><code>#lang racket
+
+(require ffi/unsafe
+ffi/unsafe/define)
+
+(define-ffi-definer mylib-define (ffi-lib &quot;mylib1&quot;))
+(mylib-define isquare (_fun _int -&gt; _int))
+
+(isquare 5)
+</code></pre><p>mylib1.rkt</p>
+<pre><code>#lang racket
+(require ffi/unsafe)
+
+(define mylib (ffi-lib &quot;mylib1.so&quot;))
+
+
+(define isquare
+(get-ffi-obj &quot;isquare&quot;
+        mylib 
+        (_fun _int -&gt; _int)))
+
+(isquare 1000)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/06/01/2013-06-01-racket-on-ffi/" data-id="cj6ajxglh002p1qpt13e7y15t" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-06-01-slideshow-and-ffi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/06/01/2013-06-01-slideshow-and-ffi/" class="article-date">
+  <time datetime="2013-06-01T14:39:00.000Z" itemprop="datePublished">2013-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/01/2013-06-01-slideshow-and-ffi/">slideshow and ffi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天值得高兴的有两件事，是很有意思的一天。</p>
+<p>学习Racket以来，一直很好奇Racket 中怎么实现调用动态库，Java中可以通过JNI技术，来实现对动态库的调用。<br>但是一直是不知道在Racket中如何调用。</p>
+<p>这一切的疑问都在今天解决了，在逛github 的时候，看到了Racket中通过ffi 中的函数库来调用动态库。<br>一般有如下方法:     </p>
+<pre><code>#lang racket
+(requive ffi/unsafe)
+(define libgit2 (ffi-lib &quot;libgit2&quot;))   
+</code></pre><p>大体的代码结构就是这样，详细文档请见<a href="http://docs.racket-lang.org/foreign/" target="_blank" rel="external">ffi</a></p>
+<p>第二件高兴的事情是，在看<a href="http://www.mefeedia.com/video/26348171" target="_blank" rel="external">Macros Matter: Infrastructure for building new programming languages</a> 这个视频的时候。<br>看到简单使用slideshow 这个函数库中的slide 函数实现ppt的编写。</p>
+<p>这东西也太酷了，所以简单的看了一下该函数库的文档，然后还用这写了一个简单的个人简介的ppt。<br><a href="http://docs.racket-lang.org/slideshow/" target="_blank" rel="external">slideshow</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/06/01/2013-06-01-slideshow-and-ffi/" data-id="cj6ajxglh002q1qptysolp324" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-04-30-i-love-you" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/04/30/2013-04-30-i-love-you/" class="article-date">
+  <time datetime="2013-04-30T07:52:00.000Z" itemprop="datePublished">2013-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/04/30/2013-04-30-i-love-you/">I love you</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#lang racket 
+
+;;; 1 构造list 的基本手段: quote和list
+
+&apos;(I love you)
+
+(quote (I love you))
+
+(list &apos;I &apos;love &apos;you)
+
+(list (quote I) (quote love) (quote you))
+
+;;; 2 用cons 连接单元
+
+(cons &apos;I (cons &apos;love (cons &apos;you &apos;())))
+
+(cons &apos;I (cons &apos;love (list &apos;you)))
+
+(cons &apos;I (list &apos;love &apos;you))
+
+(cons &apos;I &apos;(love you))
+
+;;; 3 加点list 记号(Dotted list notation)
+
+&apos;(I love . (you))
+
+&apos;(I . (love . (you)))
+
+&apos;(I . (love . (you . ())))
+
+&apos;(I . (love you))
+
+;;; 4 反引号表示list (Quasiquoted lists)
+
+`(I love you)
+`(I , &apos;love you)
+
+(quasiquote (I , &apos;love you))
+
+(quasiquote (I (unquote &apos;love) you))
+
+`(I ,`love you)
+
+(let ([verb &apos;love])
+`(I ,verb you))
+
+`(I , (string-&gt;symbol &quot;love&quot; )you)
+
+`(I ,(string-&gt;symbol (list-&gt;string &apos;(#\l #\o #\v #\e)))you)
+
+`(I love . (you))
+
+`(I love . , (list &apos;you))
+
+`(I love ,@&apos;(you))
+
+`(I love (unquote-splicing &apos;(you)))
+
+`(I ,@(list &apos;love &apos;you))
+
+`(,@(list &apos;I &apos;love)you)
+
+`(,@&apos;(I love you))
+
+`, &apos;(I love you)
+
+`(I love you . , &apos;())
+
+;;; 5 car 和cdr 
+
+(car (list &apos;(I love you)))
+(cdr &apos;(Hark! I love you))
+
+;;; 6 let 帮顶形式(let-binding forms)
+
+(let ([words &apos;(love you I)])
+(list (car (cdr (cdr words)))
+        (car words)
+        (car (cdr words))))
+
+(let ([words &apos;(love you I)])
+(list (caddr words)
+        (car words)
+        (cadr words)))
+
+(let* ([c &apos;(you)]
+    [b (cons &apos;love c)]
+    [a (cons &apos;I b)])
+a)
+
+(let () 
+&apos;(I love you not)
+&apos;(I love you))
+
+;;; 7 vector 
+(vector-&gt;list (vector &apos;I &apos;love &apos;you))
+
+(vector-&gt;list #(I love you))
+
+;;; 8 stream 
+(stream-&gt;list (stream &apos;I &apos;love &apos;you))
+
+;;; 9 匿名函数(Anonymous functions)
+
+((lambda args args) &apos;I &apos;love &apos;you)
+
+((lambda (one two . rest)rest) &apos;You &apos;believe &apos;I &apos;love &apos;you)
+
+((lambda (a c b)(list a b c)) &apos;I &apos;you &apos;love)
+
+(apply (lambda (a c b)(list a b c))
+    (list &apos;I &apos;you &apos;love))
+
+((lambda (a b [c &apos;you]) (list a b c)) &apos;I &apos;love)
+
+((lambda (#:foo b #:bar c #:baz a)
+(list a b c))
+#:baz &apos;I #:bar &apos;you #:foo &apos;love)
+
+((lambda (a b #:key [c &apos;me]) (list a b c)) #:key &apos;you &apos;I &apos;love)
+
+;;; 10 柯里化(Currying)
+
+(let ([f (λ (x)
+        (λ (y)
+        (λ (z)
+            (list x y z))))])
+(((f &apos;I)&apos;love)&apos;you))
+
+;;; 11 case-lambda 
+
+(let ([f (case-lambda 
+        [() &apos;I]
+        [(x) &apos;love]
+        [(x y) &apos;you])])
+(list (f) (f 1) (f 1 2)))
+
+;;; 12 基础list 操作
+
+(append &apos;(I love)&apos;(you))
+
+(append &apos;(I) &apos;(love) &apos;(you))
+
+(flatten &apos;((I)(love you)))
+
+(flatten &apos;((I) (love)(you) ()))
+
+(reverse &apos;(you love I))
+
+(remove &apos;cannot &apos;(I cannot love you))
+
+(remove-duplicates &apos;(I love love love you))
+
+(take &apos;(I love you not)3)
+
+(take-right &apos;(I think I love you)3)
+
+(drop &apos;(She knows I love you)2)
+
+(drop-right &apos;(I love you no more) 2)
+
+;;; 13 高阶list操作(map, filter和reduce)
+
+(map (lambda (x) (if (eq? x &apos;hate)&apos;love x))
+    &apos;( I hate you))
+
+(map (λ(i)(vector-ref #(love you I)i))
+    &apos;( 2 0 1))
+
+(map (λ (k)(hash-ref #hash((&quot;foo&quot; . I)
+                            (&quot;baz&quot; . you)
+                            (&quot;bar&quot; . love)) k))
+    &apos;(&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;))
+
+(map string-&gt;symbol (sort (list &quot;love&quot; &quot;you&quot; &quot;I&quot;) string&lt;?))
+
+(map string-&gt;symbol (string-split &quot;I-love-you&quot; &quot;-&quot;))
+
+(flatten (map (λ ( a b) (cons  a b))
+                &apos;(I love you)
+                &apos;(() () ())))
+
+(filter (lambda (x) (not (eq? x &apos;cannot)))
+        &apos;(I cannot love you))
+
+(foldr cons &apos;() &apos;(I love you))
+
+(foldl cons &apos;() &apos;(you love I))
+
+;;; 14 迭代(Iterations)
+
+(for/list ([world #(I love you)])
+        world)
+
+;;; 15 条件式(Conditionals)
+(cond 
+[(even? 3) &apos;(Not me)]
+[(odd? 3) &apos;(I love you)])
+
+(cond 
+[(even? 3) &apos;(Not me)]
+[(odd? 2) &apos;(Nor I)]
+[else &apos;(I love you)])
+
+(case 1
+[(a b c) &apos;(Not me)]
+[(3 2 1) &apos;(I love you)])
+
+
+;;; 16 结构化模式匹配(Structural pattern-matching)
+
+(match #t
+    [#f &apos;(Not me)]
+    [#t &apos;(I love you)])
+
+(match #t 
+    [#f &apos;(Not me)]
+    [_ &apos;(I love you)])
+
+(match &apos;you 
+    [&apos;me &apos;(Not me)]
+    [x `(I love ,x)])
+
+(match &apos;(foo bar)
+    [&apos;(foo bar)&apos;(I love you)])
+
+(match &apos;(I cannot lift you)
+    [(list &apos;I &apos;cannot _ c) `(I love ,c)])
+
+(match &apos;(2 3 1)
+    [(list-no-order 3 1 2)
+        &apos;(I love you)])
+
+(match &apos;(love you I)
+    [(list-no-order &apos;I &apos;love foo)
+        `(I love , foo)])
+
+(match &apos;(3 . 4)
+    [(cons 3 4)
+        &apos;(I love you)])
+
+(match &apos;(3 love 1)
+    [(cons 3 (cons x (cons 1 &apos;())))
+        `(I , x you)])
+
+(match &apos;(3 love 1)
+    [(cons 3 (cons x (cons 1 &apos;())))
+        `(I (unquote x) you)])
+
+(match 3 
+    [(? symbol?) &apos;(Not me)]
+    [(? string?) &apos;(Me neither)]
+    [(? number?) &apos;(I love you)])
+
+(match 3 
+    [(not 4) &apos;(I love you)]
+    [3   &apos;unreachable])
+
+(match &apos;(you love I)
+    [`(,c love ,a)
+        `(,a love ,c)])
+
+(match &apos;(We love you)
+    [`(,_ . , rest)
+        `(I . , rest)])
+
+(match &apos;(We love you)
+    [`(,_ ,rest ...)
+        `(I ,@rest)])
+
+(match &apos;(We love you)
+    [(list _ rest ...)
+        `(I ,@rest)])
+
+(match #(1 love 3)
+    [(vector (? number?) b (? number?))
+        `(I ,b you)])
+
+(match #hash((1 . I) (3 . you) (5 . love))
+    [(hash-table (1 a) (5 b)(3 c))
+        (list a b c)])
+
+(match &apos;you
+    [(and x (? symbol?)) `(I love ,x)])
+
+(match &apos;100 
+    [(app (λ (n) (- n 1)) 99)
+        &apos;(I love you)])
+
+;;; 17 续延(Continuation)
+
+(list &apos;I 
+    (call/cc (λ (cc) 
+                (error (cc &apos;love))))
+    &apos;you)
+
+;;; 18 异常(Exceptions)
+
+(with-handlers ([symbol? (lambda (p) 
+                                `(I ,p you))])
+            (raise &apos;love))
+
+;;; 19 延迟求值(Delayed evaluation)
+
+(let ([problem (delay (car &apos;()))])
+&apos;(I love you))
+
+`(I ,(force (delay &apos;love)) you)
+
+(letrec ([x (delay (list a b c))]
+        [a &apos;I]
+        [c &apos;you]
+        [b &apos;love])
+(force x))
+
+;;; 20 变更 (Mutation)
+
+(let ([word &apos;know])
+(set! word &apos;love)
+`(I ,word you))
+
+(let ([word-box (box &apos;know)])
+(set-box! word-box &apos;love)
+`(I ,(unbox word-box )you))
+
+;;; 21 宏(Macros)
+(let-syntax ([un-yoda-list 
+            (syntax-rules () 
+                [(_ c a b) (list &apos;a &apos;b &apos;c)])])
+(un-yoda-list you I love))
+
+;;; 22 端口(Ports)
+
+(let ((in (open-input-string &quot;I love you&quot;)))
+(cons (read in)
+        (cons (read in)
+            (cons (read in) &apos;()))))
+
+;;; 23 未来(Futures)
+(list (touch (future (λ () &apos;I))) &apos;love &apos;you)
+
+;;; 24 参数化(Parameterization)
+
+(let ([a (make-parameter &quot;a&quot;)]
+    [b (make-parameter &quot;b&quot;)]
+    [c (make-parameter &quot;c&quot;)])
+(parameterize ([a &apos;I] [b &apos;love] [c &apos;you])
+    (list (a)
+        ((parameterize ([b &apos;dislike])
+            (λ () (b))))
+    (c))))
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/04/30/2013-04-30-i-love-you/" data-id="cj6ajxglk002w1qptv8ksxhil" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-04-29-fact" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/04/29/2013-04-29-fact/" class="article-date">
+  <time datetime="2013-04-29T14:44:00.000Z" itemprop="datePublished">2013-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/04/29/2013-04-29-fact/">fact</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为什么没有如此实现斐波拉契呢？<br>斐波拉契是一个天然的序对。<br>初始是 (0 1),然后<br>    (1 1)<br>    (1 2)<br>    (2 3)<br>    (3 5)<br>    (5 8)<br>    (8 13)<br>    (13 21)<br>    (21 34)<br>    (34 55)<br>    (55 89)  </p>
+<p>规律是下一个序对的car 是上一个序对的cdr,<br>下一个序对的cdr 是上一个序对的(+ car cdr)。<br>基本表达式是:  </p>
+<pre><code>#lang racket
+
+(define (fact lst)
+(cons (cadr lst) (+ (car lst) (cadr lst))))
+
+(fact &apos;(0 1))
+(fact &apos;(1 1))
+(fact &apos;(1 2))
+(fact &apos;(2 3))
+(fact &apos;(3 5))
+(fact &apos;(5 8))
+(fact &apos;(8 13))
+(fact &apos;(13 21))
+(fact &apos;(21 34))
+(fact &apos;(34 55))
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/04/29/2013-04-29-fact/" data-id="cj6ajxglf002m1qpts9903fho" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

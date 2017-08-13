@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Schemer | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近一段时间在学习Schemer, 使用的方言是Racket。 sicp 读完了前三章，然后也读了其它的几本书，规范也看了，到处搜索了关于schemer 的资料， 以前别人吹读了sicp就是牛人了。直到最近才知道sicp只是基础。 读了sicp的前三章，主要是受王垠的一个blog影响，就只读了前三章，练习大概做了三分之一。 以前别人说的一些数学概念，都只能仰视，但是看了sicp之后，感觉也就那么一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schemer">
+<meta property="og:url" content="http://cmonkey.github.com/2012/11/23/2012-11-23-schemer/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近一段时间在学习Schemer, 使用的方言是Racket。 sicp 读完了前三章，然后也读了其它的几本书，规范也看了，到处搜索了关于schemer 的资料， 以前别人吹读了sicp就是牛人了。直到最近才知道sicp只是基础。 读了sicp的前三章，主要是受王垠的一个blog影响，就只读了前三章，练习大概做了三分之一。 以前别人说的一些数学概念，都只能仰视，但是看了sicp之后，感觉也就那么一">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Schemer">
+<meta name="twitter:description" content="最近一段时间在学习Schemer, 使用的方言是Racket。 sicp 读完了前三章，然后也读了其它的几本书，规范也看了，到处搜索了关于schemer 的资料， 以前别人吹读了sicp就是牛人了。直到最近才知道sicp只是基础。 读了sicp的前三章，主要是受王垠的一个blog影响，就只读了前三章，练习大概做了三分之一。 以前别人说的一些数学概念，都只能仰视，但是看了sicp之后，感觉也就那么一">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2012-11-23-schemer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/23/2012-11-23-schemer/" class="article-date">
+  <time datetime="2012-11-23T09:36:00.000Z" itemprop="datePublished">2012-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Schemer
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一段时间在学习Schemer, 使用的方言是Racket。</p>
+<p>sicp 读完了前三章，然后也读了其它的几本书，规范也看了，到处搜索了关于schemer 的资料，</p>
+<p>以前别人吹读了sicp就是牛人了。直到最近才知道sicp只是基础。</p>
+<p>读了sicp的前三章，主要是受王垠的一个blog影响，就只读了前三章，练习大概做了三分之一。</p>
+<p>以前别人说的一些数学概念，都只能仰视，但是看了sicp之后，感觉也就那么一回事。</p>
+<p>可能以前别人光知道秀名词了，没有把整个数学概念将清楚，或者太愚钝也未必可知。</p>
+<p>由于是在vim中写的代码，所以一般会直接!racket %。</p>
+<p>但有些sicp中的代码是在racket中不能运行的，可以用mzscheme运行。</p>
+<p>在vim中写lisp的一个问题可能是在插入模式下面要向右移动多个括号，然后换行在写。</p>
+<p>这个问题开始还不知道如何解决，后来由于用的neocomplcache 插件，所以Ctrl+k 可以满足这种需求。</p>
+<a id="more"></a>
+<p>在知道什么是纯函数，什么不是纯函数后，就知道一些以前的问题的答案了。</p>
+<p>比如一个函数传同一个参数得到的值都是一样的，不知道什么是纯函数的时候，很好奇如果一个函数是根据id读取数据库，该怎么处理？ 原来就是不知道什么是纯函数而已。</p>
+<p>在schemer中，只排斥一种东西，并且这东西还没有学，很排斥学习它，也没有写过一个例子。</p>
+<p>它就是宏，不知道宏到底有什么用处，并且整个宏的定义感觉很怪异，从来都没有写过任何的宏。</p>
+<p>读完sicp后，对schemer有了解，但是肯定是不能写一个读写文件的简单程序的。</p>
+<p>sicp后，又读了《How to Design Programs》 , 《The little Schemer》等书。</p>
+<p>《The little Schemer》读到第5章就读不下去了，所以也就读了前5章。</p>
+<p>但是还没有搞清楚如何用schemer写一些demo来练手。</p>
+<p>racket的文档也大概读了两遍了。</p>
+<p>学好几门语言都是这样基本语法知道后，但是没有用过，没有在实际中用过，过一段时间后，自己就渐渐忘记了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/11/23/2012-11-23-schemer/" data-id="cj6ajxglb002d1qptt84sw3ig" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/11/29/2012-11-29-xin-you-meng-hu/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          心有猛虎
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/10/27/2012-10-27-programmer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">programmer</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

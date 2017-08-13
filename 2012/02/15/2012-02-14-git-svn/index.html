@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git-svn 使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如果正在使用svn，打算换到git，又暂时不想放弃已有的svn代码库，可以选择git-svn。 初始化代码库 git svn clone -s svn-repository-url git svn clone svn-repository-url local-projectname svn-repository-url 是svn代码库的url，如果要从trunk目录或者某个branch目录里che">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-svn 使用">
+<meta property="og:url" content="http://cmonkey.github.com/2012/02/15/2012-02-14-git-svn/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如果正在使用svn，打算换到git，又暂时不想放弃已有的svn代码库，可以选择git-svn。 初始化代码库 git svn clone -s svn-repository-url git svn clone svn-repository-url local-projectname svn-repository-url 是svn代码库的url，如果要从trunk目录或者某个branch目录里che">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git-svn 使用">
+<meta name="twitter:description" content="如果正在使用svn，打算换到git，又暂时不想放弃已有的svn代码库，可以选择git-svn。 初始化代码库 git svn clone -s svn-repository-url git svn clone svn-repository-url local-projectname svn-repository-url 是svn代码库的url，如果要从trunk目录或者某个branch目录里che">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2012-02-14-git-svn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/15/2012-02-14-git-svn/" class="article-date">
+  <time datetime="2012-02-14T21:39:12.000Z" itemprop="datePublished">2012-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git-svn 使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果正在使用svn，打算换到git，又暂时不想放弃已有的svn代码库，可以选择git-svn。</p>
+<p>初始化代码库</p>
+<pre><code>git svn clone -s svn-repository-url
+git svn clone svn-repository-url local-projectname
+</code></pre><p>svn-repository-url 是svn代码库的url，如果要从trunk目录或者某个branch目录里check out ,要把<br>-s 换成-T,-b等选项，请自行man git-svn。</p>
+<p>由于需要同步所有的提交历史，所有比较慢，同步完成后就可以工作了。</p>
+<a id="more"></a>
+<p>不过在开始之前可以先运行:<br>    git gc<br>对代码库的信息进行垃圾收集和压缩，最明显的作用就是减小磁盘空间。</p>
+<p>应该得到了一个主分支。<br>    *master<br>可以按照git的使用方式进行代码的编写了。</p>
+<p>为了确保代码没有过时，不时运行一下<br>    git svn rebase<br>运行命令时确保工作目录整洁。如果本地做了修改，则必须在运行<br>    git svn rebase<br>之前或暂存工作，或暂时提交内容–不然会发生衍合的结果包含冲突而终止。</p>
+<p>为了确保svn的代码是一个线性的历史记录，使用rebase进行衍合，不要使用merge。</p>
+<p>最后用<br>    git svn rebase<br>获取最新代码，在基础上进行衍合，然后<br>    git svn dcommit<br>对代码进行提交。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/15/2012-02-14-git-svn/" data-id="cj6ajxgkv001h1qptdbqdsatt" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/02/18/2012-02-17-rvm-install/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          rvm 安装和使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/02/15/2012-02-14-education/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">离家出走</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kernel_SysRq | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近awesome 更新到了3.5版本，由于未知的原因，有时候可能造成awesome+xorg都不响应了。以前都是直接按住电源键关机，然后重启，问题倒是没有，但是总归很危险的操作。 linux中针对这种情况，可以通过reisub来进行系统重启。在archlinux中默认关闭了通过reisub 来重启系统的功能。需要：    echo “1” &amp;gt; /proc/sys/kernel/sysrq或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kernel_SysRq">
+<meta property="og:url" content="http://cmonkey.github.com/2013/02/06/2013-02-06-kernel-sysrq/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近awesome 更新到了3.5版本，由于未知的原因，有时候可能造成awesome+xorg都不响应了。以前都是直接按住电源键关机，然后重启，问题倒是没有，但是总归很危险的操作。 linux中针对这种情况，可以通过reisub来进行系统重启。在archlinux中默认关闭了通过reisub 来重启系统的功能。需要：    echo “1” &amp;gt; /proc/sys/kernel/sysrq或">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kernel_SysRq">
+<meta name="twitter:description" content="最近awesome 更新到了3.5版本，由于未知的原因，有时候可能造成awesome+xorg都不响应了。以前都是直接按住电源键关机，然后重启，问题倒是没有，但是总归很危险的操作。 linux中针对这种情况，可以通过reisub来进行系统重启。在archlinux中默认关闭了通过reisub 来重启系统的功能。需要：    echo “1” &amp;gt; /proc/sys/kernel/sysrq或">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2013-02-06-kernel-sysrq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/02/06/2013-02-06-kernel-sysrq/" class="article-date">
+  <time datetime="2013-02-06T09:21:00.000Z" itemprop="datePublished">2013-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kernel_SysRq
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近awesome 更新到了3.5版本，由于未知的原因，有时候可能造成awesome+xorg都不响应了。<br>以前都是直接按住电源键关机，然后重启，问题倒是没有，但是总归很危险的操作。</p>
+<p>linux中针对这种情况，可以通过reisub来进行系统重启。<br>在archlinux中默认关闭了通过reisub 来重启系统的功能。<br>需要：<br>    echo “1” &gt; /proc/sys/kernel/sysrq<br>或者：<br>    edit /etc/sysctl.conf and set kernel.sysrq = 1</p>
+<p>来开启reisub 功能，使系统在不能响应时，可以通过按Alt+SysRq + reisub 重启系统。</p>
+<p>link: <a href="https://wiki.archlinux.org/index.php/Keyboard_Shortcuts" target="_blank" rel="external">Keyboard_Shortcuts</a> </p>
+<a id="more"></a>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/02/06/2013-02-06-kernel-sysrq/" data-id="cj6ajxgle002k1qptgdwse4dy" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/02/28/2013-02-28-0-2-baby/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          给0-2岁小朋友的书单
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/01/28/2013-01-28-clever-fool/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">聪明人和傻子和奴才</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

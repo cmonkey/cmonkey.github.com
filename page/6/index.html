@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://cmonkey.github.com/page/6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2013-04-29-call-slash-cc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/04/29/2013-04-29-call-slash-cc/" class="article-date">
+  <time datetime="2013-04-29T08:24:00.000Z" itemprop="datePublished">2013-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/04/29/2013-04-29-call-slash-cc/">call/cc</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在晚上搜索了半天的call/cc 的知识。看了半天，并且尝试了半天。<br>才得到一下的结果。</p>
+<p><code><br>    (define (t x y)<br>        (sqr (call/cc (lambda (k)<br>                        (k (+ x y))))))</code></p>
+<pre><code>(t 5 10)
+
+225
+</code></pre><p></p>
+<p>在这里的k 相当于这个表达式，也就是sqr 函数，所以k = sqr ,然后(sqr (+ x y))</p>
+<p>但是这并不是想要的，想实现的效果</p>
+<p><code><br>    (lambda ()<br>        (+ x y) sqr)<br></code></p>
+<p>传入x,y,将x,y相加，然后将结果给sqr.<br>但是不知道如何实现。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/04/29/2013-04-29-call-slash-cc/" data-id="cj6ajxglf002l1qptwugmrsn1" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-04-29-the-croods" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/04/29/2013-04-29-the-croods/" class="article-date">
+  <time datetime="2013-04-29T06:05:00.000Z" itemprop="datePublished">2013-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/04/29/2013-04-29-the-croods/">the croods</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨晚在南山书城的华夏电影院看了《疯狂原始人》。</p>
+<p>晚上10点的场，0点后才回到家。</p>
+<p>《疯狂原始人》是一部有亲情，有欢乐的电影。</p>
+<p>不管是陪着爱人看，或一家看都是好的。</p>
+<p>有条件的话，大家都应该去电影院看看这么一部电影。</p>
+<p>亲情，爱情，改变。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/04/29/2013-04-29-the-croods/" data-id="cj6ajxglg002n1qpt7909otku" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-03-14-cat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/14/2013-03-14-cat/" class="article-date">
+  <time datetime="2013-03-14T03:16:00.000Z" itemprop="datePublished">2013-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/14/2013-03-14-cat/">cat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link:<a href="http://www.zhihu.com/question/20843234" target="_blank" rel="external">猫</a></p>
+<p>传说世间的一切生灵皆可修炼成仙，而猫自然在其中。每修炼二十年，猫就会多长出一条尾巴，等到有九条尾巴的时候，就算功德圆满了，连天上的神仙都要敬让三分。可是这第九条尾巴却是极难修到的，当猫修炼到第八条尾巴时，会得到一个提示，帮助它的主人实现一个愿望，心愿完成后，会长出一条新的尾巴，但是从前的尾巴也会脱落一条，仍是八尾。这看起来是个奇怪的死循环，无论怎样都不可能修炼到九条尾巴。</p>
+<p>有一只很虔诚的猫，已经修炼了不知道几百年，也不知道帮多少人实现了愿望，但仍然是八条尾巴，它向佛祖抱怨，这样下去如何才能修炼得道？佛祖只是笑而不答，它只得继续修炼。有一天当它在暴风雨中回到它藏身的村庄，遇到一个少年被狼群围攻，以它的造化，当然不费吹灰之力地赶走了狼群，救下了这个少年，之后发现这个少年是它第一位主人的后代。按照规矩，它需要帮少年实现一个愿望，然后脱落一条尾巴再长出一条新的尾巴，继续它的死循环。</p>
+<p>少年当然是欣喜若狂，九尾猫的传说在当地不知流传了多少年，而自己何其有幸，竟然成为了八尾猫的主人，还有一个不论多奢侈都能够实现的愿望！八尾猫问少年的心愿是什么，他一时之间竟回答不出来，于是八尾猫变化成一只普通的猫咪，暂且跟少年回到了他家。在之后的几天里，少年小心翼翼地与八尾相处，发现它的眼神里除了看透世事的淡然以外，竟然还有些许悲哀。当他得知了死循环的秘密之后，竟然对这只神通广大的猫产生了怜悯。</p>
+<p>终于有一天，八尾猫待得不耐烦了，便问少年到底有什么愿望。少年想了想，问，“什么愿望都可以实现吗？”八尾不屑地瞥了他一眼。少年接着一字一顿地说，“那么，我的愿望就是，你能有九条尾巴。”<br>八尾猫愣住了，眼睛里充满了疑惑，随后是一种难以言表的感恩眼神。它俯下身，舔了下少年的手，很温暖。</p>
+<p>于是，八尾猫长出了华丽的第九条尾巴，变成了真正的九尾猫。而少年的一生，也过得十分幸福美满。</p>
+<p>故事到这里结束。原来得道的天机是如此，只有遇到一个肯让它圆满的人，八尾猫才能有九条尾巴。以前的人都自私地为自己考虑，觉得八尾猫为他们实现任何愿望都是应该的，从不会考虑八尾猫的感受，可是每一条尾巴都要付出八尾猫几十年的修炼。</p>
+<p>当我读到少年的愿望时，着实吃了一惊，一直以来，不管是阿拉丁神灯还是雅各布斯的猴爪，人们在得到命运的眷顾时，所许的愿望都是为了自己。对于天上掉下来的馅饼，人们总是享用得如此理所当然。</p>
+<p>而耗费自己难得的运气去成全别人的圆满，这或许是世间最大的慷慨、最真心的回馈了吧。<br>谨以此故事，为你取暖。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/03/14/2013-03-14-cat/" data-id="cj6ajxglg002o1qpt8k25x7t1" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-02-28-0-2-baby" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/02/28/2013-02-28-0-2-baby/" class="article-date">
+  <time datetime="2013-02-28T00:58:00.000Z" itemprop="datePublished">2013-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/02/28/2013-02-28-0-2-baby/">给0-2岁小朋友的书单</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link:<a href="http://blog.sina.com.cn/s/blog_492a112001015gjq.html" target="_blank" rel="external">给0-2岁小朋友的书单</a></p>
+<p>1:  棕色的熊棕色的熊你在看什么？（美）艾瑞•卡尔/图      语言琅琅上口，图画鲜明。</p>
+<p>2:  米米系列    周逸芬/文陈致元/图                  切合孩子的成长感受</p>
+<p>3:  小熊宝宝绘本系列、噼里啪啦绘本系列  （日）佐佐木洋子     同上，孩子感受成长学习生活</p>
+<p>4:  阿力会穿裤子了   （日）西卷茅子图                      学习的努力和成长的快乐</p>
+<p>5:  月亮的味道  （波兰）麦克·格雷涅茨                    想象力到月亮上去了</p>
+<p>6:  第五个    (奥)恩斯特·杨德尔/文 (德)诺尔曼·荣格/图      关于疾病</p>
+<p>7:  弗洛拉系列  (英)戴比•格里欧瑞                       关于友爱和想象</p>
+<p>8:  小鸭黛西系列  (英)简•西蒙斯                          发现童年美好，关于探索世界的安全</p>
+<p>9:  米菲系列    (荷)迪克•布鲁纳                            经典的书。</p>
+<p>10: 猜猜我有多爱你  (爱尔兰)山姆•麦克布雷尼  (英)安妮塔•婕朗图    经典，爱的表达</p>
+<p>11: 好饿的毛毛虫  （美）艾瑞•卡尔                       无与伦比的童书，让孩子感受丰富         </p>
+<p>12: 我说了吧  系列（日）五味太郎                                  幽默和急智，好玩。</p>
+<p>再加上一套《中国第一套儿童情绪管理图画书》（新西兰）特蕾西.莫罗妮</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/02/28/2013-02-28-0-2-baby/" data-id="cj6ajxgld002i1qptm3z00dey" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-02-06-kernel-sysrq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/02/06/2013-02-06-kernel-sysrq/" class="article-date">
+  <time datetime="2013-02-06T09:21:00.000Z" itemprop="datePublished">2013-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/02/06/2013-02-06-kernel-sysrq/">kernel_SysRq</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近awesome 更新到了3.5版本，由于未知的原因，有时候可能造成awesome+xorg都不响应了。<br>以前都是直接按住电源键关机，然后重启，问题倒是没有，但是总归很危险的操作。</p>
+<p>linux中针对这种情况，可以通过reisub来进行系统重启。<br>在archlinux中默认关闭了通过reisub 来重启系统的功能。<br>需要：<br>    echo “1” &gt; /proc/sys/kernel/sysrq<br>或者：<br>    edit /etc/sysctl.conf and set kernel.sysrq = 1</p>
+<p>来开启reisub 功能，使系统在不能响应时，可以通过按Alt+SysRq + reisub 重启系统。</p>
+<p>link: <a href="https://wiki.archlinux.org/index.php/Keyboard_Shortcuts" target="_blank" rel="external">Keyboard_Shortcuts</a> </p>
+        
+          <p class="article-more-link">
+            <a href="/2013/02/06/2013-02-06-kernel-sysrq/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/02/06/2013-02-06-kernel-sysrq/" data-id="cj6ajxgle002k1qptgdwse4dy" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-01-28-clever-fool" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/01/28/2013-01-28-clever-fool/" class="article-date">
+  <time datetime="2013-01-28T08:26:00.000Z" itemprop="datePublished">2013-01-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/28/2013-01-28-clever-fool/">聪明人和傻子和奴才</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>《聪明人和傻子和奴才》– 鲁迅</p>
+<p>奴才总不过是寻人诉苦。只要这样，也只是这样。有一日，他遇到一个聪明人。<br>“先生！”他悲哀地说，眼泪连成一线，就从眼角上直流小来。<br>“你知道的。我所过的简直不是人的生活。吃的是一天未必有一餐，这一餐又不过是高粱皮，连猪狗都不要吃的，尚且只有一小碗…”<br>“这实在令人同情。” 聪明人也惨然说。<br>”可不是么!” “他高兴了。<br>“可是做工是昼夜无休息：清早担水晚烧饭，上午跑街也磨面，晴洗衣裳雨张伞，冬烧气炉夏打扇。半夜要为煨银耳，伺候主人耍钱;头钱从来没分，有时还挨皮鞭…”<br>”唉唉…”聪明人叹息着，眼圈有些发红，似乎要下泪。<br>“先生！我这样是敷衍不下去的。我总得另外想法子。可是什么法子呢?…”<br>“我想，你总会好起来…”<br>“是么？但愿如此。可是我对先生诉了冤苦，又得你的同情和慰安，已经舒坦得不少了。可见天理没有灭绝…”<br>但是，不几日，他又不平起来了，仍然寻人诉苦。<br>”先生！“他流着泪说。<br>”你知道的，我住的简直比猪窝还不如。主人并不将我当人;他对他的叭儿狗还要好到几万倍…”<br>“混帐！”那人大叫起来，使他吃惊了。那人是一个傻子。<br>“先生，我的只是一间破小屋，又湿，又阴，满是臭虫，睡下去就咬得真可以，秽气冲着鼻子，四面又没有一个窗子…”<br>“你不会要你主人开一个窗的么？”<br>”这怎么行？…”<br>“那么，你带我去看去！”<br>傻子跟奴才到他屋外，动手就砸那泥墙。<br>“先生!你干什么？”他大惊地说。<br>“我给你打开一个窗洞来”<br>“这不行！主人要骂的！”<br>“管他呢！”他仍然砸。<br>“人来呀！强盗在毁咱们的屋子了！快来呀！迟一点可要打出窟窿来了！…”他苦嚷着，在地上团团地打滚。<br>一群奴才都出来，将傻子赶走。<br>听到了喊声，慢慢地最后出来的是主人。<br>”有强盗要毁咱们的屋子，我首先叫喊起来，大家一同把他赶走了。“他恭敬而得胜地说。<br>”你不错.”主人这样夸奖他。<br>这一天就来了许多慰问的人，聪明人也在内。<br>”先生，这回因为我有功，主人夸奖了我了，你先前说我总会好起来，实在是有先见之明…”他大有希望似的高兴地说。<br>“可不是么…”聪明人也代为高兴似的回答他。  </p>
+<p>一九二五年十二月二十六日。  </p>
+        
+          <p class="article-more-link">
+            <a href="/2013/01/28/2013-01-28-clever-fool/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/01/28/2013-01-28-clever-fool/" data-id="cj6ajxgld002h1qptkjfo65z8" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-01-25-light" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/01/25/2013-01-25-light/" class="article-date">
+  <time datetime="2013-01-25T06:10:00.000Z" itemprop="datePublished">2013-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/25/2013-01-25-light/">light</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link:<a href="http://www.douban.com/note/258557321/" target="_blank" rel="external">宁肯与好人一起咽糟糠，也不能与坏人一起吃筵席</a></p>
+<p>这句话是很多年前以为大姐告诉我的，我以前很执着，或者说很固执，好吧！我那是很较劲。<br>其实大姐当时还说了一句话，就是跟明白人打顿架，也不跟混蛋说句话。<br>我估计当时大姐跟我说这些的潜台词是我再不改变就彻底不搭理我了。</p>
+<p>记得以前听过一个讲座，说的是你现在周围的人决定你的未来，讲的是朋友影响你的态度，生活，进而影响命运，<br>当时听完觉得没有什么，后来越想越觉得有道理。我青春期的时候，我姨妈曾经给我讲过这么一个道理，就是女孩找婆家，不光要观察这个男生，还有观察这个那生的家庭情况，如果公公打婆婆，那么丈夫就有打媳妇的可能。<br>如果婆婆不会过日子，那以后就算进门了，也要单过。胳膊拧不过大腿，到人家里过日子，想改变人家一家太难了，但是人家改变你却比较容易。</p>
+<p>我们没办法选择自己的父母，家人，同学，却可以选择自己的同事，朋友，未来伴侣。<br>在我们长大承认后，我们大部分的时间要和同事，伴侣在一起生活，他们对我们的影响，直接影响我们的下半辈子。<br>处在一个正能量多的地方，不能说一定幸福，至少幸福的概率大一点儿，就像在一个一千多只股票都上涨的市场，你买中上涨股票的机会就多，赚钱的概率就高。在一个一千多只股票都下跌的市场，你买中上涨股票的机会就少，赚钱的概率就低，这就是所谓的顺大势。</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/01/25/2013-01-25-light/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/01/25/2013-01-25-light/" data-id="cj6ajxglc002g1qpt2pktejsk" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013-01-25-garbage-collection" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/01/25/2013-01-25-garbage-collection/" class="article-date">
+  <time datetime="2013-01-25T02:44:00.000Z" itemprop="datePublished">2013-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/25/2013-01-25-garbage-collection/">Garbage Collection 初探</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link: <a href="http://www.findfunaax.com/notes/file/157" target="_blank" rel="external">Garbage Collection</a></p>
+<ol>
+<li>原理</li>
+</ol>
+<p>垃圾回收(Garbage Collection, GC)技术的源头可以追溯到1960年Lisp语言。 如今越来越多的高级语言采用垃圾回收技术，尤其是动态语言(Python, Lua)。 当然，最知名的还是Java这个静态类型语言把GC技术带给了广大的程序员， 解放了Memory Leak这个问题。更多GC技术的历史可以查阅参考文献1.</p>
+<p>GC是关于内存的垃圾回收，在讨论回收之前，首先要知道内存是怎么分配的。 大多数主流语言或Virtual Machine支持三种最基本的那次分配方式：</p>
+<pre><code>静态分配(Static Allocation)：静态变量和全局变量的分配方式。自动申请，无需释放。
+自动分配(Automatic Allocation)：栈中局部变量的分配方式。自动申请，自动释放。
+动态分配(Dynamic Allocation)：堆中内存的分配方式。手动申请，手动释放。
+</code></pre><p>这里面最容易出问题的地方就是动态分配的内存。如果只有“手动申请(malloc/new)，忘记释放(free/delete)”，就会造成Memory Leak。 GC所作的事就是使得动态分配的内存“手动申请，自动释放”，解放程序员的生产力。</p>
+<p>根据IBM T.J Watson Research Center的一篇总结性论文A Unified Theorg of Garbage Collection， 垃圾回收算法可以分为两大类：<br>    Reference Counting 引用计数型<br>    Tracing 追踪型</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/01/25/2013-01-25-garbage-collection/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/01/25/2013-01-25-garbage-collection/" data-id="cj6ajxglc002f1qpta1i974wm" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-11-29-xin-you-meng-hu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/29/2012-11-29-xin-you-meng-hu/" class="article-date">
+  <time datetime="2012-11-29T03:20:00.000Z" itemprop="datePublished">2012-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/29/2012-11-29-xin-you-meng-hu/">心有猛虎</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“我心里有猛虎，在细嗅着蔷薇，审视我的心灵吧，亲爱的朋友，你应战栗，因为那里才是你本来的面目。” ——西格夫里•萨松</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/11/29/2012-11-29-xin-you-meng-hu/" data-id="cj6ajxgla002c1qpt006jbrla" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-11-23-schemer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/23/2012-11-23-schemer/" class="article-date">
+  <time datetime="2012-11-23T09:36:00.000Z" itemprop="datePublished">2012-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/23/2012-11-23-schemer/">Schemer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一段时间在学习Schemer, 使用的方言是Racket。</p>
+<p>sicp 读完了前三章，然后也读了其它的几本书，规范也看了，到处搜索了关于schemer 的资料，</p>
+<p>以前别人吹读了sicp就是牛人了。直到最近才知道sicp只是基础。</p>
+<p>读了sicp的前三章，主要是受王垠的一个blog影响，就只读了前三章，练习大概做了三分之一。</p>
+<p>以前别人说的一些数学概念，都只能仰视，但是看了sicp之后，感觉也就那么一回事。</p>
+<p>可能以前别人光知道秀名词了，没有把整个数学概念将清楚，或者太愚钝也未必可知。</p>
+<p>由于是在vim中写的代码，所以一般会直接!racket %。</p>
+<p>但有些sicp中的代码是在racket中不能运行的，可以用mzscheme运行。</p>
+<p>在vim中写lisp的一个问题可能是在插入模式下面要向右移动多个括号，然后换行在写。</p>
+<p>这个问题开始还不知道如何解决，后来由于用的neocomplcache 插件，所以Ctrl+k 可以满足这种需求。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/11/23/2012-11-23-schemer/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/11/23/2012-11-23-schemer/" data-id="cj6ajxglb002d1qptt84sw3ig" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

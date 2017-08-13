@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Solaris Disk 安装 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先在oracle下载dvd包在windows的fat32下建立solaris 文件夹解压缩solaris dvd，将boot 文件夹中的multiboot,x86.miniroot 文件copy到solaris文件夹。最后得到的文件夹可能是这样:F:/solaris   sol-10-u10-ga2-x86-dvd.iso   multiboot   x86.miniroot 现在reboot系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solaris Disk 安装">
+<meta property="og:url" content="http://cmonkey.github.com/2011/12/20/2011-12-19-solaris-disk-install/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先在oracle下载dvd包在windows的fat32下建立solaris 文件夹解压缩solaris dvd，将boot 文件夹中的multiboot,x86.miniroot 文件copy到solaris文件夹。最后得到的文件夹可能是这样:F:/solaris   sol-10-u10-ga2-x86-dvd.iso   multiboot   x86.miniroot 现在reboot系统">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Solaris Disk 安装">
+<meta name="twitter:description" content="先在oracle下载dvd包在windows的fat32下建立solaris 文件夹解压缩solaris dvd，将boot 文件夹中的multiboot,x86.miniroot 文件copy到solaris文件夹。最后得到的文件夹可能是这样:F:/solaris   sol-10-u10-ga2-x86-dvd.iso   multiboot   x86.miniroot 现在reboot系统">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2011-12-19-solaris-disk-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/20/2011-12-19-solaris-disk-install/" class="article-date">
+  <time datetime="2011-12-19T18:51:16.000Z" itemprop="datePublished">2011-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Solaris Disk 安装
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先在oracle下载dvd包<br>在windows的fat32下建立solaris 文件夹<br>解压缩solaris dvd，将boot 文件夹中的multiboot,x86.miniroot 文件copy到solaris文件夹。<br>最后得到的文件夹可能是这样:<br>F:/solaris<br>   sol-10-u10-ga2-x86-dvd.iso<br>   multiboot<br>   x86.miniroot</p>
+<p>现在reboot系统；进入grub，按c进入grub command。</p>
+<pre><code>find /solaris/multiboot
+</code></pre><p>得到输出可能是这样 (hd0,1)</p>
+<pre><code>root (hd0,1)
+kernel /solaris/multiboot kernel/unxi -B install_media=dsk
+module /solaris/miniroot
+boot
+</code></pre><a id="more"></a>
+<p>进入solaris安装环境<br>进入选择界面<br>1为默认,是UFS系统。<br>3或者4是ZFS系统。<br>选择3<br>然后得到找不到系统文件<br>进入shell<br>输入如下命令:<br>    mount -F pcfs /dev/dsk/c1d0p0:1 /mnt</p>
+<p>c1d0p0:1 是系统的FAT32 那一块硬盘，具体在不同机器上各不一样</p>
+<pre><code>lofiadm -a /mnt/solaris/sol-10-u10-ga2-x86-dvd.iso
+mount -F hsfs /dev/lofi/1 /cdrom
+exit
+</code></pre><p>现在可能需要重新选择一次，安装什么样的系统。<br>选择3，进入安装根系统是ZFS的安装界面。<br>ZFS可以提供全新安装或者升级安装。</p>
+<p>今天看到各类媒体都在报道朝鲜的金正日在前两天，<br>也就是2011-12-7的时候在火车上挂了。个人唯一的感受就是朝鲜的改革开放是否在明年如他们自己所说的那样如期到来。<br>社会都在不停的进步，生活的这片土地，还有那么多悲惨的事情，但自己似乎无能为力，<br>乌坎，很多地方都在上演悲剧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2011/12/20/2011-12-19-solaris-disk-install/" data-id="cj6ajxgkr00171qptjxhhua49" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2011/12/25/2011-12-24-view-room/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          一个非基督徒的圣诞节
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/12/12/2011-12-11-imagemagick/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">ImageMagick 使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

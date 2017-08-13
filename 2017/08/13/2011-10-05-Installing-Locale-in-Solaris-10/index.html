@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Installing Locale in Solaris 10 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Link: Gopi Desaboyina Solaris Blogs Installing Japanese fonts/Locale in Solaris 10.=======================================  Check what all locales you’ve installed using locale -a localeadm -lt –&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Installing Locale in Solaris 10">
+<meta property="og:url" content="http://cmonkey.github.com/2017/08/13/2011-10-05-Installing-Locale-in-Solaris-10/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Link: Gopi Desaboyina Solaris Blogs Installing Japanese fonts/Locale in Solaris 10.=======================================  Check what all locales you’ve installed using locale -a localeadm -lt –&amp;gt;">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Installing Locale in Solaris 10">
+<meta name="twitter:description" content="Link: Gopi Desaboyina Solaris Blogs Installing Japanese fonts/Locale in Solaris 10.=======================================  Check what all locales you’ve installed using locale -a localeadm -lt –&amp;gt;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2011-10-05-Installing-Locale-in-Solaris-10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/13/2011-10-05-Installing-Locale-in-Solaris-10/" class="article-date">
+  <time datetime="2017-08-13T09:44:10.723Z" itemprop="datePublished">2017-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Installing Locale in Solaris 10
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Link: <a href="http://gdesaboyina.wordpress.com/2011/04/22/installing-locale-in-solaris-10/" target="_blank" rel="external">Gopi Desaboyina Solaris Blogs</a></p>
+<h3 id="Installing-Japanese-fonts-Locale-in-Solaris-10"><a href="#Installing-Japanese-fonts-Locale-in-Solaris-10" class="headerlink" title="Installing Japanese fonts/Locale in Solaris 10."></a>Installing Japanese fonts/Locale in Solaris 10.</h3><p>=======================================</p>
+<ol>
+<li>Check what all locales you’ve installed using locale -a</li>
+<li>localeadm -lt –&gt; Check if you’ve Japanese there. If not you can directly install from DVD localeadm -a</li>
+<li>localeadm -v -a ja -d /<dvd mount="" path="" solaris_10="" product=""></dvd></li>
+<li>localeadm -v -r ja –&gt; This one removes the Japnese Packages ( Only Locale Related Packages).</li>
+<li>set the LANG &amp; LC_ALL variables then open gedit or appropriate program to check fonts.</li>
+</ol>
+<h3 id="Check-if-your-installation-supports-Japanese-Region"><a href="#Check-if-your-installation-supports-Japanese-Region" class="headerlink" title="Check if your installation supports Japanese Region ?"></a>Check if your installation supports Japanese Region ?</h3><p>=====================================================</p>
+<h3 id="localeadm-lt"><a href="#localeadm-lt" class="headerlink" title="localeadm -lt"></a>localeadm -lt</h3><p>You do not appear to have created a fresh config file since you began using this application.<br>If you have a set of Solaris install images available to you, it is recommended that you do so before proceeding.</p>
+<p>Do you wish to create a new config file? [y/n]: y</p>
+<p>Please select the option that was used to install Solaris</p>
+<ol>
+<li>CD installation/net installed CD images</li>
+<li>DVD installation/net installed combined image</li>
+</ol>
+<p>Please enter your choice:<br>^C<br>The following regions are supported by localeadm: <a id="more"></a></p>
+<p>—————–</p>
+<p>Australasia (aua)<br>[ Australia, New Zealand ]</p>
+<p>Central America (cam)<br>[ Costa Rica, Guatemala, Nicaragua, Panama, El Salvador ]</p>
+<p>Central Europe (ceu)<br>[ Austria, Czech Republic, Germany, Hungary, Poland, Slovakia, Switzerland (German), Switzerland (French) ]</p>
+<p>Eastern Europe (eeu)<br>[ Albania, Bosnia, Bulgaria, Estonia, Croatia, Kazakhstan, Lithuania, Latvia, Macedonia, Romania, Russia, Serbia, Slovenia, Turkey, Ukraine ]</p>
+<p>Middle East (mea)<br>[ Saudi Arabia, Israel ]</p>
+<p>Northern Africa (naf)<br>[ Egypt ]</p>
+<p>North America (nam)<br>[ Canada (English), Canada (French), United States, Mexico ]</p>
+<p>Northern Europe (neu)<br>[ Denmark, Finland, Iceland, Norway (Bokmal), Norway (Nyorsk),  Sweden ]</p>
+<p>South America (sam)<br>[ Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Paraguay, Peru, Uruguay, Venezuela ]</p>
+<p>Southern Europe (seu)<br>[ Cyprus, Italy, Greece, Malta (English), Malta (Maltese), Portugal, Spain (Catalan), Spain (Spanish) ]</p>
+<p>Western Europe (weu)<br>[France, Holland, Belgium (French), Belgium (Flemish), Ireland, England, Luxembourg (French), Luxembourg (German) ]</p>
+<p>Japanese (ja)</p>
+<p>Korean (korean)</p>
+<p>Simplified Chinese (china)</p>
+<p>Traditional Chinese (Hong Kong) (hongkong)</p>
+<p>Traditional Chinese (taiwan)</p>
+<p>Thai (th_th)</p>
+<p>Hindi (hi_in)</p>
+<p>Done.</p>
+<h3 id="Checking"><a href="#Checking" class="headerlink" title="Checking"></a>Checking</h3><p>=======================</p>
+<h3 id="locale"><a href="#locale" class="headerlink" title="locale"></a>locale</h3><p>LANG=C<br>LC_CTYPE=”C”<br>LC_NUMERIC=”C”<br>LC_TIME=”C”<br>LC_COLLATE=”C”<br>LC_MONETARY=”C”<br>LC_MESSAGES=”C”<br>LC_ALL=</p>
+<h3 id="ls-ltr-var-adm-messages"><a href="#ls-ltr-var-adm-messages" class="headerlink" title="ls -ltr /var/adm/messages*"></a>ls -ltr /var/adm/messages*</h3><p>-rw-r–r–   1 root     root      350534 Feb 28 20:11 /var/adm/messages.2<br>-rw-r–r–   1 root     root      435091 Mar 28 23:05 /var/adm/messages.1<br>-rw-r–r–   1 root     root      124690 Apr 16 21:04 /var/adm/messages.0<br>-rw-r–r–   1 root     root       59680 Apr 22 02:59 /var/adm/messages</p>
+<h3 id="export-LANG-ja"><a href="#export-LANG-ja" class="headerlink" title="export LANG=ja"></a>export LANG=ja</h3><h3 id="export-LC-ALL-ja"><a href="#export-LC-ALL-ja" class="headerlink" title="export LC_ALL=ja"></a>export LC_ALL=ja</h3><h3 id="locale-1"><a href="#locale-1" class="headerlink" title="locale"></a>locale</h3><p>LANG=ja<br>LC_CTYPE=”ja”<br>LC_NUMERIC=”ja”<br>LC_TIME=”ja”<br>LC_COLLATE=”ja”<br>LC_MONETARY=”ja”<br>LC_MESSAGES=”ja”<br>LC_ALL=ja</p>
+<h3 id="ls-ltr-var-adm-messages-1"><a href="#ls-ltr-var-adm-messages-1" class="headerlink" title="ls -ltr /var/adm/messages*"></a>ls -ltr /var/adm/messages*</h3><p>-rw-r–r–   1 root     root      350534  2?????? 28??????  20:11 /var/adm/messages.2<br>-rw-r–r–   1 root     root      435091  3?????? 28??????  23:05 /var/adm/messages.1<br>-rw-r–r–   1 root     root      124690  4?????? 16??????  21:04 /var/adm/messages.0<br>-rw-r–r–   1 root     root       59680  4?????? 22??????  02:59 /var/adm/messages</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2017/08/13/2011-10-05-Installing-Locale-in-Solaris-10/" data-id="cj6ajxgkf000r1qptce0kgvyw" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/13/2011-09-26-sesso-schiavi-etica-riflessione/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          萧瀚:洛阳性奴案的伦理反思
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/13/2011-07-21-solaris-vbox4.10-error/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">VirtualBox 4.1 for Solaris hosts Error log</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

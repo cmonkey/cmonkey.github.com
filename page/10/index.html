@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://cmonkey.github.com/page/10/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2012-03-08-jdk-remote-debug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/03/09/2012-03-08-jdk-remote-debug/" class="article-date">
+  <time datetime="2012-03-08T22:46:14.000Z" itemprop="datePublished">2012-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/03/09/2012-03-08-jdk-remote-debug/">jdk remote debug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##JPDA</p>
+<p>工作在DEBUG模式下，加入参数:<br>    -Xdebug -Xrunjdwp,transport=dt_socket,server=y,address=5432,suspend=n</p>
+<p>-Xdebug 是通知JVM工作在debug模式下。<br>-Xrunjdwp 是通知jvm 使用(java debug wire protocol) 来运行测试环境。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/03/09/2012-03-08-jdk-remote-debug/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/03/09/2012-03-08-jdk-remote-debug/" data-id="cj6ajxgkx001l1qpthrwfnxlt" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-23-awesome-monitor-settings" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/24/2012-02-23-awesome-monitor-settings/" class="article-date">
+  <time datetime="2012-02-24T03:02:11.000Z" itemprop="datePublished">2012-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/24/2012-02-23-awesome-monitor-settings/">awesome 外接显示器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文档几乎是下面两个blog的内容。</p>
+<p>link: <a href="http://www.cnblogs.com/pylemon/archive/2012/2/6.html" target="_blank" rel="external">http://www.cnblogs.com/pylemon/</a></p>
+<p>link: <a href="http://www.cnblogs.com/pylemon/archive/2012/02/06/2340556.html" target="_blank" rel="external">http://www.cnblogs.com/pylemon</a></p>
+<p>awesome 外接显示器需要用到xrandr命令。<br>xrandr 有如下使用方法:<br>    $ xrandr<br>在我机器上获得如下输出:<br>      Screen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192<br>      LVDS-1 connected 1024x768+0+0 (normal left inverted right x axis y axis) 303mm x 189mm<br>         1280x800       60.0 +   50.0<br>         1024x768       59.9<em><br>         800x600        59.9<br>         640x480        59.4<br>         720x400        59.6<br>         640x400        60.0<br>         640x350        59.8<br>      VGA-1 connected 1024x768+0+0 (normal left inverted right x axis y axis) 510mm x 287mm<br>         1920x1080      60.0 +<br>         1280x1024      75.0     60.0<br>         1152x864       75.0<br>         1024x768       75.1     60.0</em><br>         800x600        75.0     60.3<br>         640x480        75.0     60.0<br>         720x400        70.1<br>      DP-1 disconnected (normal left inverted right x axis y axis)<br>      DP-2 disconnected (normal left inverted right x axis y axis)<br>      DP-3 disconnected (normal left inverted right x axis y axis)</p>
+<p>输出了当前机器所有的接口和支持的分辨率，刷新率。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/24/2012-02-23-awesome-monitor-settings/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/24/2012-02-23-awesome-monitor-settings/" data-id="cj6ajxgkx001k1qptt50r6g9b" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-17-rvm-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/18/2012-02-17-rvm-install/" class="article-date">
+  <time datetime="2012-02-17T19:32:07.000Z" itemprop="datePublished">2012-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/18/2012-02-17-rvm-install/">rvm 安装和使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>rvm 常用两种方法进行安装</p>
+<p>第一种是:<br>    $bash &lt; &lt;( curl <a href="http://rvm.beginrescueend.com/releases/rvm-install-head" target="_blank" rel="external">http://rvm.beginrescueend.com/releases/rvm-install-head</a>)</p>
+<p>第二种是通过git获得源码，然后进行安装，推荐使用这种方式安装rvm<br>    git clone git://github.com/wayneeseguin/rvm.git<br>    cd rvm<br>    ./install</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/18/2012-02-17-rvm-install/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/18/2012-02-17-rvm-install/" data-id="cj6ajxgkw001i1qptnc8l6lc8" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-14-git-svn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/15/2012-02-14-git-svn/" class="article-date">
+  <time datetime="2012-02-14T21:39:12.000Z" itemprop="datePublished">2012-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/15/2012-02-14-git-svn/">git-svn 使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果正在使用svn，打算换到git，又暂时不想放弃已有的svn代码库，可以选择git-svn。</p>
+<p>初始化代码库</p>
+<pre><code>git svn clone -s svn-repository-url
+git svn clone svn-repository-url local-projectname
+</code></pre><p>svn-repository-url 是svn代码库的url，如果要从trunk目录或者某个branch目录里check out ,要把<br>-s 换成-T,-b等选项，请自行man git-svn。</p>
+<p>由于需要同步所有的提交历史，所有比较慢，同步完成后就可以工作了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/15/2012-02-14-git-svn/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/15/2012-02-14-git-svn/" data-id="cj6ajxgkv001h1qptdbqdsatt" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-14-education" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/15/2012-02-14-education/" class="article-date">
+  <time datetime="2012-02-14T19:23:58.000Z" itemprop="datePublished">2012-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/15/2012-02-14-education/">离家出走</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天（2012-02-13）晚上我回家时，坐201在南头关下车后，看到一个10几岁的小孩在那个台阶上睡觉，走过去问他是否需要帮助，问是否没有钱回家了，或者出了什么问题。慢慢的问出了一些东西，得到的基本信息是：14岁，在罗湖读初一。其它的一概不知。</p>
+<p>最后一些用电动车载客的人来了，通过询问得到了小孩的一个亲戚的电话，但是我在给他亲戚打电话的时候，他跑了，找了很久也没有找到，感觉事没有办好,很惭愧。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/15/2012-02-14-education/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/15/2012-02-14-education/" data-id="cj6ajxgkv001g1qptvjrjntps" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-13-squander" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/14/2012-02-13-squander/" class="article-date">
+  <time datetime="2012-02-13T21:26:30.000Z" itemprop="datePublished">2012-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/14/2012-02-13-squander/">生命是用来挥霍的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>link:<a href="http://dapenti.com/blog/more.asp?name=agile&amp;id=57722" target="_blank" rel="external">池莉:生命是用来挥霍的</a></p>
+<p>大约是在三年前？或者四年前？或者五年前？我记不清楚了。自从离开学校的数学考试之后，我再也不去记忆任何数字。岁月、金钱、年龄 —— 所有阿拉伯数字，在我这里，一律都是含糊不清的符号。对于我来说，所有数字都没有重要意义，数字记载积累，提醒囤积，而我的生命就是用来挥霍的。</p>
+<p>文字才是我的钟情，是我自童年以来唯一属于自己的玩具，因此，文字对我意义远远不只是表达，更是我自身的一种生命性质。比如，早在不知道从什么时候开始，我就喜欢上了“挥霍”这个词语。我以为“挥”是世界上最漂亮的动作，这动作简直就是洒脱轻盈果断大方的化身，例如大笔一挥，挥金如土，挥汗如雨，挥泪，挥师，都是这样的绝顶豪放。而“霍”，又是这样的迅捷，闪电一般，还掷地有声。</p>
+<p>我相信，如果与人有缘，许多文字还会是一种神秘的昭示，一旦相逢，你就会如盲人开眼，突然看见你自己的生命状态。正是一个不知道是什么时候的某一天，我翻开词典，劈头看见“挥霍”一词，耳朵里就响了一记金石之音，我便会意地微笑了。我相信，我的生命性质正如我的故乡和命运一样，先于我的存在而存在，早就隐藏在文字里。而我对于它的认识与服从，也一如认同我的故乡和命运，面善得无法陌生，亦无法选择。有一些古人于某些文字的特殊敏感，让我也觉得这可能就是一种人类经验的传承。郑板桥的文字大约就是“难得糊涂”，苏轼可能就是“一蓑烟雨任平身”，而李白也就是一个“酒”字了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/14/2012-02-13-squander/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/14/2012-02-13-squander/" data-id="cj6ajxgkw001j1qptx2w7xk66" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-13-neighbor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/14/2012-02-13-neighbor/" class="article-date">
+  <time datetime="2012-02-13T21:09:30.000Z" itemprop="datePublished">2012-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/14/2012-02-13-neighbor/">《邻居》-- 西川</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我家漏雨，必是所有邻居家漏雨;<br>我家断电，必是所有邻居家都断电。<br>我走在38度的空气里，所有的邻居也走在38度的空气里;<br>我在自己家里脱衣服，仿佛是在所有的邻居家里脱衣服。</p>
+<p>– 西川</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/14/2012-02-13-neighbor/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/14/2012-02-13-neighbor/" data-id="cj6ajxgku001e1qptnyt8vxz7" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-13-stephen-william-hawking" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/14/2012-02-13-stephen-william-hawking/" class="article-date">
+  <time datetime="2012-02-13T17:33:37.000Z" itemprop="datePublished">2012-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/14/2012-02-13-stephen-william-hawking/">霍金的伟大与不幸</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linke:<a href="http://yangshen998.iteye.com/blog/1404111" target="_blank" rel="external">霍金的伟大与不幸</a></p>
+<p> 斯蒂芬·霍金是一位轮椅上的囚徒，但他的人生却比我们这些四肢健全的人丰富、精彩得多。这个时代的科学研究越来越依靠昂贵、复杂的仪器以及成百上千人的合作。他们中的绝大多数已不再是科学家，而是以科学为职业的工匠，尽管有的还是能工巧匠，因为他们的研究已不再受热情和兴趣驱使，而是为生计所迫，受利益驱使。在霍金身上，还多少保留着那种业已消逝了的科学家的古老形象：高傲，专注，特立独行，激情四射，且智力超群，虽然谈不上清贫寂寞。</p>
+<p>　　随着《时间简史》被译成中文，霍金在中国开始渐为人知。这还是 1990 年代中期的事。2002年的来访则使他变得广为人知。其实，早在 1985 年初夏，他就有过一次鲜为人知的中国之行。当时我还在科大念大三。这位非常活跃的理论物理学家在来到合肥前，肯定还到过中国的其他地方，但我只知道他来到了科大不怎么漂亮的校园里，因为海报已经张贴在图书馆前的布告栏上。同学们都有些不敢相信，像霍金这么既不便行走又具有传奇色彩的人物，怎么说来就来了呢，且来到了偏居一隅的合肥市。现在想来也不奇怪，当年科大的天体物理和宇宙学不但国内有名，在国际上也算是活跃的。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/02/14/2012-02-13-stephen-william-hawking/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/14/2012-02-13-stephen-william-hawking/" data-id="cj6ajxgl0001q1qpt246nr6qp" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-12-be-time" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/12/2012-02-12-be-time/" class="article-date">
+  <time datetime="2012-02-12T14:58:32.000Z" itemprop="datePublished">2012-02-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/12/2012-02-12-be-time/">是时候了</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>是时候了，中国人！ 是时候了<br>广场是大家的<br>脚是自己的<br>是时候 用脚去广场作出选择;<br>是时候了，中国人！ 是时候了<br>歌曲是大家的<br>喉是自己的<br>是时候用喉唱出心底的歌曲;<br>是时候了，中国人！ 是时候了<br>中国是大家的<br>选择是自己的<br>是时候用自己选择未来的中国。</p>
+<p>– 朱虞夫
+        
+          <p class="article-more-link">
+            <a href="/2012/02/12/2012-02-12-be-time/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/12/2012-02-12-be-time/" data-id="cj6ajxgkt001d1qptqptcvtc8" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012-02-11-archlinux-gvim-zh-input" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/12/2012-02-11-archlinux-gvim-zh-input/" class="article-date">
+  <time datetime="2012-02-12T00:05:24.000Z" itemprop="datePublished">2012-02-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/12/2012-02-11-archlinux-gvim-zh-input/">ArchLinux Gvim 不能输入中文</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ArchLinux 系统中，使用fcitx输入法，在GVIM中不能输入中文的解决办法。</p>
+<p>使用gvim -N -u NONE 启动，查看是否可以使用中文输入。</p>
+<p>答案为真的话，基本可以确定是配置文件的错误。</p>
+<p>用正常启动，在命令模式中输入<br>      :verbose set imi?<br>      :verbose set imd?</p>
+<p>然后再次测试是否可以正常输入中文。
+        
+          <p class="article-more-link">
+            <a href="/2012/02/12/2012-02-11-archlinux-gvim-zh-input/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2012/02/12/2012-02-11-archlinux-gvim-zh-input/" data-id="cj6ajxgll002y1qpt8ajuf75l" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

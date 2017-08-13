@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>I love you | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#lang racket   ;;; 1 构造list 的基本手段: quote和list  &amp;apos;(I love you)  (quote (I love you))  (list &amp;apos;I &amp;apos;love &amp;apos;you)  (list (quote I) (quote love) (quote you))  ;;; 2 用cons 连接单元  (cons &amp;apos;I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I love you">
+<meta property="og:url" content="http://cmonkey.github.com/2013/04/30/2013-04-30-i-love-you/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#lang racket   ;;; 1 构造list 的基本手段: quote和list  &amp;apos;(I love you)  (quote (I love you))  (list &amp;apos;I &amp;apos;love &amp;apos;you)  (list (quote I) (quote love) (quote you))  ;;; 2 用cons 连接单元  (cons &amp;apos;I">
+<meta property="og:updated_time" content="2017-08-13T09:44:10.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="I love you">
+<meta name="twitter:description" content="#lang racket   ;;; 1 构造list 的基本手段: quote和list  &amp;apos;(I love you)  (quote (I love you))  (list &amp;apos;I &amp;apos;love &amp;apos;you)  (list (quote I) (quote love) (quote you))  ;;; 2 用cons 连接单元  (cons &amp;apos;I">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cmonkey.github.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2013-04-30-i-love-you" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/04/30/2013-04-30-i-love-you/" class="article-date">
+  <time datetime="2013-04-30T07:52:00.000Z" itemprop="datePublished">2013-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      I love you
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#lang racket 
+
+;;; 1 构造list 的基本手段: quote和list
+
+&apos;(I love you)
+
+(quote (I love you))
+
+(list &apos;I &apos;love &apos;you)
+
+(list (quote I) (quote love) (quote you))
+
+;;; 2 用cons 连接单元
+
+(cons &apos;I (cons &apos;love (cons &apos;you &apos;())))
+
+(cons &apos;I (cons &apos;love (list &apos;you)))
+
+(cons &apos;I (list &apos;love &apos;you))
+
+(cons &apos;I &apos;(love you))
+
+;;; 3 加点list 记号(Dotted list notation)
+
+&apos;(I love . (you))
+
+&apos;(I . (love . (you)))
+
+&apos;(I . (love . (you . ())))
+
+&apos;(I . (love you))
+
+;;; 4 反引号表示list (Quasiquoted lists)
+
+`(I love you)
+`(I , &apos;love you)
+
+(quasiquote (I , &apos;love you))
+
+(quasiquote (I (unquote &apos;love) you))
+
+`(I ,`love you)
+
+(let ([verb &apos;love])
+`(I ,verb you))
+
+`(I , (string-&gt;symbol &quot;love&quot; )you)
+
+`(I ,(string-&gt;symbol (list-&gt;string &apos;(#\l #\o #\v #\e)))you)
+
+`(I love . (you))
+
+`(I love . , (list &apos;you))
+
+`(I love ,@&apos;(you))
+
+`(I love (unquote-splicing &apos;(you)))
+
+`(I ,@(list &apos;love &apos;you))
+
+`(,@(list &apos;I &apos;love)you)
+
+`(,@&apos;(I love you))
+
+`, &apos;(I love you)
+
+`(I love you . , &apos;())
+
+;;; 5 car 和cdr 
+
+(car (list &apos;(I love you)))
+(cdr &apos;(Hark! I love you))
+
+;;; 6 let 帮顶形式(let-binding forms)
+
+(let ([words &apos;(love you I)])
+(list (car (cdr (cdr words)))
+        (car words)
+        (car (cdr words))))
+
+(let ([words &apos;(love you I)])
+(list (caddr words)
+        (car words)
+        (cadr words)))
+
+(let* ([c &apos;(you)]
+    [b (cons &apos;love c)]
+    [a (cons &apos;I b)])
+a)
+
+(let () 
+&apos;(I love you not)
+&apos;(I love you))
+
+;;; 7 vector 
+(vector-&gt;list (vector &apos;I &apos;love &apos;you))
+
+(vector-&gt;list #(I love you))
+
+;;; 8 stream 
+(stream-&gt;list (stream &apos;I &apos;love &apos;you))
+
+;;; 9 匿名函数(Anonymous functions)
+
+((lambda args args) &apos;I &apos;love &apos;you)
+
+((lambda (one two . rest)rest) &apos;You &apos;believe &apos;I &apos;love &apos;you)
+
+((lambda (a c b)(list a b c)) &apos;I &apos;you &apos;love)
+
+(apply (lambda (a c b)(list a b c))
+    (list &apos;I &apos;you &apos;love))
+
+((lambda (a b [c &apos;you]) (list a b c)) &apos;I &apos;love)
+
+((lambda (#:foo b #:bar c #:baz a)
+(list a b c))
+#:baz &apos;I #:bar &apos;you #:foo &apos;love)
+
+((lambda (a b #:key [c &apos;me]) (list a b c)) #:key &apos;you &apos;I &apos;love)
+
+;;; 10 柯里化(Currying)
+
+(let ([f (λ (x)
+        (λ (y)
+        (λ (z)
+            (list x y z))))])
+(((f &apos;I)&apos;love)&apos;you))
+
+;;; 11 case-lambda 
+
+(let ([f (case-lambda 
+        [() &apos;I]
+        [(x) &apos;love]
+        [(x y) &apos;you])])
+(list (f) (f 1) (f 1 2)))
+
+;;; 12 基础list 操作
+
+(append &apos;(I love)&apos;(you))
+
+(append &apos;(I) &apos;(love) &apos;(you))
+
+(flatten &apos;((I)(love you)))
+
+(flatten &apos;((I) (love)(you) ()))
+
+(reverse &apos;(you love I))
+
+(remove &apos;cannot &apos;(I cannot love you))
+
+(remove-duplicates &apos;(I love love love you))
+
+(take &apos;(I love you not)3)
+
+(take-right &apos;(I think I love you)3)
+
+(drop &apos;(She knows I love you)2)
+
+(drop-right &apos;(I love you no more) 2)
+
+;;; 13 高阶list操作(map, filter和reduce)
+
+(map (lambda (x) (if (eq? x &apos;hate)&apos;love x))
+    &apos;( I hate you))
+
+(map (λ(i)(vector-ref #(love you I)i))
+    &apos;( 2 0 1))
+
+(map (λ (k)(hash-ref #hash((&quot;foo&quot; . I)
+                            (&quot;baz&quot; . you)
+                            (&quot;bar&quot; . love)) k))
+    &apos;(&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;))
+
+(map string-&gt;symbol (sort (list &quot;love&quot; &quot;you&quot; &quot;I&quot;) string&lt;?))
+
+(map string-&gt;symbol (string-split &quot;I-love-you&quot; &quot;-&quot;))
+
+(flatten (map (λ ( a b) (cons  a b))
+                &apos;(I love you)
+                &apos;(() () ())))
+
+(filter (lambda (x) (not (eq? x &apos;cannot)))
+        &apos;(I cannot love you))
+
+(foldr cons &apos;() &apos;(I love you))
+
+(foldl cons &apos;() &apos;(you love I))
+
+;;; 14 迭代(Iterations)
+
+(for/list ([world #(I love you)])
+        world)
+
+;;; 15 条件式(Conditionals)
+(cond 
+[(even? 3) &apos;(Not me)]
+[(odd? 3) &apos;(I love you)])
+
+(cond 
+[(even? 3) &apos;(Not me)]
+[(odd? 2) &apos;(Nor I)]
+[else &apos;(I love you)])
+
+(case 1
+[(a b c) &apos;(Not me)]
+[(3 2 1) &apos;(I love you)])
+
+
+;;; 16 结构化模式匹配(Structural pattern-matching)
+
+(match #t
+    [#f &apos;(Not me)]
+    [#t &apos;(I love you)])
+
+(match #t 
+    [#f &apos;(Not me)]
+    [_ &apos;(I love you)])
+
+(match &apos;you 
+    [&apos;me &apos;(Not me)]
+    [x `(I love ,x)])
+
+(match &apos;(foo bar)
+    [&apos;(foo bar)&apos;(I love you)])
+
+(match &apos;(I cannot lift you)
+    [(list &apos;I &apos;cannot _ c) `(I love ,c)])
+
+(match &apos;(2 3 1)
+    [(list-no-order 3 1 2)
+        &apos;(I love you)])
+
+(match &apos;(love you I)
+    [(list-no-order &apos;I &apos;love foo)
+        `(I love , foo)])
+
+(match &apos;(3 . 4)
+    [(cons 3 4)
+        &apos;(I love you)])
+
+(match &apos;(3 love 1)
+    [(cons 3 (cons x (cons 1 &apos;())))
+        `(I , x you)])
+
+(match &apos;(3 love 1)
+    [(cons 3 (cons x (cons 1 &apos;())))
+        `(I (unquote x) you)])
+
+(match 3 
+    [(? symbol?) &apos;(Not me)]
+    [(? string?) &apos;(Me neither)]
+    [(? number?) &apos;(I love you)])
+
+(match 3 
+    [(not 4) &apos;(I love you)]
+    [3   &apos;unreachable])
+
+(match &apos;(you love I)
+    [`(,c love ,a)
+        `(,a love ,c)])
+
+(match &apos;(We love you)
+    [`(,_ . , rest)
+        `(I . , rest)])
+
+(match &apos;(We love you)
+    [`(,_ ,rest ...)
+        `(I ,@rest)])
+
+(match &apos;(We love you)
+    [(list _ rest ...)
+        `(I ,@rest)])
+
+(match #(1 love 3)
+    [(vector (? number?) b (? number?))
+        `(I ,b you)])
+
+(match #hash((1 . I) (3 . you) (5 . love))
+    [(hash-table (1 a) (5 b)(3 c))
+        (list a b c)])
+
+(match &apos;you
+    [(and x (? symbol?)) `(I love ,x)])
+
+(match &apos;100 
+    [(app (λ (n) (- n 1)) 99)
+        &apos;(I love you)])
+
+;;; 17 续延(Continuation)
+
+(list &apos;I 
+    (call/cc (λ (cc) 
+                (error (cc &apos;love))))
+    &apos;you)
+
+;;; 18 异常(Exceptions)
+
+(with-handlers ([symbol? (lambda (p) 
+                                `(I ,p you))])
+            (raise &apos;love))
+
+;;; 19 延迟求值(Delayed evaluation)
+
+(let ([problem (delay (car &apos;()))])
+&apos;(I love you))
+
+`(I ,(force (delay &apos;love)) you)
+
+(letrec ([x (delay (list a b c))]
+        [a &apos;I]
+        [c &apos;you]
+        [b &apos;love])
+(force x))
+
+;;; 20 变更 (Mutation)
+
+(let ([word &apos;know])
+(set! word &apos;love)
+`(I ,word you))
+
+(let ([word-box (box &apos;know)])
+(set-box! word-box &apos;love)
+`(I ,(unbox word-box )you))
+
+;;; 21 宏(Macros)
+(let-syntax ([un-yoda-list 
+            (syntax-rules () 
+                [(_ c a b) (list &apos;a &apos;b &apos;c)])])
+(un-yoda-list you I love))
+
+;;; 22 端口(Ports)
+
+(let ((in (open-input-string &quot;I love you&quot;)))
+(cons (read in)
+        (cons (read in)
+            (cons (read in) &apos;()))))
+
+;;; 23 未来(Futures)
+(list (touch (future (λ () &apos;I))) &apos;love &apos;you)
+
+;;; 24 参数化(Parameterization)
+
+(let ([a (make-parameter &quot;a&quot;)]
+    [b (make-parameter &quot;b&quot;)]
+    [c (make-parameter &quot;c&quot;)])
+(parameterize ([a &apos;I] [b &apos;love] [c &apos;you])
+    (list (a)
+        ((parameterize ([b &apos;dislike])
+            (λ () (b))))
+    (c))))
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cmonkey.github.com/2013/04/30/2013-04-30-i-love-you/" data-id="cj6ajxglk002w1qptv8ksxhil" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/06/01/2013-06-01-slideshow-and-ffi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          slideshow and ffi
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/04/29/2013-04-29-fact/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">fact</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">October 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/2011-10-31-apple-jobs/">改变我人生轨迹的Apple II，Thanks Jobs！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-09-28-sesso-schiavi-disturbato/">杨恒均:洛阳警方对&#34;性奴&#34;案的处理让我不安</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-11-04-superstition/">迷信曾这样诞生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-08-03-three-body-series-climax-over-and-over-eternal-life/">《三体》系列:高潮遍地，BUG永生</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/13/2011-07-23-lucifer-effect/">一个普通人离杀人有多远--梁文道讲(路西法效应)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
