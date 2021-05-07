@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  
+
+<div class="container-lg">
+  
+
+<div class="blog-intro">
+  <div class="blog-intro-user">
+    <img class="avatar" src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon">
+    <div class="user-name">
+      <div class="blog-title"></div>
+      <div class="blog-author"></div>
+        <ul class="user-detail mobile-only">
+    
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://cmonkey.github.com">http://cmonkey.github.com</a>
+    </li>
+  </ul>
+    </div>
+    <div class="blog-description">
+      
+    </div>
+  </div>
+
+  <ul class="user-detail desktop-only">
+    
+    <li>
+      <i class="fa fa-link"></i>
+      <a href="http://cmonkey.github.com">http://cmonkey.github.com</a>
+    </li>
+  </ul>
+
+  <div class="social-media desktop-only">
+    <h4>Social Media</h4>
+    <ul>
+      
+      <li class="social-media-item"><a href="https://github.com/cmonkey" target="_blank"><i class="fa fa-github"></i></a></li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  <div class="blog-detail">
+    
+<nav class="blog-detail-nav desktop-only">
+  <ul class="clearfix">
+    <li class="">
+      <a href="/">Overview</a></li>
+    <li class="selected">
+      <a href="/">Posts <span class="counter">108</span></a>
+    </li>
+    <li class="">
+      <a href="/">Categories <span
+                class="counter">2</span></a></li>
+    <li class="">
+      <a href="/">Tags <span class="counter">24</span></a></li>
+  </ul>
+</nav>
+
+    <div class="body-secondary">
+      <ul class="archive-list">
+        
+        <li class="archive-list-item">
+          <h2><a href="/2019/03/08/programming-language/">programming-language</a></h2>
+          <p>
+               Programming  工作这么多年来，使用过的程序语言很多，但主要的工作语言还是Java, 这几年用Scala + Java 进行混合编程多一些 
+ 但工作的主要语言还是在Java系语言上面 
+ Racket 主要用来写一些临时的任务，并没有通过它做相对比较繁琐的工作 
+ 目前前端火热的J...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/Programming-Language/">Programming Language</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/Programming/"><i class="fa fa-folder-open"></i> Programming</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1552026416000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2019/01/14/event-sourcing-cqrs/">event-sourcing-cqrs</a></h2>
+          <p>
+             Event Sourcing 完全可以看作一个业务操作的DAG, 一个被git 管理的业务操作历史 
+ 物化视图类似git master ，指向当前的最新状态  
+ CQRS (Command Query Responsibility Segregation) 读写分离 
+ Command 请求，...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1547435526000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/11/23/downgrade-version/">downgrade-version</a></h2>
+          <p>
+             首先来看看今天的一个提交记录 
+      1   2   3   4   5       downgrade mysql-connector version 8.0.13 to 8.0.11          在druid 1.1.11 中, 反射调用 com.mysql.cj.conf.Pro...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1542964879000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/10/31/rm/">rm</a></h2>
+          <p>
+             删除主目录的.viminfo* 被输入成了 
+      1   2       rm .viminfo *          
+ 马上反映过来，但是已经看到Dropbox 开始通过了 
+ 马上将dropbox kill 掉，然后将Dropbox 目录删除，重新关联dropbox  
+ 让drop...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1540976997000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/10/20/book/">book</a></h2>
+          <p>
+             不用说，书本并不单纯只用来阅读而已，因为书本并不是只有在被阅读才有它的价值。 
+ 随时可以读得到，不，应该说随时可以轻松地看得到，也是书本的效用之一， 
+ 换句话说即使不读它，光是拥有，书本就会产生意义， 
+ 书本是随手可用的道具，材料，光是把它放在那里，就拥有书的价值 
+...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1540030738000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/28/crabs/">crabs</a></h2>
+          <p>
+             公司在这个八月十五的时候没有按照以前惯例，发月饼给大家 
+ 而是发了一个提货卡，用来提取大闸蟹，店家叫做姑苏渔歌 
+ 因为开湖日期在9/21,所以在中秋节时，没有拿到货，在27号才被顺丰从龙岗快递过来 
+ 总共八只，晚上回家后，看到已经被蒸好，但是因为没有吃过，所以需要家人回来教一下 
+ 等真正吃...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1538123238000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/26/jdk11/">jdk11</a></h2>
+          <p>
+             今天(2018-09-26), 期待的重量级更新jdk11正式版发布 
+ 可以通过 jdk11  下载 
+   Feature    Local Variable Type Inference  在以前对变量进行声明时 
+      1       String text = &amp;quot;你好 J...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1537942256000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/09/21/CacheLine/">CacheLine</a></h2>
+          <p>
+             缓存行: Cache Line 
+ 操作系统内存如下: CPU 有三级缓存， L1, L2, L3, 最后主内存, 越靠近CPU速度越快 
+ L1 &amp;gt; L2 &amp;gt; L3 &amp;gt; 主内存 
+ CPU缓存(Cache)由很多缓存行(Cache Line )组成, 一个缓存行占64字节 
+ ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1537529725000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/03/idea-2018-1-menu/">idea 2018.1 menu 问题</a></h2>
+          <p>
+             在ArchLinux + Awesome WM 环境下，使用idea 2018.1版本 会出现菜单漂浮的情况，一下为解决方法 
+      1       Ctrl + Shift + A (find action)       
+ 在搜索框中输入Switch IDE Boot JDK 修改为本机...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/idea/">idea</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1525319971000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
+          <h2><a href="/2018/05/02/gvisor/">gvisor</a></h2>
+          <p>
+               clone code       1       git clone --recursive git@github.com:google/gvisor.git        
+
+   build &amp;amp;&amp;amp; install       1   2   3   4   5   6   ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/docker/">docker</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1525263266000).fromNow()}}</span>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

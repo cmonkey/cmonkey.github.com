@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Garbage Collection 初探 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1359081840000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1359081840000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Garbage Collection 初探</h1>
+    <p>link: <a target="_blank" rel="noopener" href="http://www.findfunaax.com/notes/file/157">Garbage Collection</a></p>
+<ol>
+<li>原理</li>
+</ol>
+<p>垃圾回收(Garbage Collection, GC)技术的源头可以追溯到1960年Lisp语言。 如今越来越多的高级语言采用垃圾回收技术，尤其是动态语言(Python, Lua)。 当然，最知名的还是Java这个静态类型语言把GC技术带给了广大的程序员， 解放了Memory Leak这个问题。更多GC技术的历史可以查阅参考文献1.</p>
+<p>GC是关于内存的垃圾回收，在讨论回收之前，首先要知道内存是怎么分配的。 大多数主流语言或Virtual Machine支持三种最基本的那次分配方式：</p>
+<pre><code>静态分配(Static Allocation)：静态变量和全局变量的分配方式。自动申请，无需释放。
+自动分配(Automatic Allocation)：栈中局部变量的分配方式。自动申请，自动释放。
+动态分配(Dynamic Allocation)：堆中内存的分配方式。手动申请，手动释放。</code></pre>
+<p>这里面最容易出问题的地方就是动态分配的内存。如果只有“手动申请(malloc/new)，忘记释放(free/delete)”，就会造成Memory Leak。 GC所作的事就是使得动态分配的内存“手动申请，自动释放”，解放程序员的生产力。</p>
+<p>根据IBM T.J Watson Research Center的一篇总结性论文A Unified Theorg of Garbage Collection， 垃圾回收算法可以分为两大类：<br>    Reference Counting 引用计数型<br>    Tracing 追踪型</p>
+<span id="more"></span>
+
+<p>1.1 Reference Counting 引用计数型</p>
+<p>引用技术算法对于每个对象增加一个引用技术值，记录对象某时被引用的计数。 当有新的变量指向这个对象时，引用计数加1。 当有变量不再引用这个对象时，引用计数减1。 当对象的引用的次数为0时，表示对象可以被垃圾回收。</p>
+<p>引用计数型的算法回收速度较快，适合多线程实现。 但是算法对程序中每一次内存分配和指针操作提出了额外的要求（增加或减少对象的引用计数）。 更重要的是，引用计数算法无法正确解决循环引用(circular reference)问题(配合weak reference counting可以基本解决)。</p>
+<p>C++的智能指针就是引用技术算法的一个例子。</p>
+<p>1.2 Tracing 追踪型  </p>
+<p>1.2.1 Mark-Sweep 标记－清除</p>
+<p>Mark-Sweep算法是J. Mc Carthy等人在1960年提出并成功地应用于Lisp语言的GC算法，也是第一个实用和完善的算法。 算法分为Mark和Sweep两个阶段：</p>
+<pre><code>Mark阶段：标记每个对象是否被引用
+Sweep阶段：清除没有被引用的变量</code></pre>
+<p>Mark-Sweep算法效率不高。</p>
+<p>1.2.2 Copy 拷贝</p>
+<p>1963年M. L. Minsky提出了Mark-Copy算法，改进了Mark-Sweep的效率问题。 Copy算法将堆空间一分为二，并使用简单的复制操作来完成收集工作。 在回收阶段，把正在使用的对象从堆空间的一般拷贝到另一半，未被使用对象不动。 这样同时解决了碎片问题。代价是可用内存少了一半。</p>
+<p>1.2.3 Mark-Compact 标记-整理</p>
+<p>Mark-Compact算法是Mark-Sweep和Copy算法的整合。 这个算法不需把堆空间分割成两块，整个过程也是两个阶段：</p>
+<pre><code>Mark阶段：标记每个对象是否被引用
+Compact阶段：将被引用的对象拷贝至堆空间的一端</code></pre>
+<p>理论上Mark-Compact兼有Mark-Sweep算法的内存占用上的优点和Copy算法的执行效率。 因此在许多现代的垃圾收集器中，人们都使用了标记－整理算法或其改进版本。</p>
+<p>参考: <a target="_blank" rel="noopener" href="http://blog.csdn.net/javafuns/article/details/1771535">http://blog.csdn.net/javafuns/article/details/1771535</a></p>
+<p>updateing:<br>在使用java的时候，一般会知道关于java中是如何进行垃圾回收的，分为几个不同的代，然后在学racket 的时候，也会知道是有垃圾回收的，但是关于垃圾回收到底是怎么样的历史，是如何一步步发展，然后是怎么样的思想来实现垃圾回收的，就不得而知，读了这篇文章和参考链接后，对垃圾回收有一个思想上的认识，至于在各种语言中怎么具体实现的，是另一回事了。</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2013/01/25/garbage-collection/";
+    this.page.identifier = 1359081840;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

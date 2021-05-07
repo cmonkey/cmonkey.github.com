@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    microservice-dark-cloud | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1557300119000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1557300119000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>microservice-dark-cloud</h1>
+    <h2 id="对微服务的切分总是来自与业务范围"><a href="#对微服务的切分总是来自与业务范围" class="headerlink" title="对微服务的切分总是来自与业务范围"></a>对微服务的切分总是来自与业务范围</h2><p>通过对传统的投资预算和团队管理的变革，将微服务作为产品运营建立以业务结果导向的稳定产品团队</p>
+<p>Product over Project , 构建稳定的团队是实现微服务的的管理变革</p>
+<p>当服务不在是一个技术组件，而是一个业务服务时，所面临的技术问题并非在微服务的场景中得到体现</p>
+<p>分布式通信框架，地址无关的服务注册和发现， 智能路由和编排系统早在上古时代实现了一遍又一遍， RPC, SOA 都是具体的体现</p>
+<h2 id="面临的问题"><a href="#面临的问题" class="headerlink" title="面临的问题"></a>面临的问题</h2><p>反模式的阴云总是在轮回似的发生</p>
+<p>开发者对强类型RPC代码的依恋，虽然历史告诉我们RPC不能为分布式通信提供足够好的封装， 伪装成本地方法的调用客户端往往成为api设计不良的温床</p>
+<p>细粒度的频繁调用，缺少缓存和容错处理，IDL生成客户端会导致依赖耦合, 每次升级都需要升级N个相关服务</p>
+<p>一个可能的解决方法是通过RESTful HATEOAS模式 ,通过对返回的增强，实现对api 变更的自动化跟踪</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cmonkey/hateoas-api">hateoas-api</a></p>
+<p>快速的序列化和反序列化，类型安全和IDE的智能提示，是开发人员经常“发明”rpc的潜在动力</p>
+<p>“开发人员的便利性是否真的胜过正确性，可扩展性，性能， 关注点分离， 可扩展性和意外复杂性？” – Vinoski </p>
+<p>ESB 将异构应用链接在一起起到关键作用，但接入的服务越来越多，分配的职责更多的被加入，数据的剪切转换，</p>
+<p>服务发现，智能路由，监控治理，分布式事务等问题将ESB变成单点梦魔， 导致对ESB系统的难以测试和版本控制</p>
+<p>所以微服务发出了”智能终端哑管道”的呐喊，我们需要的是一个不那么智能的代理来处理可靠消息传递，将灵活的逻辑交给服务本身去编排</p>
+<p>在典型的微服务系统中，通过Unix 哲学将负载均衡，服务注册发现，分布式跟踪等各司其职</p>
+<p>但在竞争的情况下，厂商不断将更多的功能放到其中间件中</p>
+<p>如果API Gateway 开始处理数据转换和业务逻辑编排，那么就可以认为这又是一个轮回的ESB, 最终导致梦魔般的单点问题</p>
+<p>而只是通过横切的方式处理鉴权，限流等则没有问题</p>
+<p>技术的发展，但还在使用旧思维，导致通过新技术一遍遍的实现旧的反模式</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5MjY3OTgwMA==&mid=2652464744&idx=1&sn=77bd69deb88272440d2499ce7db5c612&chksm=bd4f547f8a38dd6940ade572ca15624f3043094461489dd5b1fa39d69fbb3ba2a598b5fdf46f&mpshare=1&scene=1&srcid=#rd">溯源微服务：企业分布式应用的一次回顾</a></p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/05/08/microservice-dark-cloud/";
+    this.page.identifier = 1557300119;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

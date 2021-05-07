@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    I love you | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1367308320000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1367308320000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>I love you</h1>
+    <pre><code>#lang racket 
+
+;;; 1 构造list 的基本手段: quote和list
+
+&#39;(I love you)
+
+(quote (I love you))
+
+(list &#39;I &#39;love &#39;you)
+
+(list (quote I) (quote love) (quote you))
+
+;;; 2 用cons 连接单元
+
+(cons &#39;I (cons &#39;love (cons &#39;you &#39;())))
+
+(cons &#39;I (cons &#39;love (list &#39;you)))
+
+(cons &#39;I (list &#39;love &#39;you))
+
+(cons &#39;I &#39;(love you))
+
+;;; 3 加点list 记号(Dotted list notation)
+
+&#39;(I love . (you))
+
+&#39;(I . (love . (you)))
+
+&#39;(I . (love . (you . ())))
+
+&#39;(I . (love you))
+
+;;; 4 反引号表示list (Quasiquoted lists)
+
+`(I love you)
+`(I , &#39;love you)
+
+(quasiquote (I , &#39;love you))
+
+(quasiquote (I (unquote &#39;love) you))
+
+`(I ,`love you)
+
+(let ([verb &#39;love])
+`(I ,verb you))
+
+`(I , (string-&gt;symbol &quot;love&quot; )you)
+
+`(I ,(string-&gt;symbol (list-&gt;string &#39;(#\l #\o #\v #\e)))you)
+
+`(I love . (you))
+
+`(I love . , (list &#39;you))
+
+`(I love ,@&#39;(you))
+
+`(I love (unquote-splicing &#39;(you)))
+
+`(I ,@(list &#39;love &#39;you))
+
+`(,@(list &#39;I &#39;love)you)
+
+`(,@&#39;(I love you))
+
+`, &#39;(I love you)
+
+`(I love you . , &#39;())
+
+;;; 5 car 和cdr 
+
+(car (list &#39;(I love you)))
+(cdr &#39;(Hark! I love you))
+
+;;; 6 let 帮顶形式(let-binding forms)
+
+(let ([words &#39;(love you I)])
+(list (car (cdr (cdr words)))
+        (car words)
+        (car (cdr words))))
+
+(let ([words &#39;(love you I)])
+(list (caddr words)
+        (car words)
+        (cadr words)))
+
+(let* ([c &#39;(you)]
+    [b (cons &#39;love c)]
+    [a (cons &#39;I b)])
+a)
+
+(let () 
+&#39;(I love you not)
+&#39;(I love you))
+
+;;; 7 vector 
+(vector-&gt;list (vector &#39;I &#39;love &#39;you))
+
+(vector-&gt;list #(I love you))
+
+;;; 8 stream 
+(stream-&gt;list (stream &#39;I &#39;love &#39;you))
+
+;;; 9 匿名函数(Anonymous functions)
+
+((lambda args args) &#39;I &#39;love &#39;you)
+
+((lambda (one two . rest)rest) &#39;You &#39;believe &#39;I &#39;love &#39;you)
+
+((lambda (a c b)(list a b c)) &#39;I &#39;you &#39;love)
+
+(apply (lambda (a c b)(list a b c))
+    (list &#39;I &#39;you &#39;love))
+
+((lambda (a b [c &#39;you]) (list a b c)) &#39;I &#39;love)
+
+((lambda (#:foo b #:bar c #:baz a)
+(list a b c))
+#:baz &#39;I #:bar &#39;you #:foo &#39;love)
+
+((lambda (a b #:key [c &#39;me]) (list a b c)) #:key &#39;you &#39;I &#39;love)
+
+;;; 10 柯里化(Currying)
+
+(let ([f (λ (x)
+        (λ (y)
+        (λ (z)
+            (list x y z))))])
+(((f &#39;I)&#39;love)&#39;you))
+
+;;; 11 case-lambda 
+
+(let ([f (case-lambda 
+        [() &#39;I]
+        [(x) &#39;love]
+        [(x y) &#39;you])])
+(list (f) (f 1) (f 1 2)))
+
+;;; 12 基础list 操作
+
+(append &#39;(I love)&#39;(you))
+
+(append &#39;(I) &#39;(love) &#39;(you))
+
+(flatten &#39;((I)(love you)))
+
+(flatten &#39;((I) (love)(you) ()))
+
+(reverse &#39;(you love I))
+
+(remove &#39;cannot &#39;(I cannot love you))
+
+(remove-duplicates &#39;(I love love love you))
+
+(take &#39;(I love you not)3)
+
+(take-right &#39;(I think I love you)3)
+
+(drop &#39;(She knows I love you)2)
+
+(drop-right &#39;(I love you no more) 2)
+
+;;; 13 高阶list操作(map, filter和reduce)
+
+(map (lambda (x) (if (eq? x &#39;hate)&#39;love x))
+    &#39;( I hate you))
+
+(map (λ(i)(vector-ref #(love you I)i))
+    &#39;( 2 0 1))
+
+(map (λ (k)(hash-ref #hash((&quot;foo&quot; . I)
+                            (&quot;baz&quot; . you)
+                            (&quot;bar&quot; . love)) k))
+    &#39;(&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;))
+
+(map string-&gt;symbol (sort (list &quot;love&quot; &quot;you&quot; &quot;I&quot;) string&lt;?))
+
+(map string-&gt;symbol (string-split &quot;I-love-you&quot; &quot;-&quot;))
+
+(flatten (map (λ ( a b) (cons  a b))
+                &#39;(I love you)
+                &#39;(() () ())))
+
+(filter (lambda (x) (not (eq? x &#39;cannot)))
+        &#39;(I cannot love you))
+
+(foldr cons &#39;() &#39;(I love you))
+
+(foldl cons &#39;() &#39;(you love I))
+
+;;; 14 迭代(Iterations)
+
+(for/list ([world #(I love you)])
+        world)
+
+;;; 15 条件式(Conditionals)
+(cond 
+[(even? 3) &#39;(Not me)]
+[(odd? 3) &#39;(I love you)])
+
+(cond 
+[(even? 3) &#39;(Not me)]
+[(odd? 2) &#39;(Nor I)]
+[else &#39;(I love you)])
+
+(case 1
+[(a b c) &#39;(Not me)]
+[(3 2 1) &#39;(I love you)])
+
+
+;;; 16 结构化模式匹配(Structural pattern-matching)
+
+(match #t
+    [#f &#39;(Not me)]
+    [#t &#39;(I love you)])
+
+(match #t 
+    [#f &#39;(Not me)]
+    [_ &#39;(I love you)])
+
+(match &#39;you 
+    [&#39;me &#39;(Not me)]
+    [x `(I love ,x)])
+
+(match &#39;(foo bar)
+    [&#39;(foo bar)&#39;(I love you)])
+
+(match &#39;(I cannot lift you)
+    [(list &#39;I &#39;cannot _ c) `(I love ,c)])
+
+(match &#39;(2 3 1)
+    [(list-no-order 3 1 2)
+        &#39;(I love you)])
+
+(match &#39;(love you I)
+    [(list-no-order &#39;I &#39;love foo)
+        `(I love , foo)])
+
+(match &#39;(3 . 4)
+    [(cons 3 4)
+        &#39;(I love you)])
+
+(match &#39;(3 love 1)
+    [(cons 3 (cons x (cons 1 &#39;())))
+        `(I , x you)])
+
+(match &#39;(3 love 1)
+    [(cons 3 (cons x (cons 1 &#39;())))
+        `(I (unquote x) you)])
+
+(match 3 
+    [(? symbol?) &#39;(Not me)]
+    [(? string?) &#39;(Me neither)]
+    [(? number?) &#39;(I love you)])
+
+(match 3 
+    [(not 4) &#39;(I love you)]
+    [3   &#39;unreachable])
+
+(match &#39;(you love I)
+    [`(,c love ,a)
+        `(,a love ,c)])
+
+(match &#39;(We love you)
+    [`(,_ . , rest)
+        `(I . , rest)])
+
+(match &#39;(We love you)
+    [`(,_ ,rest ...)
+        `(I ,@rest)])
+
+(match &#39;(We love you)
+    [(list _ rest ...)
+        `(I ,@rest)])
+
+(match #(1 love 3)
+    [(vector (? number?) b (? number?))
+        `(I ,b you)])
+
+(match #hash((1 . I) (3 . you) (5 . love))
+    [(hash-table (1 a) (5 b)(3 c))
+        (list a b c)])
+
+(match &#39;you
+    [(and x (? symbol?)) `(I love ,x)])
+
+(match &#39;100 
+    [(app (λ (n) (- n 1)) 99)
+        &#39;(I love you)])
+
+;;; 17 续延(Continuation)
+
+(list &#39;I 
+    (call/cc (λ (cc) 
+                (error (cc &#39;love))))
+    &#39;you)
+
+;;; 18 异常(Exceptions)
+
+(with-handlers ([symbol? (lambda (p) 
+                                `(I ,p you))])
+            (raise &#39;love))
+
+;;; 19 延迟求值(Delayed evaluation)
+
+(let ([problem (delay (car &#39;()))])
+&#39;(I love you))
+
+`(I ,(force (delay &#39;love)) you)
+
+(letrec ([x (delay (list a b c))]
+        [a &#39;I]
+        [c &#39;you]
+        [b &#39;love])
+(force x))
+
+;;; 20 变更 (Mutation)
+
+(let ([word &#39;know])
+(set! word &#39;love)
+`(I ,word you))
+
+(let ([word-box (box &#39;know)])
+(set-box! word-box &#39;love)
+`(I ,(unbox word-box )you))
+
+;;; 21 宏(Macros)
+(let-syntax ([un-yoda-list 
+            (syntax-rules () 
+                [(_ c a b) (list &#39;a &#39;b &#39;c)])])
+(un-yoda-list you I love))
+
+;;; 22 端口(Ports)
+
+(let ((in (open-input-string &quot;I love you&quot;)))
+(cons (read in)
+        (cons (read in)
+            (cons (read in) &#39;()))))
+
+;;; 23 未来(Futures)
+(list (touch (future (λ () &#39;I))) &#39;love &#39;you)
+
+;;; 24 参数化(Parameterization)
+
+(let ([a (make-parameter &quot;a&quot;)]
+    [b (make-parameter &quot;b&quot;)]
+    [c (make-parameter &quot;c&quot;)])
+(parameterize ([a &#39;I] [b &#39;love] [c &#39;you])
+    (list (a)
+        ((parameterize ([b &#39;dislike])
+            (λ () (b))))
+    (c))))</code></pre>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2013/04/30/i-love-you/";
+    this.page.identifier = 1367308320;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Linux Kill 信号 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1339016162000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1339016162000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Linux Kill 信号</h1>
+    <p>link: <a target="_blank" rel="noopener" href="http://hi.baidu.com/cchaha0227/blog/item/516636aff64a21f3fbed50d6.html">Linux kill 信号量</a></p>
+<p>$ kill -l</p>
+<ol>
+<li>SIGHUP</li>
+<li>SIGINT</li>
+<li>SIGQUIT</li>
+<li>SIGILL</li>
+<li>SIGTRAP</li>
+<li>SIGABRT</li>
+<li>SIGBUS</li>
+<li>SIGFPE</li>
+<li>SIGKILL</li>
+<li>SIGUSR1</li>
+<li>SIGSEGV</li>
+<li>SIGUSR2</li>
+<li>SIGPIPE</li>
+<li>SIGALRM</li>
+<li>SIGTERM</li>
+<li>SIGSTKFLT</li>
+<li>SIGCHLD</li>
+<li>SIGCONT</li>
+<li>SIGSTOP</li>
+<li>SIGTSTP</li>
+<li>SIGTTIN</li>
+<li>SIGTTOU</li>
+<li>SIGURG</li>
+<li>SIGXCPU</li>
+<li>SIGXFSZ</li>
+<li>SIGVTALRM</li>
+<li>SIGPROF</li>
+<li>SIGWINCH</li>
+<li>SIGIO</li>
+<li>SIGPWR</li>
+<li>SIGSYS</li>
+<li>SIGRTMIN</li>
+<li>SIGRTMIN+1</li>
+<li>SIGRTMIN+2</li>
+<li>SIGRTMIN+3</li>
+<li>SIGRTMIN+4</li>
+<li>SIGRTMIN+5</li>
+<li>SIGRTMIN+6</li>
+<li>SIGRTMIN+7</li>
+<li>SIGRTMIN+8</li>
+<li>SIGRTMIN+9</li>
+<li>SIGRTMIN+10</li>
+<li>SIGRTMIN+11</li>
+<li>SIGRTMIN+12</li>
+<li>SIGRTMIN+13</li>
+<li>SIGRTMIN+14</li>
+<li>SIGRTMIN+15</li>
+<li>SIGRTMAX-14</li>
+<li>SIGRTMAX-13</li>
+<li>SIGRTMAX-12</li>
+<li>SIGRTMAX-11</li>
+<li>SIGRTMAX-10</li>
+<li>SIGRTMAX-9</li>
+<li>SIGRTMAX-8</li>
+<li>SIGRTMAX-7</li>
+<li>SIGRTMAX-6</li>
+<li>SIGRTMAX-5</li>
+<li>SIGRTMAX-4</li>
+<li>SIGRTMAX-3</li>
+<li>SIGRTMAX-2</li>
+<li>SIGRTMAX-1</li>
+<li>SIGRTMAX</li>
+</ol>
+<p>列表中，编号为1 ~ 31的信号为传统UNIX支持的信号，是不可靠信号(非实时的)，编号为32 ~ 63的信号是后来扩充的，称做可靠信号(实时信号)。不可靠信号和可靠信号的区别在于前者不支持排队，可能会造成信号丢失，而后者不会。</p>
+<span id="more"></span>
+
+<p>下面我们对编号小于SIGRTMIN的信号进行讨论。</p>
+<ol>
+<li>SIGHUP<br>本信号在用户终端连接(正常或非正常)结束时发出, 通常是在终端的控制进程结束时, 通知同一session内的各个作业, 这时它们与控制终端不再关联。</li>
+</ol>
+<p>登录Linux时，系统会分配给登录用户一个终端(Session)。在这个终端运行的所有程序，包括前台进程组和后台进程组，一般都属于这个 Session。当用户退出Linux登录时，前台进程组和后台有对终端输出的进程将会收到SIGHUP信号。这个信号的默认操作为终止进程，因此前台进 程组和后台有终端输出的进程就会中止。不过可以捕获这个信号，比如wget能捕获SIGHUP信号，并忽略它，这样就算退出了Linux登录，wget也 能继续下载。</p>
+<p>此外，对于与终端脱离关系的守护进程，这个信号用于通知它重新读取配置文件。</p>
+<ol start="2">
+<li><p>SIGINT<br>程序终止(interrupt)信号, 在用户键入INTR字符(通常是Ctrl-C)时发出，用于通知前台进程组终止进程。</p>
+</li>
+<li><p>SIGQUIT<br>和SIGINT类似, 但由QUIT字符(通常是Ctrl-)来控制. 进程在因收到SIGQUIT退出时会产生core文件, 在这个意义上类似于一个程序错误信号。</p>
+</li>
+<li><p>SIGILL<br>执行了非法指令. 通常是因为可执行文件本身出现错误, 或者试图执行数据段. 堆栈溢出时也有可能产生这个信号。</p>
+</li>
+<li><p>SIGTRAP<br>由断点指令或其它trap指令产生. 由debugger使用。</p>
+</li>
+<li><p>SIGABRT<br>调用abort函数生成的信号。</p>
+</li>
+<li><p>SIGBUS<br>非法地址, 包括内存地址对齐(alignment)出错。比如访问一个四个字长的整数, 但其地址不是4的倍数。它与SIGSEGV的区别在于后者是由于对合法存储地址的非法访问触发的(如访问不属于自己存储空间或只读存储空间)。</p>
+</li>
+<li><p>SIGFPE<br>在发生致命的算术运算错误时发出. 不仅包括浮点运算错误, 还包括溢出及除数为0等其它所有的算术的错误。</p>
+</li>
+<li><p>SIGKILL<br>用来立即结束程序的运行. 本信号不能被阻塞、处理和忽略。如果管理员发现某个进程终止不了，可尝试发送这个信号。</p>
+</li>
+<li><p>SIGUSR1<br>留给用户使用</p>
+</li>
+<li><p>SIGSEGV<br>试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据.</p>
+</li>
+<li><p>SIGUSR2<br>留给用户使用</p>
+</li>
+<li><p>SIGPIPE<br>管道破裂。这个信号通常在进程间通信产生，比如采用FIFO(管道)通信的两个进程，读管道没打开或者意外终止就往管道写，写进程会收到SIGPIPE信号。此外用Socket通信的两个进程，写进程在写Socket的时候，读进程已经终止。</p>
+</li>
+<li><p>SIGALRM<br>时钟定时信号, 计算的是实际的时间或时钟时间. alarm函数使用该信号.</p>
+</li>
+<li><p>SIGTERM<br>程序结束(terminate)信号, 与SIGKILL不同的是该信号可以被阻塞和处理。通常用来要求程序自己正常退出，shell命令kill缺省产生这个信号。如果进程终止不了，我们才会尝试SIGKILL。</p>
+</li>
+<li><p>SIGCHLD<br>子进程结束时, 父进程会收到这个信号。</p>
+</li>
+</ol>
+<p>如果父进程没有处理这个信号，也没有等待(wait)子进程，子进程虽然终止，但是还会在内核进程表中占有表项，这时的子进程称为僵尸进程。这种情 况我们应该避免(父进程或者忽略SIGCHILD信号，或者捕捉它，或者wait它派生的子进程，或者父进程先终止，这时子进程的终止自动由init进程来接管)。</p>
+<ol start="18">
+<li><p>SIGCONT<br>让一个停止(stopped)的进程继续执行. 本信号不能被阻塞. 可以用一个handler来让程序在由stopped状态变为继续执行时完成特定的工作. 例如, 重新显示提示符…</p>
+</li>
+<li><p>SIGSTOP<br>停止(stopped)进程的执行. 注意它和terminate以及interrupt的区别:该进程还未结束, 只是暂停执行. 本信号不能被阻塞, 处理或忽略.</p>
+</li>
+<li><p>SIGTSTP<br>停止进程的运行, 但该信号可以被处理和忽略. 用户键入SUSP字符时(通常是Ctrl-Z)发出这个信号</p>
+</li>
+<li><p>SIGTTIN<br>当后台作业要从用户终端读数据时, 该作业中的所有进程会收到SIGTTIN信号. 缺省时这些进程会停止执行.</p>
+</li>
+<li><p>SIGTTOU<br>类似于SIGTTIN, 但在写终端(或修改终端模式)时收到.</p>
+</li>
+<li><p>SIGURG<br>有”紧急”数据或out-of-band数据到达socket时产生.</p>
+</li>
+<li><p>SIGXCPU<br>超过CPU时间资源限制. 这个限制可以由getrlimit/setrlimit来读取/改变。</p>
+</li>
+<li><p>SIGXFSZ<br>当进程企图扩大文件以至于超过文件大小资源限制。</p>
+</li>
+<li><p>SIGVTALRM<br>虚拟时钟信号. 类似于SIGALRM, 但是计算的是该进程占用的CPU时间.</p>
+</li>
+<li><p>SIGPROF<br>类似于SIGALRM/SIGVTALRM, 但包括该进程用的CPU时间以及系统调用的时间.</p>
+</li>
+<li><p>SIGWINCH<br>窗口大小改变时发出.</p>
+</li>
+<li><p>SIGIO<br>文件描述符准备就绪, 可以开始进行输入/输出操作.</p>
+</li>
+<li><p>SIGPWR<br>Power failure</p>
+</li>
+<li><p>SIGSYS<br>非法的系统调用。</p>
+</li>
+</ol>
+<p>在以上列出的信号中，程序不可捕获、阻塞或忽略的信号有：SIGKILL,SIGSTOP<br>不能恢复至默认动作的信号有：SIGILL,SIGTRAP<br>默认会导致进程流产的信号有：SIGABRT,SIGBUS,SIGFPE,SIGILL,SIGIOT,SIGQUIT,SIGSEGV,SIGTRAP,SIGXCPU,SIGXFSZ<br>默认会导致进程退出的信号有：SIGALRM,SIGHUP,SIGINT,SIGKILL,SIGPIPE,SIGPOLL,SIGPROF,SIGSYS,SIGTERM,SIGUSR1,SIGUSR2,SIGVTALRM<br>默认会导致进程停止的信号有：SIGSTOP,SIGTSTP,SIGTTIN,SIGTTOU<br>默认进程忽略的信号有：SIGCHLD,SIGPWR,SIGURG,SIGWINCH</p>
+<p>此外，SIGIO在SVR4是退出，在4.3BSD中是忽略；SIGCONT在进程挂起时是继续，否则是忽略，不能被阻塞。</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2012/06/07/linux-kill/";
+    this.page.identifier = 1339016162;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

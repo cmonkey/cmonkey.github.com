@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    ImageMagick 使用 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1323635349000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1323635349000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ImageMagick 使用</h1>
+    <p>link: <a target="_blank" rel="noopener" href="http://jianlee.ylinux.org/Computer/Software/imagemagick.html">http://jianlee.ylinux.org/Computer/Software/imagemagick.html</a></p>
+<h3 id="1-convert"><a href="#1-convert" class="headerlink" title="1. convert"></a>1. convert</h3><p>   对图像进行转换，它主要用来对图像进行格式的转化，同时还可以做缩放、剪切、模糊、反转等操作。</p>
+<h4 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h4><p>   有时候在论坛发帖想带图，Linux里面抓的图通常是 png 格式的，很大。使用下面一条目录就可以把 png 格式转换为 jpg 格式了。<br>    convert foo.png foo.jpg<br>   还可以使用 mogrify :<br>    mogrify -format png *.jpg    # 将当前目录下所有jpg文件转换为png格式。<br>   不过 convert 还可以把多种照片转换成 pdf 文件：<br>    convert *.png foo.pdf  # 厉害吧！</p>
+<h4 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h4><pre><code>convert -resize 100x100 foo.jpg thumbnail.jpg
+convert -resize 50%x50% foo.jpg thumbnail.jpg
+mogrify -sample 80x60 *.jpg   # 注意，这条命令会覆盖源文件</code></pre>
+<h4 id="加边框"><a href="#加边框" class="headerlink" title="加边框"></a>加边框</h4><p>   下面两条语句都可以加边框<br>    convert -mattecolor “#333333” -frame 60x60 源文件.png 转换后文件.png<br>    convert -bordercolor “#666666” -border 60x60 源文件.png 转换后.png</p>
+<h4 id="图片上加文字"><a href="#图片上加文字" class="headerlink" title="图片上加文字"></a>图片上加文字</h4><pre><code>convert -fill green -pointsize 40 \
+-draw &#39;text 10,50 &quot;jianlee.cn&quot;&#39; clutter-春江花月夜.png  tmp.png
+使用 -font 可以指定字体。</code></pre>
+<h4 id="模糊"><a href="#模糊" class="headerlink" title="模糊"></a>模糊</h4><p>   高斯模糊<br>    convert -blur 80  clutter-春江花月夜.png  tmp.png<br>   -blur参数还可以这样-blur 80x5。后面的那个5表示的是Sigma的值，它的值对模糊的效果起关键的作用。<span id="more"></span></p>
+<h4 id="翻转"><a href="#翻转" class="headerlink" title="翻转"></a>翻转</h4><p>   上下翻转<br>    convert -flip clutter-春江花月夜.png  tmp.png<br>   左右翻转<br>    convert -flop clutter-春江花月夜.png  tmp.png<br>   反色<br>    convert -negate clutter-春江花月夜.png  tmp.png<br>   单色（黑白照片）<br>    convert -monochrome clutter-春江花月夜.png  tmp.png<br>   加噪声<br>    convert -noise 3 clutter-春江花月夜.png  tmp.png<br>   油画效果<br>    /media/d_fat32/picture/h红楼/87版我的截图/右手.JPG<br>   旋转<br>    convert -rotate 30 hlm.JPG  tmp.jpg<br>   上面的30，表示向右旋转30度，如果要向左旋转，度数就是负数。<br>   炭笔效果(比素描更模糊,铅笔画)<br>    convert -charcoal 2 hlm.JPGtp.jpg<br>   散射（毛玻璃）效果<br>    convert -spread 10 hlm.JPG  tmp.jpg<br>   漩涡<br>   以图片中心为转轴，扭转图片形成漩涡效果<br>    convert -swirl 60 hlm.JPG  tmp.jpg<br>   同样，正负数表示左漩涡还是右漩涡<br>   突起效果<br>    convert -raise 10x10 hlm.JPG  tmp.jpg<br>   执行后，你会看到，照片的四周会一个10x10的边，如果你要一个凹下去的边，把-raise改为+raise就可以了。凸起和凹下好像没有区别。</p>
+<p>   其他<br>   查看手册页可以得到更多的功能</p>
+<h3 id="import-截图"><a href="#import-截图" class="headerlink" title="import (截图)"></a>import (截图)</h3><p>没有这么好的截图工具了！常用功能有：<br>截取屏幕任一矩形区域</p>
+<pre><code>import tmp.png</code></pre>
+<p>执行上面命令后，鼠标变成 “十“ 字，选择区域截图就行了！<br>截取程序窗口</p>
+<pre><code>import -pause 3 -frame tmp.png</code></pre>
+<p>回车后，用鼠标在你想截的窗口上点一下即可。参数-frame的作用是告诉 import，截图的时候把目标窗口的外框架带上，参数-pause的作用很重要，你可以试着把它去掉，对比一下，你会发现，目标窗口的标题栏是灰色的，pause就是让import稍微延迟一下，等你的目标窗口获得焦点了，才开始截图，这样的图才比较自然。<br>让截图倾斜</p>
+<pre><code>import -rotate 30 -pause 3 -frame tmp.png</code></pre>
+<p>多了一个截图后倾斜功能。<br>全屏截图</p>
+<pre><code>import -pause 3 -window root screen.png</code></pre>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>显示图片，处理图片<br>显示<br>    display 名字.png  # 或者 display *.png</p>
+<p>幻灯片显示<br>    display -delay 5 *</p>
+<p>快捷键</p>
+<ol>
+<li>space(空格): 显示下一张图片</li>
+<li>backspace(回删键):显示上一张图片</li>
+<li>h: 水平翻转</li>
+<li>v: 垂直翻转</li>
+<li>/:顺时针旋转90度</li>
+<li>:逆时针旋转90度</li>
+<li>&gt;: 放大</li>
+<li>&lt;: 缩小</li>
+<li>F7:模糊图片</li>
+<li>Alt+s:把图片中间的像素旋转</li>
+<li>Ctrl+s:图象另存</li>
+<li>Ctrl+d:删除图片</li>
+<li>q: 退出</li>
+</ol>
+<p>其他<br>   ImageMagick还提供有丰富的编程接口，比如，你可以用php来调用它，用 ImageMagick来生成验证码图片，效果非常棒。<br>   ImageMagick还有一个小工具identify，它可以用来显示一个图片文件的详悉信息，比如格式、分辨率、大小、色深等等。<br>参考<br>   <a target="_blank" rel="noopener" href="http://www.bokee.net/bloggermodule/blog_viewblog.do?id=68625">http://www.bokee.net/bloggermodule/blog_viewblog.do?id=68625</a><br>   <a target="_blank" rel="noopener" href="http://www.imagemagick.org/">http://www.imagemagick.org</a></p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2011/12/12/imagemagick/";
+    this.page.identifier = 1323635349;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

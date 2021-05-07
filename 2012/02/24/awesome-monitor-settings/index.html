@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    awesome 外接显示器 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1330052531000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1330052531000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>awesome 外接显示器</h1>
+    <p>本文档几乎是下面两个blog的内容。</p>
+<p>link: <a target="_blank" rel="noopener" href="http://www.cnblogs.com/pylemon/archive/2012/2/6.html">http://www.cnblogs.com/pylemon/</a></p>
+<p>link: <a target="_blank" rel="noopener" href="http://www.cnblogs.com/pylemon/archive/2012/02/06/2340556.html">http://www.cnblogs.com/pylemon</a></p>
+<p>awesome 外接显示器需要用到xrandr命令。<br>xrandr 有如下使用方法:<br>    $ xrandr<br>在我机器上获得如下输出:<br>      Screen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192<br>      LVDS-1 connected 1024x768+0+0 (normal left inverted right x axis y axis) 303mm x 189mm<br>         1280x800       60.0 +   50.0<br>         1024x768       59.9*<br>         800x600        59.9<br>         640x480        59.4<br>         720x400        59.6<br>         640x400        60.0<br>         640x350        59.8<br>      VGA-1 connected 1024x768+0+0 (normal left inverted right x axis y axis) 510mm x 287mm<br>         1920x1080      60.0 +<br>         1280x1024      75.0     60.0<br>         1152x864       75.0<br>         1024x768       75.1     60.0*<br>         800x600        75.0     60.3<br>         640x480        75.0     60.0<br>         720x400        70.1<br>      DP-1 disconnected (normal left inverted right x axis y axis)<br>      DP-2 disconnected (normal left inverted right x axis y axis)<br>      DP-3 disconnected (normal left inverted right x axis y axis)</p>
+<p>输出了当前机器所有的接口和支持的分辨率，刷新率。</p>
+<span id="more"></span>
+
+<p>打开外接显示器，与笔记本液晶屏幕显示同样内容（克隆）(–auto 最高分辨率)<br>    xrandr –output VGA-1 –same-as LVDS-1 –auto</p>
+<p>打开外接显示器，与笔记本液晶屏幕显示同样内容（克隆） （分辨率为1280X800）<br>    xrandr –output VGA-1 –same-as LVDS-1 –mode 1280X800</p>
+<p>打开外接显示器，设置为右侧扩展屏幕<br>    xrandr –output VGA-1 –right-of LVDS-1 –auto</p>
+<p>打开外接显示器，同时关闭笔记本液晶屏幕（只用外接显示器工作）<br>    xrandr –output VGA-1 –auto –output LVDS-1 –off</p>
+<p>关闭外接显示器，只用笔记本液晶屏幕<br>    xrandr –output VGA-1 –off –output LVDS-1 –auto</p>
+<p>关闭外接显示器<br>    xrandr –output VGA-1 –off</p>
+<p>VGA-1和LVDS-1 到底在其他机器上是笔记本的显示器还是外接的显示器，需要各自进行本地化测试。</p>
+<p>Updateing:<br>有两个显示器的时候，需要有一下特别的设置，假若笔记本的显示器通过xrandr得出的结果是LVDS-0。<br>外接显示器通过xrandr得出的结果是VGA-0 , 现在需求是笔记本显示器正常显示，但外接显示器是坚屏的。<br>可以在.xinitrc 中进行如下配置:</p>
+<pre><code>xrandr --output VGA-0 --mode 1920x10809 --rotate left
+xrandr --output LVDS-0 --mode 1280x800 --rotate normal</code></pre>
+<p>awesome 通过ctrl+mode+j 进行屏幕间跳转。<br>通过mode+o将某个应用发送到下一个屏幕。</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2012/02/24/awesome-monitor-settings/";
+    this.page.identifier = 1330052531;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

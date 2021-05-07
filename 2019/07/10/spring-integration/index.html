@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    spring-integration | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1562739988000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1562739988000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>spring-integration</h1>
+    <h2 id="Spring-Integration"><a href="#Spring-Integration" class="headerlink" title="Spring Integration"></a>Spring Integration</h2><p>Spring Integration 是用于对企业应用进行支持的一整套方案，主要通过消息和channel 来做链接</p>
+<h2 id="Custom-Distributed-Lock"><a href="#Custom-Distributed-Lock" class="headerlink" title="Custom Distributed Lock"></a>Custom Distributed Lock</h2><p>业务实践中，实现了自定义的 Distributed Lock</p>
+<p>在具体实现中，分别使用了通过stringRedisTemplete 的方式，通过redis lua 实现的lock </p>
+<p>而另一个实现中，使用redis 推荐的redisson组件封装Distributed Lock </p>
+<p>用户对lock 的使用，都是基于注解的方式，并没有提供java.util.concurrent.locks.Lock 语义</p>
+<h2 id="Spring-Integration-Distributed-Lock"><a href="#Spring-Integration-Distributed-Lock" class="headerlink" title="Spring Integration Distributed Lock"></a>Spring Integration Distributed Lock</h2><p>LockRegistry 就定义obtain 方法，传入一个lockKey 参数，返回一个Lock 对象</p>
+<p>而spring integration 提供的LockRegistry 在接口定义上就实现为返回一个Lock 对象</p>
+<p>LockRegistry 是一个functionalInterface ,而ExpirableLockRegistry 继承了LockRegistry 接口</p>
+<p>并添加了expireUnusedOlderThan 方法，该方法描述为支持删除当前未锁定的旧锁</p>
+<p>而具体的实现目前有JdbcLockRegistry, RedisLockRegistry, ZookeeperLockRegistry</p>
+<p>为了支持expireUnusedOlderThan， 所以在实现上都通过map 的方式将lockKey 和具体的Lock 进行关联</p>
+<p>这样在expireUnusedOlderThan方法中就可以通过迭代map的value ， 得到Lock , 然后通过判断lock 的过期时间来做到对lock 的删除</p>
+<ol>
+<li>JdbcLockRegistry 通过在数据库创建lock 表，通过对表记录加锁的方式实现对资源的锁定</li>
+<li>RedisLockRegistry 也是通过redis lua 的方式对资源进行加锁</li>
+<li>ZookeeperLockRegistry 最终通过curator 的InterProcessMutex 对znode 进行创建和监听</li>
+</ol>
+<h2 id="Custom-Distributed-Lock-vs-Spring-Integration-Lock"><a href="#Custom-Distributed-Lock-vs-Spring-Integration-Lock" class="headerlink" title="Custom Distributed Lock vs Spring Integration Lock"></a>Custom Distributed Lock vs Spring Integration Lock</h2><p>自定义的实现主要是通过redis lua 机制实现的，不管是通过自定义lua 实现，或者是通过redisson 实现</p>
+<p>所以对标的Spring Integration Lock 的实现是RedisLockRegistry </p>
+<p>在方法上并没有存在大的差异，所以说删除自定义的lock 实现, 而改用Spring Integration Lock 实现理由并不充分</p>
+<p>因为通过Lock 的语义和通过提供用户友好的注解使用并不冲突，通过注解的方式可以降低业务的使用难度，但在设计上又涉及到如何处理异常和加锁不成功导致的错误处理</p>
+<p>按照<a target="_blank" rel="noopener" href="http://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">how to do distributed locking</a> 中对distributed locking 所面对的问题，是否应该在添加一个对Zookeeper Lock 的支持，这才是值得思考的</p>
+<p>而对Zookeeper Lock 的支持，完全可以通过将ZookeeperLockRegistry 进行封装，形成zookeeper-lock-spring-boot-starter </p>
+<p>最终用户还是对提供的Lock 注解进行方法级别的配置， 而丧失掉对业务子逻辑的自定义加锁的能力</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a target="_blank" rel="noopener" href="https://www.slideshare.net/GlobalLogicUkraine/spring-cloud-the-real-case-of-spring-global-lock-usage">spring cloud the real case of spring global lock usage</a></p>
+<p><a target="_blank" rel="noopener" href="http://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">how to do distributed locking</a></p>
+<p>– cmonkey 2019年7月10日15:27:22 于深圳南山</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/07/10/spring-integration/";
+    this.page.identifier = 1562739988;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

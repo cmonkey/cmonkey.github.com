@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    java-16-feature | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1617197391000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1617197391000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>java-16-feature</h1>
+    <p>***** 已完成 jdk 16 feature [#B] [100%]                                  :task:<br>      CLOSED: [2021-03-31 三 21:28] SCHEDULED: &lt;2021-03-31 三&gt;<br>      :PROPERTIES:<br>      :REF: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=1hyWJTjxeGM">https://www.youtube.com/watch?v=1hyWJTjxeGM</a><br>      :END:</p>
+<pre><code>  - State &quot;已完成&quot;     from &quot;进行中&quot;     [2021-03-31 三 21:28]
+  - State &quot;进行中&quot;     from &quot;未开始&quot;     [2021-03-31 三 20:35]
+  1. Record
+
+     # MyRecord
+     public record MyRecord(String name, int id) &#123;
+
+        public MyRecord&#123;
+         validateMyFields(id, name);
+        &#125;
+        public MyRecord(String name, int id)&#123;
+          validateMyFields(id, name);
+          this.name = name;
+          this.id = id;
+        &#125;
+
+        private void validateMyFields(int id, String name)&#123;
+         // do validate fields
+        &#125;
+     &#125;
+
+     # Test MyRecord
+     new MyRecord(&quot;Trisha&quot;, 4326493)
+
+  2. Pattern Matching for InstanceOf
+
+      public class PatternMatchingForInstanceOf&#123;
+        public void inspectionToConvertInstanceof(Person person)&#123;
+
+          if(person instanceof Employee employee)&#123;
+              if(employee.isBasedInOffice())&#123;
+                employee.workFromHome();
+              &#125;
+          &#125;
+        &#125;
+      &#125;
+
+  3. New methods on Stream
+
+     var strings = ArrayList&lt;String&gt;();
+
+     # ModernJava
+     strings.stream()
+            .filter(s -&gt; s.startsWith(&quot;S&quot;))
+            .sorted()
+            .collect(Collectors.toUnmodifiableList());
+     # JDK16
+     strings.stream()
+            .filter(s-&gt; s.startsWith(&quot;S&quot;))
+            .sorted()
+            .toList();
+
+  4. Warning for Value-Based Classes
+
+     # deprecated in java 9, but new for jdk16 marked for removal JEP 390
+     var aDouble = new Double(1.0);
+     var aDouble = 1.0;
+
+  5. Local Types
+
+     1. local records
+
+        private Set&lt;Person&gt; filterForPeopleWithFiveOrders(List&lt;Person&gt; people)&#123;
+          record PersonAndOrders(Person person, List&lt;Order&gt; orders)&#123;&#125;
+
+          return people.stream()
+                       .map(person -&gt; new PersonAndOrders(person, getOrdersFor(person)))
+                       .filter(personAndOrders -&gt; personAndOrders.orders().size() == 5)
+                       .map(PersonAndOrders::person)
+                       .collect(toUnmodifiableSet());
+
+         &#125;
+      2. local enums
+
+         private void organisePeople(List&lt;Person&gt; people)&#123;
+            enum Role&#123;Employee, Customer, Both, None&#125;
+
+            var peopleByRole = new HashMap&lt;Role, List&lt;Perso&gt;&gt;();
+
+            people.stream()
+                  .filter(Person::isCustomer)
+                  .forEach(person -&gt; peopleByRole.computeIfAbsent(Role.Customer, role -&gt; new ArrayList&lt;&gt;())
+                  .add(person));
+
+         &#125;
+
+  6. Static methods/classes on inner classes
+
+     public class StaticOnInnerClasses&#123;
+        static class Outer&#123;
+           class NonStaticInnerClass&#123;
+              void instanceMethod()&#123;
+              &#125;
+
+              # jdk16 static methods on inner classes
+              static void staticMethod()&#123;
+              &#125;
+
+              # jdk16 static classes inside inner classes
+              static class StaticInnerClass&#123;
+              &#125;
+           &#125;
+     &#125;
+
+  7. java 16 preview features
+
+     1. Sealed Types
+
+        public sealed class Colour permits Black, Pink&#123;
+
+        &#125;
+
+        public final class Black extends Colour&#123;
+
+        &#125;
+
+        public non-sealed class Pink extends Colour permits Rose, Magenta&#123;
+        &#125;
+
+        public final class Rose extends Pink&#123;
+
+        &#125;
+
+        public final class Magenta extends Pink&#123;
+
+        &#125;
+
+  8. Also available in Java 16
+
+     1. Text Blocks (jdk 14, jdk 13)
+
+     2. Switch Expressions (jdk 12, jdk 13)
+
+  9. Java 11 Features
+
+     1. Local Variable Type Inference
+
+        var
+
+     2. Convenience Factory Methods for Collections
+
+        1. List.of()
+        2. Set.of()
+        3. Map.of()
+        4. Map.ofEntries()
+
+     3. New Methods on Optional
+
+        https://javadevcentral.com/optional-new-methods
+        1. ifPresentOrElse()
+        2. or()
+        3. Stream()
+        4. orElseThrow()
+        5. isEmpty()
+
+  10. Let your tools do the hard work
+
+Entered on [2021-03-31 三 20:32]</code></pre>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2021/03/31/java-16-feature/";
+    this.page.identifier = 1617197391;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

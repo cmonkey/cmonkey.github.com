@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Installing Locale in Solaris 10 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1317744000000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1317744000000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Installing Locale in Solaris 10</h1>
+    <p>Link: <a target="_blank" rel="noopener" href="http://gdesaboyina.wordpress.com/2011/04/22/installing-locale-in-solaris-10/">Gopi Desaboyina Solaris Blogs</a></p>
+<h3 id="Installing-Japanese-fonts-Locale-in-Solaris-10"><a href="#Installing-Japanese-fonts-Locale-in-Solaris-10" class="headerlink" title="Installing Japanese fonts/Locale in Solaris 10."></a>Installing Japanese fonts/Locale in Solaris 10.</h3><p>=======================================</p>
+<ol>
+<li>Check what all locales you’ve installed using locale -a</li>
+<li>localeadm -lt –&gt; Check if you’ve Japanese there. If not you can directly install from DVD localeadm -a</li>
+<li>localeadm -v -a ja -d /&lt;DVD Mount Path/Solaris_10/Product&gt;</li>
+<li>localeadm -v -r ja –&gt; This one removes the Japnese Packages ( Only Locale Related Packages).</li>
+<li>set the LANG &amp; LC_ALL variables then open gedit or appropriate program to check fonts.</li>
+</ol>
+<h3 id="Check-if-your-installation-supports-Japanese-Region"><a href="#Check-if-your-installation-supports-Japanese-Region" class="headerlink" title="Check if your installation supports Japanese Region ?"></a>Check if your installation supports Japanese Region ?</h3><p>=====================================================</p>
+<h3 id="localeadm-lt"><a href="#localeadm-lt" class="headerlink" title="localeadm -lt"></a>localeadm -lt</h3><p>You do not appear to have created a fresh config file since you began using this application.<br>If you have a set of Solaris install images available to you, it is recommended that you do so before proceeding.</p>
+<p>Do you wish to create a new config file? [y/n]: y</p>
+<p>Please select the option that was used to install Solaris</p>
+<ol>
+<li>CD installation/net installed CD images</li>
+<li>DVD installation/net installed combined image</li>
+</ol>
+<p>Please enter your choice:<br>^C<br>The following regions are supported by localeadm: <span id="more"></span></p>
+<p>—————–</p>
+<p>Australasia (aua)<br>[ Australia, New Zealand ]</p>
+<p>Central America (cam)<br>[ Costa Rica, Guatemala, Nicaragua, Panama, El Salvador ]</p>
+<p>Central Europe (ceu)<br>[ Austria, Czech Republic, Germany, Hungary, Poland, Slovakia, Switzerland (German), Switzerland (French) ]</p>
+<p>Eastern Europe (eeu)<br>[ Albania, Bosnia, Bulgaria, Estonia, Croatia, Kazakhstan, Lithuania, Latvia, Macedonia, Romania, Russia, Serbia, Slovenia, Turkey, Ukraine ]</p>
+<p>Middle East (mea)<br>[ Saudi Arabia, Israel ]</p>
+<p>Northern Africa (naf)<br>[ Egypt ]</p>
+<p>North America (nam)<br>[ Canada (English), Canada (French), United States, Mexico ]</p>
+<p>Northern Europe (neu)<br>[ Denmark, Finland, Iceland, Norway (Bokmal), Norway (Nyorsk),  Sweden ]</p>
+<p>South America (sam)<br>[ Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Paraguay, Peru, Uruguay, Venezuela ]</p>
+<p>Southern Europe (seu)<br>[ Cyprus, Italy, Greece, Malta (English), Malta (Maltese), Portugal, Spain (Catalan), Spain (Spanish) ]</p>
+<p>Western Europe (weu)<br>[France, Holland, Belgium (French), Belgium (Flemish), Ireland, England, Luxembourg (French), Luxembourg (German) ]</p>
+<p>Japanese (ja)</p>
+<p>Korean (korean)</p>
+<p>Simplified Chinese (china)</p>
+<p>Traditional Chinese (Hong Kong) (hongkong)</p>
+<p>Traditional Chinese (taiwan)</p>
+<p>Thai (th_th)</p>
+<p>Hindi (hi_in)</p>
+<p>Done.</p>
+<h3 id="Checking"><a href="#Checking" class="headerlink" title="Checking"></a>Checking</h3><p>=======================</p>
+<h3 id="locale"><a href="#locale" class="headerlink" title="locale"></a>locale</h3><p>LANG=C<br>LC_CTYPE=”C”<br>LC_NUMERIC=”C”<br>LC_TIME=”C”<br>LC_COLLATE=”C”<br>LC_MONETARY=”C”<br>LC_MESSAGES=”C”<br>LC_ALL=</p>
+<h3 id="ls-ltr-var-adm-messages"><a href="#ls-ltr-var-adm-messages" class="headerlink" title="ls -ltr /var/adm/messages*"></a>ls -ltr /var/adm/messages*</h3><p>-rw-r–r–   1 root     root      350534 Feb 28 20:11 /var/adm/messages.2<br>-rw-r–r–   1 root     root      435091 Mar 28 23:05 /var/adm/messages.1<br>-rw-r–r–   1 root     root      124690 Apr 16 21:04 /var/adm/messages.0<br>-rw-r–r–   1 root     root       59680 Apr 22 02:59 /var/adm/messages</p>
+<h3 id="export-LANG-ja"><a href="#export-LANG-ja" class="headerlink" title="export LANG=ja"></a>export LANG=ja</h3><h3 id="export-LC-ALL-ja"><a href="#export-LC-ALL-ja" class="headerlink" title="export LC_ALL=ja"></a>export LC_ALL=ja</h3><h3 id="locale-1"><a href="#locale-1" class="headerlink" title="locale"></a>locale</h3><p>LANG=ja<br>LC_CTYPE=”ja”<br>LC_NUMERIC=”ja”<br>LC_TIME=”ja”<br>LC_COLLATE=”ja”<br>LC_MONETARY=”ja”<br>LC_MESSAGES=”ja”<br>LC_ALL=ja</p>
+<h3 id="ls-ltr-var-adm-messages-1"><a href="#ls-ltr-var-adm-messages-1" class="headerlink" title="ls -ltr /var/adm/messages*"></a>ls -ltr /var/adm/messages*</h3><p>-rw-r–r–   1 root     root      350534  2?????? 28??????  20:11 /var/adm/messages.2<br>-rw-r–r–   1 root     root      435091  3?????? 28??????  23:05 /var/adm/messages.1<br>-rw-r–r–   1 root     root      124690  4?????? 16??????  21:04 /var/adm/messages.0<br>-rw-r–r–   1 root     root       59680  4?????? 22??????  02:59 /var/adm/messages</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2011/10/05/Installing-Locale-in-Solaris-10/";
+    this.page.identifier = 1317744000;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

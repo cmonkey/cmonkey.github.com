@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    grpc | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  grpc rsocket rpc
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1553848241000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1553848241000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>grpc</h1>
+    <h2 id="grpc"><a href="#grpc" class="headerlink" title="grpc"></a>grpc</h2><p>grpc 主要玩耍对象就是Google Protobuf </p>
+<p>proto 文件也很简单，主要就是定义message, enum, service 这些</p>
+<p>和远古时期的WSDL 一样，需要生成stub 代码，而stub 代码一直不舒服，感觉很乱</p>
+<p>但proto 生成的stub 代码貌似比印象中的WSDL stub 代码更眉清目秀一些？</p>
+<p>在java 中用io.grpc 的几个依赖就可以很快的创建一个GrpcService </p>
+<p>项目依赖，和code generator 按照<a target="_blank" rel="noopener" href="https://github.com/grpc/grpc-java">https://github.com/grpc/grpc-java</a> 的README就可以了</p>
+<h2 id="stub"><a href="#stub" class="headerlink" title="stub"></a>stub</h2><p>生成的Grpc ，在调用时，有blocking, future, stub 几种， 可玩耍比较有意思的是stub , 通过传入一个StreamObServer 对象</p>
+<p>然后在onNext 中读取服务端生产的stream 对象, 而服务端可以一直调用onNext 创建对象给调用方</p>
+<p>如果没有Flux 这类工具可用，那么可以通过Executors的方式按照时间周期创建对象</p>
+<h2 id="http-2"><a href="#http-2" class="headerlink" title="http/2"></a>http/2</h2><p>spring framework 5 兼容servlet 4, 这是支持http/2， 但是需要给容器添加配置</p>
+<p>看文档说webflux on netty 不支持http/2, 所以不能通过Flux.interval(Duration.ofMillis(200)) 的方式不断的创建stream response </p>
+<p>但这是存疑的，看起来spring 官网的文档和github 上的文档写的并不一样</p>
+<p>而grpc 默认就是http/2 的， 通过stub 代码，blocking 的方式可以是request/response 的，而stub 的方式可以不断的读取stream response </p>
+<h2 id="Rsocket-amp-amp-Grpc"><a href="#Rsocket-amp-amp-Grpc" class="headerlink" title="Rsocket &amp;&amp; Grpc"></a>Rsocket &amp;&amp; Grpc</h2><p>在Rsocket 里面说， Grpc 是好的，但是它没有背压， 所以Rsocket 给添加了背压</p>
+<p>Rsocket Rpc 基本是基于Grpc 进行的实现，主要的区别首先是在:</p>
+<p>grpc:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.xolstice.maven.plugins&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;protobuf-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.5.1&lt;/version&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">        &lt;protocArtifact&gt;com.google.protobuf:protoc:3.6.1:exe:$&#123;os.detected.classifier&#125;&lt;/protocArtifact&gt;</span><br><span class="line">        &lt;pluginId&gt;grpc-java&lt;/pluginId&gt;</span><br><span class="line">        &lt;pluginArtifact&gt;io.grpc:protoc-gen-grpc-java:1.19.0:exe:$&#123;os.detected.classifier&#125;&lt;/pluginArtifact&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">    &lt;executions&gt;</span><br><span class="line">        &lt;execution&gt;</span><br><span class="line">            &lt;goals&gt;</span><br><span class="line">                &lt;goal&gt;compile&lt;/goal&gt;</span><br><span class="line">                &lt;goal&gt;compile-custom&lt;/goal&gt;</span><br><span class="line">            &lt;/goals&gt;</span><br><span class="line">        &lt;/execution&gt;</span><br><span class="line">    &lt;/executions&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>rsocket rpc:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">    &lt;groupId&gt;org.xolstice.maven.plugins&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;protobuf-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.5.1&lt;/version&gt;</span><br><span class="line">    &lt;configuration&gt;</span><br><span class="line">        &lt;protocArtifact&gt;com.google.protobuf:protoc:3.6.1:exe:$&#123;os.detected.classifier&#125;&lt;/protocArtifact&gt;</span><br><span class="line">        &lt;pluginId&gt;grpc-java&lt;/pluginId&gt;</span><br><span class="line">        &lt;pluginArtifact&gt;io.rsocket.rpc:rsocket-rpc-protobuf:$&#123;rsocket-rpc.version&#125;:exe:$&#123;os.detected.classifier&#125;&lt;/pluginArtifact&gt;</span><br><span class="line">    &lt;/configuration&gt;</span><br><span class="line">    &lt;executions&gt;</span><br><span class="line">        &lt;execution&gt;</span><br><span class="line">            &lt;goals&gt;</span><br><span class="line">                &lt;goal&gt;compile&lt;/goal&gt;</span><br><span class="line">                &lt;goal&gt;compile-custom&lt;/goal&gt;</span><br><span class="line">            &lt;/goals&gt;</span><br><span class="line">        &lt;/execution&gt;</span><br><span class="line">    &lt;/executions&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>二者首先在编译参数上的区别</p>
+<p>另外的区别再于，生成的stub 代码，有非常大的区别， grpc 的stub 是Observer</p>
+<p>而rsocket rpc 基本生成的是Flux/Mono </p>
+<p>在对待stream 上的区别也是StreamObserver, Publisher的对应，当然这只是在api 上各自选择的不同</p>
+<p>二者在启动rpc 服务和调用rpc服务上也有非常大的不同，这就不写了</p>
+<p>– cmonkey 2019年3月29日16:57:48</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/03/29/grpc/";
+    this.page.identifier = 1553848241;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

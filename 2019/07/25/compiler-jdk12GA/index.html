@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    compiler-jdk12GA | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  jdk
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1564022843000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1564022843000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>compiler-jdk12GA</h1>
+    <h3 id="compiler-jdk12GA"><a href="#compiler-jdk12GA" class="headerlink" title="compiler jdk12GA"></a>compiler jdk12GA</h3><p>编译jdk, 一般文章都使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg clone http://hg.openjdk.java.net/jdk/jdk</span><br></pre></td></tr></table></figure>
+
+<p>但是在ArchLinux 上，除非安装了mercurial ,一般使用的还是git 比较多</p>
+<p>而刚好openjdk在github 上同步了一份read-only 的repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:openjdk/jdk.git</span><br></pre></td></tr></table></figure>
+<p>可以同步将openjdk 源码下载到本地，在当前(2019年7月25日10:53:27) openjdk 的主线版本为openjdk 14 </p>
+<p>而按照boot-jdk 版本在N-1或N-1还没有GA的情况下，需要N-2版本的编译说明，如果编译主线版本，那么需要openjdk 13的版本</p>
+<p>而在aur中openjdk 还是12的版本，所以按照N-1规则，切换到openjdk 13 的tag，发现编译不成功，引入了很多编译错误</p>
+<p>再次选择到jdk-12-ga 这个tag, 因为机器上openjdk 12 的版本是12.0.2+10，按照tag 来看，该版本的编译基础是jdk-12+10 的tag </p>
+<p>而jdk-12-ga 版本，是在jdk-12+33这个版本上，所以符合N-1版本的规定</p>
+<p>版本切换好后，就可以尝试对其进行编译了, 一个C/C++项目，传承远古时期的三板斧configure, make , make install，所以先configure</p>
+<p>(PS: 现在基本都有各类打包侠对各类软件进行打包， 比如boot-jdk 不就是打包侠打包的吗，而在遥远的远古时代，你需要autoconf, configure, make , make install , make test, 每天都在解决软件依赖，解决符号链接不正确，依赖软件版本不匹配等等糟心事， 所以感谢打包侠，他们还陷入在那远古的恐慌之中)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash configure --with-debug-level=fastdebug --with-boot-jdk=/usr/lib/jvm/java-12-openjdk --disable-warnings-as-errors</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>debug-level有各类选择</p>
+<ol>
+<li>release</li>
+<li>fastdebug</li>
+<li>slowdebug</li>
+<li>optimized</li>
+</ol>
+<p>默认是release, 这里为了更好的玩耍，所以选择fastdebug , 快速调试</p>
+<p>需要特别注意的是基本上一定要加入–disable-warnings-as-errors 这个参数，关闭对警告和错误的检查，不然在make 阶段就走两步就进行不下去了， 除非有莫大的勇气去解决那一堆堆的错误，所以还是假装这些警告和错误不存在吧</p>
+<p>好了，configure 很容易成功，基本上只要boot-jdk 版本对了，就成功了，可以开始漫长的make阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make jdk-image</span><br></pre></td></tr></table></figure>
+
+<p>然后就是漫长的等待，按照不同的机器性能需要的时间也各不相同，这时候就可以喝个茶，放放水</p>
+<p>而在这段时间，像我手中的这台垃圾本，8G内存的配置是编辑的最小要求，所以赶快把firefox kill 掉，不然编译半天因为内存耗尽失败就难受了</p>
+<p>vim打开的maven 项目也赶快关掉，不然vim-javacomplete2这类插件在后台不断的执行mvn package, 也导致耗尽内存</p>
+<p>自从vim 8.0 之后有异步线程可以执行，现在的vim plugin 就默默的搞很多事情，导致垃圾本已经不能好好使用了</p>
+<p>好了经过不知多么漫长时间的等待，终于编译成功，这一刻仿佛回到了远古时代，心力交瘁</p>
+<p>在当前目录的build/linux-x86_64-server-fastdebug/jdk 下面就编译好了期待的jdk 了</p>
+<p><img src="/images/20190725114057.png"></p>
+<p>而有了自定义编译的jdk12-GA版本，就可以将linux-x86_64-server-fastdebug 这个目录copy 到其它地方，然后设置编译的jdk 为JAVA_HOME的目录</p>
+<p>然后就可以用它作为boot-jdk 来编译jdk13, jdk13 如果编译成功，就可以再次编译主线的jdk14了</p>
+<p>Updateing: 使用编译好的jdk12-GA 来作为boot-jdk , 编译13和14版本的jdk 都出现问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">BailoutAndRestartBackendException_OptionDescriptors.java:22: error: cannot find symbol</span><br><span class="line">                /*declaringClass*/ BailoutAndRestartBackendException.Options.class,</span><br><span class="line">                                                                    ^</span><br><span class="line">  symbol:   class Options</span><br><span class="line">  location: class BailoutAndRestartBackendException</span><br><span class="line">/home/cmonkey/gitrepo/jdk/build/linux-x86_64-server-fastdebug/support/gensrc/jdk.internal.vm.compiler/org/graalvm/compiler/lir/BailoutAndRestartBackendException_OptionDescriptors.java:24: error: cannot find symbol</span><br><span class="line">                /*option*/ BailoutAndRestartBackendException.Options.LIRUnlockBackendRestart);</span><br><span class="line">                                                            ^</span><br><span class="line">  symbol:   variable Options</span><br><span class="line">  location: class BailoutAndRestartBackendException</span><br><span class="line">/home/cmonkey/gitrepo/jdk/build/linux-x86_64-server-fastdebug/support/gensrc/jdk.internal.vm.compiler/org/graalvm/compiler/replacements/arraycopy/PluginFactory_ArrayCopySnippets.java:35: error: cannot find symbol</span><br><span class="line">        jdk.internal.vm.compiler.word.LocationIdentity result = org.graalvm.compiler.replacements.arraycopy.ArrayCopySnippets.getArrayLocation(arg0);</span><br><span class="line">                                                                                                                             ^</span><br><span class="line">  symbol:   method getArrayLocation(JavaKind)</span><br><span class="line">  location: class ArrayCopySnippets</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>看起来确实没有定义的样子，所以先不管了</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/07/25/compiler-jdk12GA/";
+    this.page.identifier = 1564022843;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

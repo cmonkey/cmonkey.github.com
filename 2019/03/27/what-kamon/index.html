@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    what-kamon | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  Kamon
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1553677052000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1553677052000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>what-kamon</h1>
+    <h2 id="什么是Kamon"><a href="#什么是Kamon" class="headerlink" title="什么是Kamon"></a>什么是Kamon</h2><p>一个jvm 监控工具, 通过简单的注解可以非常容易的将需要监控的信息，进行上报</p>
+<p>比如通过将Kamon 信息上传到StatsD, 然后StatsD 周期性的将信息上传到grafana 面板</p>
+<h2 id="主要注解"><a href="#主要注解" class="headerlink" title="主要注解"></a>主要注解</h2><p>@EnableKamon </p>
+<p>@Segment</p>
+<p>@Trace</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>默认读取application.conf 文件</p>
+<p>application.conf 内容类似如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">## ---------------------------------------------------------------------------</span><br><span class="line">## Licensed to the Apache Software Foundation (ASF) under one or more</span><br><span class="line">## contributor license agreements.  See the NOTICE file distributed with</span><br><span class="line">## this work for additional information regarding copyright ownership.</span><br><span class="line">## The ASF licenses this file to You under the Apache License, Version 2.0</span><br><span class="line">## (the &quot;License&quot;); you may not use this file except in compliance with</span><br><span class="line">## the License.  You may obtain a copy of the License at</span><br><span class="line">##</span><br><span class="line">##      http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line">##</span><br><span class="line">## Unless required by applicable law or agreed to in writing, software</span><br><span class="line">## distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span><br><span class="line">## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line">## See the License for the specific language governing permissions and</span><br><span class="line">## limitations under the License.</span><br><span class="line">## ---------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">## To fix the issue that Spring Boot 2.1 disable the bean definition override by default</span><br><span class="line">spring.main.allow-bean-definition-overriding=true</span><br><span class="line"></span><br><span class="line">###############################</span><br><span class="line"># Kamon related configuration #</span><br><span class="line">###############################</span><br><span class="line"></span><br><span class="line">kamon &#123;</span><br><span class="line"></span><br><span class="line">  metric &#123;</span><br><span class="line">    filters &#123;</span><br><span class="line">      trace.includes = [&quot;**&quot;]</span><br><span class="line">      trace-segment.includes = [&quot;**&quot;]</span><br><span class="line">      trace-segment.excludes = []</span><br><span class="line">      akka-actor.includes = []</span><br><span class="line">      akka-actor.excludes = [&quot;**&quot;]</span><br><span class="line">      akka-dispatcher.includes = []</span><br><span class="line">      akka-dispatcher.excludes = [&quot;**&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  show-aspectj-missing-warning = no</span><br><span class="line"></span><br><span class="line">  modules &#123;</span><br><span class="line">    kamon-annotation &#123;</span><br><span class="line">      auto-start = no</span><br><span class="line">      requires-aspectj = yes</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    kamon-log-reporter &#123;</span><br><span class="line">      auto-start = no</span><br><span class="line">      requires-aspectj = no</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    kamon-statsd &#123;</span><br><span class="line">      auto-start = no</span><br><span class="line">      requires-aspectj = no</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  statsd &#123;</span><br><span class="line">    # Hostname and port in which your StatsD is running. Remember that StatsD packets are sent using UDP and</span><br><span class="line">    # setting unreachable hosts and/or not open ports wont be warned by the Kamon, your data wont go anywhere.</span><br><span class="line">    hostname = &quot;localhost&quot;</span><br><span class="line">    port = 8125</span><br><span class="line"></span><br><span class="line">    # Interval between metrics data flushes to StatsD. It&#x27;s value must be equal or greater than the</span><br><span class="line">    # kamon.metrics.tick-interval setting.</span><br><span class="line">    flush-interval = 10 second</span><br><span class="line"></span><br><span class="line">    # Subscription patterns used to select which metrics will be pushed to StatsD. Note that first, metrics</span><br><span class="line">    # collection for your desired entities must be activated under the kamon.metrics.filters settings.</span><br><span class="line">    includes &#123;</span><br><span class="line">      actor = []</span><br><span class="line">      trace = [&quot;*&quot;]</span><br><span class="line">      trace-segment = [&quot;*&quot;]</span><br><span class="line">      dispatcher = []</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    subscriptions &#123;</span><br><span class="line">      histogram = [&quot;**&quot;]</span><br><span class="line">      min-max-counter = [&quot;**&quot;]</span><br><span class="line">      gauge = [&quot;**&quot;]</span><br><span class="line">      counter = [&quot;**&quot;]</span><br><span class="line">      trace = [&quot;**&quot;]</span><br><span class="line">      trace-segment = [&quot;**&quot;]</span><br><span class="line">      akka-actor = []</span><br><span class="line">      akka-dispatcher = []</span><br><span class="line">      akka-router = []</span><br><span class="line">      system-metric = [&quot;**&quot;]</span><br><span class="line">      http-server = []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>后通过javaagent 加载aspectjweaver 将监控信息写入StatsD</p>
+<h2 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h2><p>目前还没有成功</p>
+<ol>
+<li>在fastjar 情况下，不能找到aspectj 的一个类，导致没有办法kamon start </li>
+</ol>
+<p>– cmonkey 2019年3月28日16:58:12</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/03/27/what-kamon/";
+    this.page.identifier = 1553677052;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

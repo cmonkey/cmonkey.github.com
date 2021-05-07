@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    jdk11 | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1537942256000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1537942256000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>jdk11</h1>
+    <p>今天(2018-09-26), 期待的重量级更新jdk11正式版发布</p>
+<p>可以通过<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html">jdk11</a> 下载</p>
+<h2 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h2><h3 id="Local-Variable-Type-Inference"><a href="#Local-Variable-Type-Inference" class="headerlink" title="Local Variable Type Inference"></a>Local Variable Type Inference</h3><p>在以前对变量进行声明时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String text = &quot;你好 Jdk 11&quot;</span><br></pre></td></tr></table></figure>
+
+<p>目前可以通过var 关键字进行声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var text = &quot;你好 Jdk 11&quot;</span><br></pre></td></tr></table></figure>
+
+<p>如果声明的是一个常量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final var text = &quot;你好 Jdk 11&quot;</span><br></pre></td></tr></table></figure>
+
+<p>而不是scala 那样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val text = &quot;你好 Jdk 11&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><p>List, Set, Map 扩展了of, copyOf 方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var list = List.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</span><br><span class="line">var copy = List.copyOf(list)</span><br><span class="line">System.out.println(list == copy) // true</span><br><span class="line"></span><br><span class="line">var map = Map.of(&quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;c&quot;, &quot;C&quot;, &quot;D&quot;);</span><br><span class="line"></span><br><span class="line">var copyMap = Map.copyOf(map);</span><br><span class="line"></span><br><span class="line">System.out.println(copyMap == map);</span><br><span class="line"></span><br><span class="line">var set = Set.of(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;);</span><br><span class="line"></span><br><span class="line">var copySet = Set.copyOf(set);</span><br><span class="line"></span><br><span class="line">System.out.println(copySet == set);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>of 方法构建的是一个immutable 集合</p>
+<p>如果使用的是通过直接new 的方式，那么集合不再是一个immutable 集合，而是一个mutable 集合</p>
+<p>那么通过copyOf方法得到一个copy , 然后执行比较的话，结果为false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var mutableSet = new HashSet&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">var copyMutableSet = Set.copyOf(mutableSet);</span><br><span class="line"></span><br><span class="line">System.out.println(copyMutableSet == mutableSet);</span><br><span class="line"></span><br><span class="line">var mutableList = new ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">mutableList.add(1);</span><br><span class="line">mutableList.add(2);</span><br><span class="line">mutableList.add(3);</span><br><span class="line"></span><br><span class="line">var copyMutableList = List.copyOf(mutableList);</span><br><span class="line"></span><br><span class="line">System.out.println(mutableList == copyMutableList);</span><br><span class="line"></span><br><span class="line">var mutableMap = new HashMap&lt;String, Integer&gt;();</span><br><span class="line"></span><br><span class="line">mutableMap.put(&quot;A&quot;, 1);</span><br><span class="line">mutableMap.put(&quot;B&quot;, 2);</span><br><span class="line">mutableMap.put(&quot;C&quot;, 3);</span><br><span class="line"></span><br><span class="line">var copyMutableMap = Map.copyOf(mutableMap);</span><br><span class="line"></span><br><span class="line">System.out.println(copyMutableMap == mutableMap);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h3><h4 id="ofNullable-method"><a href="#ofNullable-method" class="headerlink" title="ofNullable method"></a>ofNullable method</h4><p>Stream 添加了ofNullable 方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream.ofNullable(null).count()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Stream-dropWhile-method"><a href="#Stream-dropWhile-method" class="headerlink" title="Stream.dropWhile method"></a>Stream.dropWhile method</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stream.of(1,2,3,2,1)</span><br><span class="line">.dropWhile(n -&gt; n &lt; 3)</span><br><span class="line">.collect(Collector.toList());</span><br></pre></td></tr></table></figure>
+
+<h4 id="Stream-takeWhile-method"><a href="#Stream-takeWhile-method" class="headerlink" title="Stream.takeWhile method"></a>Stream.takeWhile method</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stream.of(1,2,3,2,1)</span><br><span class="line">.takeWhile(n -&gt; n &lt; 3)</span><br><span class="line">.collect(Collector.toList())</span><br></pre></td></tr></table></figure>
+
+<h3 id="Optionals"><a href="#Optionals" class="headerlink" title="Optionals"></a>Optionals</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var foo = Optional.of(&quot;foo&quot;).orElseThrow();</span><br><span class="line">var count = Optional.of(&quot;foo&quot;).stream().count();</span><br><span class="line"></span><br><span class="line">System.out.println(foo);</span><br><span class="line">System.out.println(count);</span><br><span class="line"></span><br><span class="line">var op = Optional.ofNullable(null).or(() -&gt; Optional.of(&quot;fallback&quot;)).get();</span><br><span class="line"></span><br><span class="line">System.out.println(op);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h3><p>String 类有更多的快捷方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var foo = Optional.of(&quot;foo&quot;).orElseThrow();</span><br><span class="line">var count = Optional.of(&quot;foo&quot;).stream().count();</span><br><span class="line"></span><br><span class="line">System.out.println(foo);</span><br><span class="line">System.out.println(count);</span><br><span class="line"></span><br><span class="line">var op = Optional.ofNullable(null).or(() -&gt; Optional.of(&quot;fallback&quot;)).get();</span><br><span class="line"></span><br><span class="line">System.out.println(op);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><p>InputStream 添加了一个便捷的transferTo方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var classLoader = ClassLoader.getSystemClassLoader();</span><br><span class="line"></span><br><span class="line">var inputStream = classLoader.getResourceAsStream(&quot;myfile.txt&quot;);</span><br><span class="line"></span><br><span class="line">var tempFile = File.createTempFile(&quot;myFileCopy&quot;, &quot;txt&quot;);</span><br><span class="line"></span><br><span class="line">try(var outputStrema = new FileOutputStream(tempFile))&#123;</span><br><span class="line">    inputStream.transferTo(outputStrema);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然最重要的还是关于ZGC的开启并可用</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cmonkey/jdk11">github</a></p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2018/09/26/jdk11/";
+    this.page.identifier = 1537942256;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

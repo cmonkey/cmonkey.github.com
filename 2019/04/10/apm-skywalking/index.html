@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    apm-skywalking | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 108 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1554868837000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1554868837000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>apm-skywalking</h1>
+    <h2 id="skywalking"><a href="#skywalking" class="headerlink" title="skywalking"></a>skywalking</h2><p>skywalking 是一个apm 系统， 在基于spring boot 2.1.4 , spring cloud Greenwich.RELEASE 实现的自定义网关中</p>
+<p>通过添加skywalking agent , 将信息上报到backend 中，但报告错误为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ERROR 2019-04-04 16:14:30:873 InstMethodsInter :  class[class reactor.netty.http.server.HttpServerOperations] before method[status] intercept failure </span><br><span class="line">java.lang.ClassCastException: java.lang.Integer cannot be cast to io.netty.handler.codec.http.HttpResponseStatus</span><br><span class="line">	at org.apache.skywalking.apm.plugin.spring.webflux.v5.StatusInterceptor.beforeMethod(StatusInterceptor.java:32)</span><br><span class="line">	at org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.InstMethodsInter.intercept(InstMethodsInter.java:82)</span><br><span class="line">	at reactor.netty.http.server.HttpServerOperations.status(HttpServerOperations.java)</span><br><span class="line">	at org.springframework.http.server.reactive.ReactorServerHttpResponse.applyStatusCode(ReactorServerHttpResponse.java:80)</span><br><span class="line">	at org.springframework.http.server.reactive.AbstractServerHttpResponse.lambda$null$6(AbstractServerHttpResponse.java:221)</span><br><span class="line">	at reactor.core.publisher.MonoRunnable.subscribe(MonoRunnable.java:49)</span><br><span class="line">	at reactor.core.publisher.MonoLift.subscribe(MonoLift.java:45)</span><br><span class="line">	at reactor.core.publisher.Mono.subscribe(Mono.java:3694)</span><br><span class="line">	at reactor.core.publisher.FluxConcatIterable$ConcatIterableSubscriber.onComplete(FluxConcatIterable.java:146)</span><br><span class="line">	at reactor.core.publisher.FluxConcatIterable.subscribe(FluxConcatIterable.java:60)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreElements.subscribe(MonoIgnoreElements.java:37)</span><br><span class="line">	at reactor.core.publisher.MonoLift.subscribe(MonoLift.java:45)</span><br><span class="line">	at reactor.core.publisher.Mono.subscribe(Mono.java:3694)</span><br><span class="line">	at org.springframework.http.server.reactive.ChannelSendOperator$WriteBarrier.onNext(ChannelSendOperator.java:182)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121)</span><br><span class="line">	at reactor.core.publisher.FluxJust$WeakScalarSubscription.request(FluxJust.java:99)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162)</span><br><span class="line">	at org.springframework.http.server.reactive.ChannelSendOperator$WriteBarrier.onSubscribe(ChannelSendOperator.java:164)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90)</span><br><span class="line">	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:70)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable.subscribe(FluxMapFuseable.java:63)</span><br><span class="line">	at org.springframework.http.server.reactive.ChannelSendOperator.subscribe(ChannelSendOperator.java:75)</span><br><span class="line">	at reactor.core.publisher.MonoPeek.subscribe(MonoPeek.java:71)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121)</span><br><span class="line">	at reactor.core.publisher.FluxContextStart$ContextStartSubscriber.onNext(FluxContextStart.java:103)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:287)</span><br><span class="line">	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:331)</span><br><span class="line">	at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1505)</span><br><span class="line">	at reactor.core.publisher.MonoCollectList$MonoBufferAllSubscriber.onComplete(MonoCollectList.java:118)</span><br><span class="line">	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:271)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$UnboundedReplayBuffer.replayNormal(FluxReplay.java:550)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$UnboundedReplayBuffer.replay(FluxReplay.java:653)</span><br><span class="line">	at reactor.core.publisher.FluxReplay.subscribe(FluxReplay.java:1082)</span><br><span class="line">	at reactor.core.publisher.FluxAutoConnectFuseable.subscribe(FluxAutoConnectFuseable.java:60)</span><br><span class="line">	at reactor.core.publisher.FluxPeekFuseable.subscribe(FluxPeekFuseable.java:86)</span><br><span class="line">	at reactor.core.publisher.MonoCollectList.subscribe(MonoCollectList.java:59)</span><br><span class="line">	at reactor.core.publisher.MonoFilterFuseable.subscribe(MonoFilterFuseable.java:44)</span><br><span class="line">	at reactor.core.publisher.MonoMapFuseable.subscribe(MonoMapFuseable.java:56)</span><br><span class="line">	at reactor.core.publisher.MonoSubscriberContext.subscribe(MonoSubscriberContext.java:47)</span><br><span class="line">	at reactor.core.publisher.MonoMapFuseable.subscribe(MonoMapFuseable.java:59)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:60)</span><br><span class="line">	at reactor.core.publisher.MonoLiftFuseable.subscribe(MonoLiftFuseable.java:55)</span><br><span class="line">	at reactor.core.publisher.Mono.subscribe(Mono.java:3694)</span><br><span class="line">	at reactor.core.publisher.MonoIgnorePublisher.subscribe(MonoIgnorePublisher.java:41)</span><br><span class="line">	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:153)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.ignoreDone(MonoIgnoreThen.java:190)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreInner.onComplete(MonoIgnoreThen.java:240)</span><br><span class="line">	at org.springframework.cloud.sleuth.instrument.reactor.ScopePassingSpanSubscriber.onComplete(ScopePassingSpanSubscriber.java:113)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:189)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onComplete(MonoFlatMap.java:260)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:81)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$UnboundedReplayBuffer.replayNormal(FluxReplay.java:550)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$UnboundedReplayBuffer.replay(FluxReplay.java:653)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$ReplaySubscriber.onComplete(FluxReplay.java:1188)</span><br><span class="line">	at reactor.core.publisher.FluxJust$WeakScalarSubscription.request(FluxJust.java:101)</span><br><span class="line">	at reactor.core.publisher.FluxReplay$ReplaySubscriber.onSubscribe(FluxReplay.java:1148)</span><br><span class="line">	at reactor.core.publisher.FluxJust.subscribe(FluxJust.java:70)</span><br><span class="line">	at reactor.core.publisher.FluxLiftFuseable.subscribe(FluxLiftFuseable.java:70)</span><br><span class="line">	at reactor.core.publisher.Flux.subscribe(Flux.java:7777)</span><br><span class="line">	at reactor.core.publisher.FluxReplay.connect(FluxReplay.java:1052)</span><br><span class="line">	at reactor.core.publisher.FluxAutoConnectFuseable.subscribe(FluxAutoConnectFuseable.java:62)</span><br><span class="line">	at reactor.core.publisher.MonoIgnoreElements.subscribe(MonoIgnoreElements.java:37)</span><br><span class="line">	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150)</span><br><span class="line">	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67)</span><br><span class="line">	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76)</span><br><span class="line">	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121)</span><br><span class="line">	at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1505)</span><br><span class="line">	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:144)</span><br><span class="line">	at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1505)</span><br><span class="line">	at reactor.core.publisher.MonoSingle$SingleSubscriber.onComplete(MonoSingle.java:171)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:794)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:560)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:540)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:426)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:794)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:560)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:540)</span><br><span class="line">	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:426)</span><br><span class="line">	at reactor.core.publisher.DrainUtils.postCompleteDrain(DrainUtils.java:131)</span><br><span class="line">	at reactor.core.publisher.DrainUtils.postComplete(DrainUtils.java:186)</span><br><span class="line">	at reactor.core.publisher.FluxMapSignal$FluxMapSignalSubscriber.onComplete(FluxMapSignal.java:213)</span><br><span class="line">	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:136)</span><br><span class="line">	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:252)</span><br><span class="line">	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:136)</span><br><span class="line">	at reactor.netty.channel.FluxReceive.terminateReceiver(FluxReceive.java:372)</span><br><span class="line">	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:196)</span><br><span class="line">	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:337)</span><br><span class="line">	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:334)</span><br><span class="line">	at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:381)</span><br><span class="line">	at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:522)</span><br><span class="line">	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:141)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)</span><br><span class="line">	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)</span><br><span class="line">	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)</span><br><span class="line">	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)</span><br><span class="line">	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)</span><br><span class="line">	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)</span><br><span class="line">	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)</span><br><span class="line">	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)</span><br><span class="line">	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:808)</span><br><span class="line">	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:410)</span><br><span class="line">	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:310)</span><br><span class="line">	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:748)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>错误的类型转换， 将一个Integer 类型转换为HttpResponseStatus</p>
+<p>修改StatusInterceptor.beforeMethod 方法，判断了allArguments[0]参数的类型，并编译上传到服务器进行测试</p>
+<p>不在抛出java.lang.ClassCastException: java.lang.Integer cannot be cast to io.netty.handler.codec.http.HttpResponseStatus 异常</p>
+<p>但SkyWalking项目在issues 2126 中对支持spring gateway 放到6.1.0 版本中，所以暂时在6.0.0 版本中对gateway 没有支持， </p>
+<p>所以需要在6.1.0 之后才能将SkyWalking 投入到基于spring gateway 的gateway 上</p>
+<p>需要强调的是，目前对基于spring boot 2.1.4 版本的业务服务的支持是可以的，所以需要根据不同的情况选择是使用zipkin, 还是SkyWalking</p>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2019/04/10/apm-skywalking/";
+    this.page.identifier = 1554868837;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
