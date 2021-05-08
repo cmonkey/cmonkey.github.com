@@ -6,7 +6,7 @@
   <link href="http://cmonkey.github.com/atom.xml" rel="self"/>
   
   <link href="http://cmonkey.github.com/"/>
-  <updated>2021-04-10T05:11:16.042Z</updated>
+  <updated>2021-05-08T02:10:02.425Z</updated>
   <id>http://cmonkey.github.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>crypto</title>
+    <link href="http://cmonkey.github.com/2021/05/08/crypto/"/>
+    <id>http://cmonkey.github.com/2021/05/08/crypto/</id>
+    <published>2021-05-08T02:07:16.000Z</published>
+    <updated>2021-05-08T02:10:02.425Z</updated>
+    
+    <content type="html"><![CDATA[<p>** crypto<br>   :PROPERTIES:<br>   :REF: <a href="https://twitter.com/jonsyu/status/1389635626698297344">https://twitter.com/jonsyu/status/1389635626698297344</a><br>   :END:</p><pre><code>I&#39;m seeing a lot of people FOMO quit their jobs to join &quot;crypto&quot;, probably out of some over-romanticized view of what goes on in these projects. Let me illuminate you about what actually happens:1. You have an earnest team that believes in decentralization as a theory, but realize that it&#39;s impossible to build any project of complexity without extreme centralization for long periods of time, potentially some parts indefinitely.2. You aim to build a community, but in reality 90% of your telegram/discord are scammers and people asking why price is going down/accusations that you and your entire team should go to jail.3. You want to decentralize governance, but only a handful wants to participate in governance. Doesn&#39;t change people from getting royally pissed at governance decisions despite not doing a single ounce of work.4. You realize that most of the &quot;influencer&quot; network of crypto is actually a cartel of individuals who all know each other and collude in pumping the same bags. They all cost around $20k-30k for a review, btw.5. Some VCs are good. Many don&#39;t do an ounce of due diligence on your project and fight tooth and nail for larger token allocations with minimal lockup periods. Most of them are actually beyond useless. Some are deeply unethical and are straight cons.6. Crypto never sleeps. And guess what? That also means that you never sleep. Half your audience is in the west, the other half is in the east. Singapore time is almost entirely during sleeping hours in the US. Have fun with that7. Legally, you can&#39;t talk about &quot;token price&quot;, but it&#39;s your ultimate marketing tool. If it&#39;s necessary for the security of your network, you&#39;re screwed. You HAVE to shill the token, and you have to assure people that the price will go up (but that&#39;s also illegal in the US).8. Traders/VCs drive the vast majority of your user acquisition early on, since, again, the token is what most people care about - so you really need THEM to be excited, and they by FAR have the largest followings in the space.9. The LAW. SO MUCH LAW. SO. MUCH. LAW. Expect to pay well into six figures of legal fees in your first year. Also, most lawyers won&#39;t actually know how to answer any questions cause everything is still a grey-area. This&#39;ll depend on jurisdiction of course.10. There&#39;s actually a good chance that there&#39;s not a single person in your entire state or country that knows how to do your taxes.11. People will make up rumors of your project on a daily basis. Either hopium or FUD. It is Brandolini&#39;s law on steroids. Hopium is actually worst than FUD by the way, because FUD unites your community around truth, whereas hopium unites them around price.12. Information asymmetry is extreme in this industry. There are telegram rooms of just founders and influencers that discuss price-moving news. You are not in those channels most likely.13. Bear markets is when you find the real demand for your products, which is likely magnitudes less than your worse fears or on-chain metrics indicate. Low liquidity = desert of demand.14. You will be proud of your project at times, but then get nervous when you see people ape&#39;ing into obvious scams and then you question whether anyone actually knows or cares about your project at all, or if it&#39;s just one of a basket of random asymmetric gambling bets.15. You will realize that the source of the majority of problems for your blockchain project is that it is built on a blockchain.16. And my personal pet peeve is that, by and large, most of crypto actually does want Bitcoin to die. Perhaps not in a &quot;I want Bitcoin to go to zero&quot;, but in a, &quot;Bitcoin doesn&#39;t do anything and so I want its value to be rightly distributed to my project, which has real utility&quot;.PS: 这一个thread 主要关注的是从事加密货币的创业者，而不是在加密货币中充斥的投机者。查看thread 的不同受众阅读的收获并不相同，一些人可能并不需要看到。</code></pre><p>  [2021-05-08 六 10:00]</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;** crypto&lt;br&gt;   :PROPERTIES:&lt;br&gt;   :REF: &lt;a href=&quot;https://twitter.com/jonsyu/status/1389635626698297344&quot;&gt;https://twitter.com/jonsyu/statu</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>java-16-feature</title>
@@ -442,28 +462,6 @@
     
     
     <category term="DevOps" scheme="http://cmonkey.github.com/tags/DevOps/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>compiler-jdk12GA</title>
-    <link href="http://cmonkey.github.com/2019/07/25/compiler-jdk12GA/"/>
-    <id>http://cmonkey.github.com/2019/07/25/compiler-jdk12GA/</id>
-    <published>2019-07-25T02:47:23.000Z</published>
-    <updated>2021-04-10T05:11:16.042Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="compiler-jdk12GA"><a href="#compiler-jdk12GA" class="headerlink" title="compiler jdk12GA"></a>compiler jdk12GA</h3><p>编译jdk, 一般文章都使用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg clone http://hg.openjdk.java.net/jdk/jdk</span><br></pre></td></tr></table></figure><p>但是在ArchLinux 上，除非安装了mercurial ,一般使用的还是git 比较多</p><p>而刚好openjdk在github 上同步了一份read-only 的repo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:openjdk/jdk.git</span><br></pre></td></tr></table></figure><p>可以同步将openjdk 源码下载到本地，在当前(2019年7月25日10:53:27) openjdk 的主线版本为openjdk 14 </p><p>而按照boot-jdk 版本在N-1或N-1还没有GA的情况下，需要N-2版本的编译说明，如果编译主线版本，那么需要openjdk 13的版本</p><p>而在aur中openjdk 还是12的版本，所以按照N-1规则，切换到openjdk 13 的tag，发现编译不成功，引入了很多编译错误</p><p>再次选择到jdk-12-ga 这个tag, 因为机器上openjdk 12 的版本是12.0.2+10，按照tag 来看，该版本的编译基础是jdk-12+10 的tag </p><p>而jdk-12-ga 版本，是在jdk-12+33这个版本上，所以符合N-1版本的规定</p><p>版本切换好后，就可以尝试对其进行编译了, 一个C/C++项目，传承远古时期的三板斧configure, make , make install，所以先configure</p><p>(PS: 现在基本都有各类打包侠对各类软件进行打包， 比如boot-jdk 不就是打包侠打包的吗，而在遥远的远古时代，你需要autoconf, configure, make , make install , make test, 每天都在解决软件依赖，解决符号链接不正确，依赖软件版本不匹配等等糟心事， 所以感谢打包侠，他们还陷入在那远古的恐慌之中)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash configure --with-debug-level=fastdebug --with-boot-jdk=/usr/lib/jvm/java-12-openjdk --disable-warnings-as-errors</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>debug-level有各类选择</p><ol><li>release</li><li>fastdebug</li><li>slowdebug</li><li>optimized</li></ol><p>默认是release, 这里为了更好的玩耍，所以选择fastdebug , 快速调试</p><p>需要特别注意的是基本上一定要加入–disable-warnings-as-errors 这个参数，关闭对警告和错误的检查，不然在make 阶段就走两步就进行不下去了， 除非有莫大的勇气去解决那一堆堆的错误，所以还是假装这些警告和错误不存在吧</p><p>好了，configure 很容易成功，基本上只要boot-jdk 版本对了，就成功了，可以开始漫长的make阶段</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make jdk-image</span><br></pre></td></tr></table></figure><p>然后就是漫长的等待，按照不同的机器性能需要的时间也各不相同，这时候就可以喝个茶，放放水</p><p>而在这段时间，像我手中的这台垃圾本，8G内存的配置是编辑的最小要求，所以赶快把firefox kill 掉，不然编译半天因为内存耗尽失败就难受了</p><p>vim打开的maven 项目也赶快关掉，不然vim-javacomplete2这类插件在后台不断的执行mvn package, 也导致耗尽内存</p><p>自从vim 8.0 之后有异步线程可以执行，现在的vim plugin 就默默的搞很多事情，导致垃圾本已经不能好好使用了</p><p>好了经过不知多么漫长时间的等待，终于编译成功，这一刻仿佛回到了远古时代，心力交瘁</p><p>在当前目录的build/linux-x86_64-server-fastdebug/jdk 下面就编译好了期待的jdk 了</p><p><img src="/images/20190725114057.png"></p><p>而有了自定义编译的jdk12-GA版本，就可以将linux-x86_64-server-fastdebug 这个目录copy 到其它地方，然后设置编译的jdk 为JAVA_HOME的目录</p><p>然后就可以用它作为boot-jdk 来编译jdk13, jdk13 如果编译成功，就可以再次编译主线的jdk14了</p><p>Updateing: 使用编译好的jdk12-GA 来作为boot-jdk , 编译13和14版本的jdk 都出现问题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">BailoutAndRestartBackendException_OptionDescriptors.java:22: error: cannot find symbol</span><br><span class="line">                /*declaringClass*/ BailoutAndRestartBackendException.Options.class,</span><br><span class="line">                                                                    ^</span><br><span class="line">  symbol:   class Options</span><br><span class="line">  location: class BailoutAndRestartBackendException</span><br><span class="line">/home/cmonkey/gitrepo/jdk/build/linux-x86_64-server-fastdebug/support/gensrc/jdk.internal.vm.compiler/org/graalvm/compiler/lir/BailoutAndRestartBackendException_OptionDescriptors.java:24: error: cannot find symbol</span><br><span class="line">                /*option*/ BailoutAndRestartBackendException.Options.LIRUnlockBackendRestart);</span><br><span class="line">                                                            ^</span><br><span class="line">  symbol:   variable Options</span><br><span class="line">  location: class BailoutAndRestartBackendException</span><br><span class="line">/home/cmonkey/gitrepo/jdk/build/linux-x86_64-server-fastdebug/support/gensrc/jdk.internal.vm.compiler/org/graalvm/compiler/replacements/arraycopy/PluginFactory_ArrayCopySnippets.java:35: error: cannot find symbol</span><br><span class="line">        jdk.internal.vm.compiler.word.LocationIdentity result = org.graalvm.compiler.replacements.arraycopy.ArrayCopySnippets.getArrayLocation(arg0);</span><br><span class="line">                                                                                                                             ^</span><br><span class="line">  symbol:   method getArrayLocation(JavaKind)</span><br><span class="line">  location: class ArrayCopySnippets</span><br><span class="line">3</span><br></pre></td></tr></table></figure><p>看起来确实没有定义的样子，所以先不管了</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;compiler-jdk12GA&quot;&gt;&lt;a href=&quot;#compiler-jdk12GA&quot; class=&quot;headerlink&quot; title=&quot;compiler jdk12GA&quot;&gt;&lt;/a&gt;compiler jdk12GA&lt;/h3&gt;&lt;p&gt;编译jdk, 一般文章都使用</summary>
-      
-    
-    
-    
-    
-    <category term="jdk" scheme="http://cmonkey.github.com/tags/jdk/"/>
     
   </entry>
   
