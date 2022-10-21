@@ -6,7 +6,7 @@
   <link href="http://cmonkey.github.com/atom.xml" rel="self"/>
   
   <link href="http://cmonkey.github.com/"/>
-  <updated>2021-05-08T02:10:02.425Z</updated>
+  <updated>2022-10-21T08:37:04.581Z</updated>
   <id>http://cmonkey.github.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>racket-command-line</title>
+    <link href="http://cmonkey.github.com/2022/10/21/racket-command-line/"/>
+    <id>http://cmonkey.github.com/2022/10/21/racket-command-line/</id>
+    <published>2022-10-21T08:36:27.000Z</published>
+    <updated>2022-10-21T08:37:04.581Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#lang racket</span><br><span class="line"></span><br><span class="line">(define fileName (make-parameter &quot;&quot;))</span><br><span class="line">(define prefix (make-parameter &quot;&quot;))</span><br><span class="line"></span><br><span class="line">(require racket/cmdline)</span><br><span class="line">(define parser</span><br><span class="line">  (command-line #:usage-help</span><br><span class="line">                &quot;input file name&quot;</span><br><span class="line">                &quot;input prefix&quot;</span><br><span class="line">                #:once-each</span><br><span class="line">                [(&quot;-f&quot; &quot;--fileName&quot;) inputFileName</span><br><span class="line">                &quot;fileName&quot;</span><br><span class="line">                (fileName inputFileName)]</span><br><span class="line">                [(&quot;-p&quot; &quot;--prefix&quot;) inputPrefix</span><br><span class="line">                &quot;prefix&quot;</span><br><span class="line">                (prefix inputPrefix)]</span><br><span class="line">                #:args () (void)</span><br><span class="line">                )</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">(displayln (fileName))</span><br><span class="line">(displayln (prefix))</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span c</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>crypto</title>
@@ -439,29 +459,6 @@
     
     
     <category term="awscloud" scheme="http://cmonkey.github.com/tags/awscloud/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ansible</title>
-    <link href="http://cmonkey.github.com/2019/07/28/ansible/"/>
-    <id>http://cmonkey.github.com/2019/07/28/ansible/</id>
-    <published>2019-07-27T16:27:07.000Z</published>
-    <updated>2021-04-10T05:11:16.042Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>以前通过在Hadoop 集群的master 节点上，通过ansible 进行对slave 节点的管理</p><p>因为hadoop 集群都在vbox 上面，现在直接在host 机器上对集群进行管理，碰到了一些问题，在此记录</p><p>因为hadoop 集群所在的os都是ArchLinux, 并且使用的shell 都是zsh , 当使用ansible 时，由于ansible 默认的shell 是/bin/sh</p><p>而/bin/sh 的链接为/bin/bash, 所以在.zshrc中对hadoop 的一些环境信息就没有办法加载到了</p><p>后来通过google了解到可以在ansible 命令后面通过-e ansible_shell_executable=zsh的方式对其默认shell 进行修改</p><h2 id="profile"><a href="#profile" class="headerlink" title="profile"></a>profile</h2><p>如果有自定义的profile,可以在发送的shell 中添加source you_profile &amp;&amp; you command 的方式进行加载 </p><h2 id="task"><a href="#task" class="headerlink" title="task"></a>task</h2><p>因为hadoop 集群在平时都是对spark job 进行作业，而spark job 的提交，我通过hadoop master 机器进行提交</p><p>所以一般都将任务的jar 先放到hdfs 上，然后通过ansible 的方式对hadoop master 机器发送命令，命令通过机器上面的spark-submit 提交任务到yarn调度器上</p><p>hadoop 集群是手动安装并维护的，并没有使用集成包的方式进行维护，并且没有做系统自启动，所以在启动机器后，也是通过ansible 访问hadoop master </p><p>然后通过已经写好的shell , 对hadoop 集群进行启动，并启动zookeeper, kafka 这些需要做一些测试的支撑服务</p><h2 id="os-upgrade"><a href="#os-upgrade" class="headerlink" title="os upgrade"></a>os upgrade</h2><p>因为系统都是ArchLinux , 而ArchLinux 是滚动升级的，所以一般来说随时都在获取被打包好的包，并执行升级</p><p>对hadoop 集群的os 升级，也是通过ansible 的方式，一般通过发送yay -Syyu –noconfirm 命令，对os进行升级</p><p>如果不加–noconfirm 参数，那么yay 一直等待用户输入y, 确定进行更新，导致ansible 一直不能结束任务，登录到目标机器查看pacman.log 会发现系统争取的在执行，就是不知道为什么更新一直不能接受，问题就在于没有添加noconfirm 参数，在等待用户输入</p><p>由于目前使用的hadoop 2.7 版本在比1.8版本更高的jdk 版本上可能出现问题，所以以前的处理方式是在pacman.conf 中将jdk 添加为ignorePkg</p><p>现在修改的方案是，取消对jdk 的ignorePkg, 让其升级到最新的稳定版，比如目前的版本是jdk12</p><p>而为了使hadoop 在jdk 上不出现问题，系统安装两个jdk , 一个是jdk12 只是随着系统升级的jdk , 另外安装一个jdk8版本，系统也会对它进行升级，但不会进行大版本升级，只是对其进行bug fix 的升级</p><p>安装好两个jdk 后，需要通过archlinux-java set jdk8的方式，修改系统默认的jdk </p><p>通过此类修改，达到对hadoop 的影响降低</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;shell&quot;&gt;&lt;a href=&quot;#shell&quot; class=&quot;headerlink&quot; title=&quot;shell&quot;&gt;&lt;/a&gt;shell&lt;/h2&gt;&lt;p&gt;以前通过在Hadoop 集群的master 节点上，通过ansible 进行对slave 节点的管理&lt;/p&gt;
-&lt;p&gt;</summary>
-      
-    
-    
-    
-    
-    <category term="DevOps" scheme="http://cmonkey.github.com/tags/DevOps/"/>
     
   </entry>
   

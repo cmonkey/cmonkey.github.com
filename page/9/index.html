@@ -127,7 +127,7 @@
     <li class="selected">
       <a href="/">Overview</a></li>
     <li class="">
-      <a href="/">Posts <span class="counter">109</span></a>
+      <a href="/">Posts <span class="counter">110</span></a>
     </li>
     <li class="">
       <a href="/">Categories <span
@@ -140,6 +140,27 @@
     <div class="body-secondary">
       <p class="right-title">Recent post</p>
       <ul class="recent-post clearfix">
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2012/07/11/demote/">降级论</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               link:  降级论  
+ 当一个社会疯狂鼓吹快节奏的时候，一定需要有人来宣扬慢生活；当全社会跟打
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
         
         <li class="recent-post-item">
           <div class="clearfix">
@@ -247,28 +268,6 @@
           </div>
         </li>
         
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2012/04/01/tig/">tig使用</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-               link: dongsheng  
- tig是git的浏览器,可以查看commants的历史. 
-
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <i class="fa fa-folder-open"></i> Uncategorized
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 0 </span>
-            </p>
-          </div>
-        </li>
-        
       </ul>
       <div class="calendar-container" id="calendar">
   <div class="calendar">
@@ -356,7 +355,7 @@
 
 
 <script>
-  var posts = [];
+  var posts = [{"date":"2022-10-21","title":"racket-command-line","url":"http://cmonkey.github.com/2022/10/21/racket-command-line/"}];
   var today = moment().format('YYYY-MM-DD');
   var oneYearAgo = moment(today).subtract(1, 'years');
   posts = posts.filter(function(post) {
