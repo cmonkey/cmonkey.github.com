@@ -6,7 +6,7 @@
   <link href="http://cmonkey.github.com/atom.xml" rel="self"/>
   
   <link href="http://cmonkey.github.com/"/>
-  <updated>2022-10-21T08:37:04.581Z</updated>
+  <updated>2022-10-21T10:29:27.923Z</updated>
   <id>http://cmonkey.github.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Venice</title>
+    <link href="http://cmonkey.github.com/2022/10/21/Venice/"/>
+    <id>http://cmonkey.github.com/2022/10/21/Venice/</id>
+    <published>2022-10-21T10:28:51.000Z</published>
+    <updated>2022-10-21T10:29:27.923Z</updated>
+    
+    <content type="html"><![CDATA[<p>:PROPERTIES:<br>:REF: <a href="https://engineering.linkedin.com/blog/2022/open-sourcing-venice--linkedin-s-derived-data-platform">https://engineering.linkedin.com/blog/2022/open-sourcing-venice--linkedin-s-derived-data-platform</a><br>:END:</p><p>linkedin 开源的数据平台，威尼斯</p><ol><li><p>一个高吞吐，低延迟，高可用，可横向扩展，最终一致的存储系统, 为批处理和流处理工作的输出的摄取有一流的支持</p></li><li><p>在linkedin 该系统从2016年开始投入生产系统</p></li><li><p>所有写入都是异步的</p></li><li><p>push job , 从hadoop 从获取数据并写入到venice, linkedin 每天有超过1400各推送作业在运行，完全自动化</p></li><li><p>在linkedin 与Feathr 集成使用，主要用于AI训练</p></li><li><p>支持增量写</p></li><li><p>除了从hadoop 写入，还可以从Stream processor 写入, 在linkedin 主要从apache samza 进行流处理，目前开源是希望社区添加其他Stream processor 处理器</p></li><li><p>Stream write, 支持从流处理器写入的数据同时应用到数据集的当前版本和备份版本，多个流处理器可以并发写入同一个数据集</p></li><li><p>Stream reprocessing, 这一点本人不熟，不关注</p></li><li><p>局部更新， 不仅可以写入整行，也可以更新列</p></li><li><p>混合写，不关注</p></li><li><p>单一查询</p></li><li><p>批量查询</p></li><li><p>读取计算，通过DSL 可以支持嵌入查询，主要通过People You May Know (PYMK), 对此不了解，应该此功能是主要亮点</p></li><li><p>Da Vinci, 一个clinet</p></li><li><p>Eager cache, 不关注</p></li><li><p>分区，用client 可以加载感兴趣的数据集的所有分区</p></li><li><p>Galene, 不关注</p></li><li><p>多区域</p></li><li><p>Geo replication</p></li><li><p>Fault recovery</p></li><li><p>Multi-cluster</p></li><li><p>Multi-tenancy , 多租户</p></li><li><p>Operator-driven configuration , 操作员驱动的配置</p></li><li><p>Compression, 压缩，支持端到端压缩, 压缩方案是Astandard</p></li><li><p>重新分区, 支持重新划分数据集, 分区是系统的规模单位，随着数据集的增长，能够改变这个参数时很有用</p></li><li><p>存储， 可拔插架构，以前是支持BDB-je 存储引擎，目前是RocksDB, 使用两种RocksDB格式， 基于块(为大于RAM的数据集优化，由SSD支持), 基于普通表(为全RAM的数据集优化)</p></li><li><p>自愈，利用Apache Helix 在每个集群进行分区复制，对硬件故障进行反应，Helix 可以对机架进行感知, 确保一个给定分区最多只有一个副本在同一个机架上</p></li><li><p>弹性和线性可扩展性,</p></li><li><p>在RDBMS, key value, document database 下存在stream/batch processor system, venice 可以是下面的组织数据生态系统</p><p>[2022-10-14 五 14:58]</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;:PROPERTIES:&lt;br&gt;:REF: &lt;a href=&quot;https://engineering.linkedin.com/blog/2022/open-sourcing-venice--linkedin-s-derived-data-platform&quot;&gt;https:/</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>racket-command-line</title>
@@ -436,29 +456,6 @@
     
     
     <category term="zookeeper" scheme="http://cmonkey.github.com/tags/zookeeper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>awscloud</title>
-    <link href="http://cmonkey.github.com/2019/07/30/awscloud/"/>
-    <id>http://cmonkey.github.com/2019/07/30/awscloud/</id>
-    <published>2019-07-30T01:50:10.000Z</published>
-    <updated>2021-04-10T05:11:16.042Z</updated>
-    
-    <content type="html"><![CDATA[<p>Daniel Vassallo 介绍使用aws cloud 的经验，其中的经验不只是对aws 用户有参考意义，对其它云服务使用者也有参考意义</p><p>This is how I use the good parts of @awscloud<br>, while filtering out all the distracting hype<br>1/25</p><p>My background: I’ve been using AWS for 11 years — since before there was a console. I also worked inside AWS for 8 years (Nov 2010 - Feb 2019).<br>2/25</p><p><img src="/images/EAWrA7rU4AEUpYX.jpg"></p><p>My experience is in web- sites/apps/services. From tiny personal projects to commercial apps running on 8,000 servers. If what you do is AI, ML, ETL, HPC, DBs, blockchain, or anything significantly different from web apps, what I’m writing here might not be relevant.<br>3/25</p><p>Step 1: Forget that all these things exist: Microservices, Lambda, API Gateway, Containers, Kubernetes, Docker.</p><p>Anything whose main value proposition is about “ability to scale” will likely trade off your “ability to be agile &amp; survive”. That’s rarely a good trade off.</p><p>4/25</p><p>Start with a t3.nano EC2 instance, and do all your testing &amp; staging on it. It only costs $3.80/mo.</p><p>Then before you launch, use something bigger for prod, maybe an m5.large (2 vCPU &amp; 8 GB mem). It’s $70/mo and can easily serve 1 million page views per day.</p><p>5/25</p><p>1 million views is a lot. For example, getting on the front page of @newsycombinator<br> will get you ~15-20K views. That’s just 2% of the capacity of an m5.large.</p><p>6/25</p><p>It might be tempting to use Lambda &amp; API Gateway to save $70/mo, but then you’re going to have to write your software to fit a new immature abstraction and deal with all sorts of limits and constraints.</p><p>7/25</p><p>Basic stuff such as using a cache, debugging, or collecting telemetry/analytics data becomes significantly harder when you don’t have access to the server. But probably the biggest disadvantage is that it makes local development much harder.</p><p>8/25</p><p>And that’s the last thing you need. I can’t emphasize enough how important it is that you can easily start your entire application on your laptop, with one click.</p><p>With Lambda &amp; API Gateway you’re going to be constantly battling your dev environment. Not worth it, IMO.</p><p>9/25</p><p>CloudFormation: Use it. But too much of it can also be a problem. First of all, there are some things that CFN can’t do. But more importantly, some things are best left out of CFN because it can do more harm than good.</p><p>10/25</p><p>The rule of 👍 : If something is likely to be static, it’s a good candidate for CFN. Ex: VPCs, load balancers, build &amp; deploy pipelines, IAM roles, etc. If something is likely to be modified over time, then using CFN will likely be a big headache. Ex: Autoscaling settings.</p><p>11/25</p><p>I like having a separate shell script to create things that CFN shouldn’t know about.</p><p>And for things that are hard/impossible to script, I just do them manually. Ex: Route 53 zones, ACM cert creation/validation, CloudTrail config, domain registration.</p><p>12/25</p><p>The test for whether your infra-as-code setup is good enough is whether you feel confident that you can tear down your stack &amp; bring it up again in a few minutes without any mistakes. Spending an unbounded amount of time in pursuit of scripting everything is dumb.</p><p>13/25</p><p>Load balancers: You should probably use one even if you only have 1 instance. For $16/mo you get automatic TLS cert management, and that alone makes it worth it IMO. You just set it up once &amp; forget about it. An ALB is probably what you’ll need, but NLB is good too.</p><p>14/25</p><p>Autoscaling: You won’t need it to spin instances up &amp; down based on utilization. Unless your profit margins are as thin as Amazon’s, what you need instead is abundant capacity headroom. Permanently. Then you can sleep well at night — unlike Amazon’s oncall engineers<br>🤣</p><p>15/25</p><p>But Autoscaling is still useful. Think of it as a tool to help you spin up or replace instances according to a template. If you have a bad host, you can just terminate it and AS will replace it with an identical one (hopefully healthy) in a couple of minutes.</p><p>16/25</p><p>VPCs, Subnets, &amp; Security Groups: These may look daunting, but they’re not that hard to grasp. You have no option but to use them, so it’s worth spending a day or two learning all there is about them. Learn through the console, but at the end set them up with CFN.</p><p>17/25</p><p>Route 53: Use it. It integrates nicely with the load balancers, and it does everything you need from a DNS service. I create hosted zones manually, but I set up A records via cfn. I also use Route 53 for .com domain registration.</p><p>18/25</p><p>CodeBuild/Deploy/Pipeline: This suite has a lot of rough edges and setup can be frustrating. But once you do set it up, the final result is simple and with few moving parts.</p><p>Don’t bother with CodeCommit though. Stick with GitHub.</p><p>Sample pipeline: <a href="https://github.com/dvassallo/github-to-ec2-pipeline">ec2-pipeline</a></p><p>19/25</p><p>S3: At 2.3 cents per GB/mo, don’t bother looking elsewhere for file storage. You can expect downloads of 90 MB/s per object and about a 50 ms first-byte latency. Use the default standard storage class unless you really know what you’re doing.</p><p>20/25</p><p>Database: Today, DynamoDB is an option you should consider. If you can live without “joins”, DDB is probably your best option for a database. With per-request pricing it’s both cheap and a truly zero burden solution. Remember to turn on point-in-time backups.</p><p>21/25</p><p>But if you want the query flexibility of SQL, I’d stick with RDS. Aurora is fascinating tech, and I’m really optimistic about it’s future, but it hasn’t passed the test of time yet. You’ll end up facing a ton of poorly documented issues with little community support.</p><p>22/25</p><p>CloudFront: I’d usually start without CloudFront. It’s one less thing to configure and worry about. But it’s something worth considering eventually, even just for the DDoS protection, if not for performance.</p><p>23/25</p><p>SQS: You likely won’t need it, and if you needed a message queue I’d consider something in-process first. But if you do have a good use case for it, SQS is solid, reliable, and reasonably straightforward to use.</p><p>24/25</p><p>Conclusion: I like to seperate interesting new tech from tech that has survived the test of time. EC2, S3, RDS, DDB, ELB, EBS, SQS definitely have. If you’re considering alternatives, there should be a strong compelling reason for losing all the benefits accrued over time.</p><p>25/25</p><p>Ref:</p><p><a href="https://twitter.com/dvassallo">Daniel Vassallo</a></p><p><a href="https://twitter.com/dvassallo/status/1154516910265884672">awscloud thread</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Daniel Vassallo 介绍使用aws cloud 的经验，其中的经验不只是对aws 用户有参考意义，对其它云服务使用者也有参考意义&lt;/p&gt;
-&lt;p&gt;This is how I use the good parts of @awscloud&lt;br&gt;, while fi</summary>
-      
-    
-    
-    
-    
-    <category term="awscloud" scheme="http://cmonkey.github.com/tags/awscloud/"/>
     
   </entry>
   
