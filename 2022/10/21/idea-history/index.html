@@ -8,9 +8,13 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    Hexo
+    idea history | Hexo
   </title>
   <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
   
   <meta name="author" content="cmonkey">
 
@@ -77,98 +81,89 @@
 </nav>
 
 <div class="main-container">
-  
-
-<div class="container-lg">
-  
-
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon">
-    <div class="user-name">
-      <div class="blog-title"></div>
-      <div class="blog-author"></div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://cmonkey.github.com">http://cmonkey.github.com</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="http://cmonkey.github.com">http://cmonkey.github.com</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-      <li class="social-media-item"><a href="https://github.com/cmonkey" target="_blank"><i class="fa fa-github"></i></a></li>
-      
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 112 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
     </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
   </div>
-</div>
 
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="">
-      <a href="/">Posts <span class="counter">112</span></a>
-    </li>
-    <li class="">
-      <a href="/">Categories <span
-                class="counter">2</span></a></li>
-    <li class="selected">
-      <a href="/">Tags <span class="counter">24</span></a></li>
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2020/04/04/zgc/">zgc</a></h2>
-          <p>
-             ArchLinux 的jdk版本已经14了，但是为了损伤CPU, 所以将jdk repo 更新一下，得到最新的jdk 源码 
- 通过 
-      1       sh configure --with-jvm-features=zgc        
- 的方式开始编译三板斧的第一步 
- 然后通过...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/gc/">gc</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <i class="fa fa-folder-open"></i> Uncategorized
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1585966675000).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
     </div>
   </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1666348703000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1666348703000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>idea history</h1>
+    <p><img src="/images/20221010112110.jpg"></p>
+
+  </article>
 </div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2022/10/21/idea-history/";
+    this.page.identifier = 1666348703;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
 
 </div>
 

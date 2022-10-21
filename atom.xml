@@ -6,7 +6,7 @@
   <link href="http://cmonkey.github.com/atom.xml" rel="self"/>
   
   <link href="http://cmonkey.github.com/"/>
-  <updated>2022-10-21T10:29:27.923Z</updated>
+  <updated>2022-10-21T10:40:59.440Z</updated>
   <id>http://cmonkey.github.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea history</title>
+    <link href="http://cmonkey.github.com/2022/10/21/idea-history/"/>
+    <id>http://cmonkey.github.com/2022/10/21/idea-history/</id>
+    <published>2022-10-21T10:38:23.000Z</published>
+    <updated>2022-10-21T10:40:59.440Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/20221010112110.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/20221010112110.jpg&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Venice</title>
@@ -434,28 +455,6 @@
     
     
     <category term="Systemd" scheme="http://cmonkey.github.com/tags/Systemd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zookeeper-monitor</title>
-    <link href="http://cmonkey.github.com/2019/08/13/zookeeper-monitor/"/>
-    <id>http://cmonkey.github.com/2019/08/13/zookeeper-monitor/</id>
-    <published>2019-08-13T06:05:50.000Z</published>
-    <updated>2021-04-10T05:11:16.042Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="zk-info"><a href="#zk-info" class="headerlink" title="zk info"></a>zk info</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">echo mntr | nc 127.0.0.1 2181                                                                  </span><br><span class="line"></span><br><span class="line">zk_version3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT</span><br><span class="line">zk_avg_latency0</span><br><span class="line">zk_max_latency1</span><br><span class="line">zk_min_latency0</span><br><span class="line">zk_packets_received49</span><br><span class="line">zk_packets_sent49</span><br><span class="line">zk_num_alive_connections4</span><br><span class="line">zk_outstanding_requests0</span><br><span class="line">zk_server_statestandalone</span><br><span class="line">zk_znode_count1447</span><br><span class="line">zk_watch_count211</span><br><span class="line">zk_ephemerals_count4</span><br><span class="line">zk_approximate_data_size99276</span><br><span class="line">zk_open_file_descriptor_count29</span><br><span class="line">zk_max_file_descriptor_count1048576</span><br></pre></td></tr></table></figure><h2 id="zk-commands"><a href="#zk-commands" class="headerlink" title="zk commands"></a>zk commands</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mntr </span><br><span class="line">stat </span><br><span class="line">crst </span><br><span class="line">dump </span><br><span class="line">envi </span><br><span class="line">ruok </span><br><span class="line">srst </span><br><span class="line">srvr</span><br><span class="line">cons </span><br><span class="line">wchs </span><br><span class="line">wchc</span><br><span class="line">wchp</span><br><span class="line">conf</span><br></pre></td></tr></table></figure><h2 id="zk-server-state"><a href="#zk-server-state" class="headerlink" title="zk_server_state"></a>zk_server_state</h2><p>集群中有且只有一个leader, 没有leader这集群无法正常工作，有两个或以上的leader, 这集群发生脑裂，数据不一致</p><p>Ref:<br><a href="https://www.infoq.cn/article/7yGNFUU*au8AhrzFkX3z">zookeeper 集权运维</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;zk-info&quot;&gt;&lt;a href=&quot;#zk-info&quot; class=&quot;headerlink&quot; title=&quot;zk info&quot;&gt;&lt;/a&gt;zk info&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl</summary>
-      
-    
-    
-    
-    
-    <category term="zookeeper" scheme="http://cmonkey.github.com/tags/zookeeper/"/>
     
   </entry>
   
