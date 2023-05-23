@@ -127,7 +127,7 @@
     <li class="">
       <a href="/">Overview</a></li>
     <li class="selected">
-      <a href="/">Posts <span class="counter">112</span></a>
+      <a href="/">Posts <span class="counter">113</span></a>
     </li>
     <li class="">
       <a href="/">Categories <span
@@ -139,6 +139,30 @@
 
     <div class="body-secondary">
       <ul class="archive-list">
+        
+        <li class="archive-list-item">
+          <h2><a href="/2020/02/21/strace-debug/">strace_debug</a></h2>
+          <p>
+             cat /etc/sysctl.d/10-pstrace.conf  
+      1       kernel.yama.ptrace_scope = 0       
+ reboot  
+ Ref:  https://linux-audit.com/protect-ptrace-process...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/strace/">strace</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1582261109000).fromNow()}}</span>
+          </div>
+        </li>
         
         <li class="archive-list-item">
           <h2><a href="/2020/02/20/audio-control/">audio-control</a></h2>
@@ -342,30 +366,6 @@
             </span>
             <span><i class="fa fa-tag"></i> 1 </span>
             <span>Published {{moment(1572940059000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2019/08/15/systemd-analyze/">systemd-analyze</a></h2>
-          <p>
-             在查询系统启动缓慢中，可以通过systemd-analyze 得到基本的启动信息， 分别对应内核和用户空间启动耗时 
- 但在做启动优化时，还需要通过得到是哪些服务启动耗时，导致整体的耗时增加 
- 可以通过systemd-analyze critical-chain 获取耗时的服务链条 
- 通过关闭...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/Systemd/">Systemd</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <i class="fa fa-folder-open"></i> Uncategorized
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1565834888000).fromNow()}}</span>
           </div>
         </li>
         
