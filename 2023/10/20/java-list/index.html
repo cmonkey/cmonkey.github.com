@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    java-list | Hexo
+  </title>
+  <meta name="description" content="blog">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="cmonkey">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://www.gravatar.com/avatar/6cfd2daebe6d0543923368acdf4029bd?s=64&amp;d=identicon"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 114 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 2 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Hexo</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    cmonkey
+
+    <span class="post-date float-right" title="{{moment(1697783047000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1697783047000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>java-list</h1>
+    <h2 id="java-list-警告"><a href="#java-list-警告" class="headerlink" title="java list 警告"></a>java list 警告</h2><p>我就不去查询java 在那个版本提供.toList方法了, 以前对一个stream 进行最后的收集是collect方法。<br>Collectors.toList 方法是一个可以修改的List, 然而现在变更为.toList 方法后，得到的结果是不可修改的List。</p>
+<p>如果不注意这点, 那么在接下来的操作中肯恩那个会抛出noe错误, 说不支持此操作。</p>
+<p>相同的问题也来自于List.of() 的实现, 该实现也是得到一个不可变更的List, 所以在得到这个List 后不能进行修改列表元素的操作, 比如sort 等等</p>
+<h2 id="个人体验"><a href="#个人体验" class="headerlink" title="个人体验"></a>个人体验</h2><ol>
+<li><p>因为我目前在开发业务项目中一般会使用</p>
+<p> <img src="/images/2023-10-20_14-32.png"><br> JDK 21 进行开发，但是因为生产系统使用的还是Jdk 17, 所以在这差距的4个版本中发生的变更就没有使用<br> 主要使用的一个很大的变化是一直使用var 来定义变量, 返回默认List[T] 基本不再使用guava 的Lists.newArrayList(), 而是使用List.of()<br> 当然因为很多JDK不支持的自动类型推导所以不是所有的变量定义都可以使用var myCustome = xxx 的方式,<br> 这问题还非常有意思, 因为如果自己来实现这种类型推导, 那么该如何实现呢?</p>
+</li>
+<li><p>和scala 相比</p>
+<p>目前还没有开始使用scala 3 来做开发, 所以主要还是基于scala 2.13.X 进行开发, 因为互操作性和团队建设的原因(这原因真是难得吐槽)</p>
+<p>scala 可以使用var, val 等来定义一个变量或者一个常量, 但是java 目前还不支持</p>
+<p>scala 定义的List[T] 直接就是一个不能修改的列表, 要使用可以修改的列表需要使用ListBuffer[T]</p>
+<p>通过不同定义来区分场景只会让人建立一次心智, 这种成本就很低, 而通过Java 的Collectors.toList(), List.of(), .toList() 的操作</p>
+<p>如果不首先去看这方面的问题,只能在开发过后通过测试来得到这些问题, 并在这些问题之后来建立这种认知</p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+<div class="container disqus-container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://cmonkey.github.com/2023/10/20/java-list/";
+    this.page.identifier = 1697783047;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://[object Object].disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://cmonkey.github.com" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 cmonkey</li>
+      <li><a href="http://cmonkey.github.com">Home</a></li>
+      
+      <li><a target="_blank" rel="noopener" href="https://github.com/cmonkey">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

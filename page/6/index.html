@@ -127,7 +127,7 @@
     <li class="selected">
       <a href="/">Overview</a></li>
     <li class="">
-      <a href="/">Posts <span class="counter">113</span></a>
+      <a href="/">Posts <span class="counter">114</span></a>
     </li>
     <li class="">
       <a href="/">Categories <span
@@ -140,6 +140,27 @@
     <div class="body-secondary">
       <p class="right-title">Recent post</p>
       <ul class="recent-post clearfix">
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/10/20/book/">book</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               不用说，书本并不单纯只用来阅读而已，因为书本并不是只有在被阅读才有它的价值。 
+ 随时可以读得到，
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
         
         <li class="recent-post-item">
           <div class="clearfix">
@@ -244,27 +265,6 @@
           </div>
         </li>
         
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2017/08/27/log/">log</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                 日志(journal)   预先写日志[Write-ahead-logs] WAL
-提交日志(
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <i class="fa fa-folder-open"></i> Uncategorized
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 0 </span>
-            </p>
-          </div>
-        </li>
-        
       </ul>
       <div class="calendar-container" id="calendar">
   <div class="calendar">
@@ -352,7 +352,7 @@
 
 
 <script>
-  var posts = [{"date":"2022-10-21","title":"Venice","url":"http://cmonkey.github.com/2022/10/21/Venice/"},{"date":"2022-10-21","title":"idea history","url":"http://cmonkey.github.com/2022/10/21/idea-history/"},{"date":"2022-10-21","title":"racket-command-line","url":"http://cmonkey.github.com/2022/10/21/racket-command-line/"},{"date":"2023-05-23","title":"ai-writing","url":"http://cmonkey.github.com/2023/05/23/ai-writing/"}];
+  var posts = [{"date":"2022-10-21","title":"Venice","url":"http://cmonkey.github.com/2022/10/21/Venice/"},{"date":"2022-10-21","title":"idea history","url":"http://cmonkey.github.com/2022/10/21/idea-history/"},{"date":"2022-10-21","title":"racket-command-line","url":"http://cmonkey.github.com/2022/10/21/racket-command-line/"},{"date":"2023-05-23","title":"ai-writing","url":"http://cmonkey.github.com/2023/05/23/ai-writing/"},{"date":"2023-10-20","title":"java-list","url":"http://cmonkey.github.com/2023/10/20/java-list/"}];
   var today = moment().format('YYYY-MM-DD');
   var oneYearAgo = moment(today).subtract(1, 'years');
   posts = posts.filter(function(post) {
