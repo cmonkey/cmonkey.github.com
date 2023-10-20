@@ -127,7 +127,7 @@
     <li class="selected">
       <a href="/">Overview</a></li>
     <li class="">
-      <a href="/">Posts <span class="counter">114</span></a>
+      <a href="/">Posts <span class="counter">115</span></a>
     </li>
     <li class="">
       <a href="/">Categories <span
@@ -140,6 +140,27 @@
     <div class="body-secondary">
       <p class="right-title">Recent post</p>
       <ul class="recent-post clearfix">
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2018/10/31/rm/">rm</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+               删除主目录的.viminfo* 被输入成了 
+      1   2       rm .vimi
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <i class="fa fa-folder-open"></i> Uncategorized
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 0 </span>
+            </p>
+          </div>
+        </li>
         
         <li class="recent-post-item">
           <div class="clearfix">
@@ -245,26 +266,6 @@
           </div>
         </li>
         
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2018/05/02/gvisor/">gvisor</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                 clone code       1       git clone --recursive 
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <i class="fa fa-folder-open"></i> Uncategorized
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
       </ul>
       <div class="calendar-container" id="calendar">
   <div class="calendar">
@@ -352,7 +353,7 @@
 
 
 <script>
-  var posts = [{"date":"2022-10-21","title":"Venice","url":"http://cmonkey.github.com/2022/10/21/Venice/"},{"date":"2022-10-21","title":"idea history","url":"http://cmonkey.github.com/2022/10/21/idea-history/"},{"date":"2022-10-21","title":"racket-command-line","url":"http://cmonkey.github.com/2022/10/21/racket-command-line/"},{"date":"2023-05-23","title":"ai-writing","url":"http://cmonkey.github.com/2023/05/23/ai-writing/"},{"date":"2023-10-20","title":"java-list","url":"http://cmonkey.github.com/2023/10/20/java-list/"}];
+  var posts = [{"date":"2022-10-21","title":"Venice","url":"http://cmonkey.github.com/2022/10/21/Venice/"},{"date":"2022-10-21","title":"idea history","url":"http://cmonkey.github.com/2022/10/21/idea-history/"},{"date":"2022-10-21","title":"racket-command-line","url":"http://cmonkey.github.com/2022/10/21/racket-command-line/"},{"date":"2023-05-23","title":"ai-writing","url":"http://cmonkey.github.com/2023/05/23/ai-writing/"},{"date":"2023-10-20","title":"java-list","url":"http://cmonkey.github.com/2023/10/20/java-list/"},{"date":"2023-10-20","title":"reading","url":"http://cmonkey.github.com/2023/10/20/read-investment-book/"}];
   var today = moment().format('YYYY-MM-DD');
   var oneYearAgo = moment(today).subtract(1, 'years');
   posts = posts.filter(function(post) {
