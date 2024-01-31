@@ -127,7 +127,7 @@
     <li class="">
       <a href="/">Overview</a></li>
     <li class="selected">
-      <a href="/">Posts <span class="counter">115</span></a>
+      <a href="/">Posts <span class="counter">116</span></a>
     </li>
     <li class="">
       <a href="/">Categories <span
@@ -139,6 +139,28 @@
 
     <div class="body-secondary">
       <ul class="archive-list">
+        
+        <li class="archive-list-item">
+          <h2><a href="/2012/02/12/archlinux-gvim-zh-input/">ArchLinux Gvim 不能输入中文</a></h2>
+          <p>
+             ArchLinux 系统中，使用fcitx输入法，在GVIM中不能输入中文的解决办法。 
+ 使用gvim -N -u NONE 启动，查看是否可以使用中文输入。 
+ 答案为真的话，基本可以确定是配置文件的错误。 
+ 用正常启动，在命令模式中输入       :verbose set imi?   ...
+          </p>
+          <ul class="tag-list clearfix">
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <i class="fa fa-folder-open"></i> Uncategorized
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 0 </span>
+            <span>Published {{moment(1329005124000).fromNow()}}</span>
+          </div>
+        </li>
         
         <li class="archive-list-item">
           <h2><a href="/2012/01/18/package-query-error/">package-query require pacman&lt;3.6 错误</a></h2>
@@ -323,26 +345,6 @@ initscripts: /etc/profile.d/locale.sh exists in fi...
             </span>
             <span><i class="fa fa-tag"></i> 0 </span>
             <span>Published {{moment(1316966400000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2011/09/23/man-manpath/">增加man路径</a></h2>
-          <p>
-             在*nix系统中，可能有一些用户自定义编译安装的软件，由于MANPATH的路径没有指定, 执行man XXX 会无效。 
- 这时候就需要定义MANPATH这个环境变量，如下所示: 假如自定义安装memcached这个分布式缓存服务器在     /usr/local/memcached 目录，没有指...
-          </p>
-          <ul class="tag-list clearfix">
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <i class="fa fa-folder-open"></i> Uncategorized
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 0 </span>
-            <span>Published {{moment(1316707200000).fromNow()}}</span>
           </div>
         </li>
         

@@ -6,7 +6,7 @@
   <link href="http://cmonkey.github.com/atom.xml" rel="self"/>
   
   <link href="http://cmonkey.github.com/"/>
-  <updated>2023-10-20T07:39:48.937Z</updated>
+  <updated>2024-01-31T10:07:30.409Z</updated>
   <id>http://cmonkey.github.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>small</title>
+    <link href="http://cmonkey.github.com/2024/01/31/small/"/>
+    <id>http://cmonkey.github.com/2024/01/31/small/</id>
+    <published>2024-01-31T10:05:54.000Z</published>
+    <updated>2024-01-31T10:07:30.409Z</updated>
+    
+    <content type="html"><![CDATA[<p>“少”是多少，导致了什么样的家庭灾难，还是社会灾难</p><p>无法量化的“少”就是缺乏力量的“少”，是毫无价值的“少”，是不值得被统战的“少”</p><p>“少”得没有价值，特别是统战价值，这就是政治账</p><p>我建议这些“少”数不要天天在网络上哭鼻子，这种一种赛博乞讨，<br>没有多大的价值要读一读”狄俄尼索斯的劳动, 对国家-形式的批判”,<br>认识到赛博乞讨的统战价值不大千万不要放弃“恐怖主义”</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;“少”是多少，导致了什么样的家庭灾难，还是社会灾难&lt;/p&gt;
+&lt;p&gt;无法量化的“少”就是缺乏力量的“少”，是毫无价值的“少”，是不值得被统战的“少”&lt;/p&gt;
+&lt;p&gt;“少”得没有价值，特别是统战价值，这就是政治账&lt;/p&gt;
+&lt;p&gt;我建议这些“少”数不要天天在网络上哭鼻子，这种一种</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>reading</title>
@@ -430,28 +453,6 @@
     
     
     <category term="kafka" scheme="http://cmonkey.github.com/tags/kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>technology</title>
-    <link href="http://cmonkey.github.com/2019/11/08/technology/"/>
-    <id>http://cmonkey.github.com/2019/11/08/technology/</id>
-    <published>2019-11-08T03:28:37.000Z</published>
-    <updated>2023-05-23T10:52:03.854Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Maven-Test"><a href="#Maven-Test" class="headerlink" title="Maven Test"></a>Maven Test</h2><p>mvn -DskipTests package 只是不执行UT, 但是会对test case 进行编译</p><p>mvn -Dmaven.test.skip=true 不仅仅不执行UT, 还不会对test case 进行编译, 所以即使test case 即使是错误的不能通过编译也可以通过-Dmaven.test.skip=true 进行跳过</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Maven-Test&quot;&gt;&lt;a href=&quot;#Maven-Test&quot; class=&quot;headerlink&quot; title=&quot;Maven Test&quot;&gt;&lt;/a&gt;Maven Test&lt;/h2&gt;&lt;p&gt;mvn -DskipTests package 只是不执行UT, 但是会对t</summary>
-      
-    
-    
-    
-    
-    <category term="technology" scheme="http://cmonkey.github.com/tags/technology/"/>
     
   </entry>
   
