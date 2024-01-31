@@ -8,7 +8,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    Racket on ffi | Hexo
+    computer-power | Hexo
   </title>
   <meta name="description" content="blog">
   
@@ -128,42 +128,20 @@
     <i class="fa fa-user-o"></i>
     cmonkey
 
-    <span class="post-date float-right" title="{{moment(1370100480000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1706696074000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1370100480000).fromNow()}}
+      {{moment(1706696074000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>Racket on ffi</h1>
-    <p>link:<a target="_blank" rel="noopener" href="http://www.cs.grinnell.edu/~rebelsky/Glimmer/Summer2012/RacketFFI/tutorial.html">The Racke tForeign-Function Interface</a><br>    // mylib1.c<br>    #include &lt;stdio.h&gt;<br>    #include &lt;stdlib.h&gt;</p>
-<pre><code>// Square an integer
-int isquare (int i)&#123;
-    return i * i;
-&#125;</code></pre>
-<p>command 中执行:    </p>
-<pre><code>gcc --shared -o mylib1.so mylib1.c</code></pre>
-<p>mylib.rkt<br>    #lang racket</p>
-<pre><code>(require ffi/unsafe
-ffi/unsafe/define)
-
-(define-ffi-definer mylib-define (ffi-lib &quot;mylib1&quot;))
-(mylib-define isquare (_fun _int -&gt; _int))
-
-(isquare 5)</code></pre>
-<p>mylib1.rkt</p>
-<pre><code>#lang racket
-(require ffi/unsafe)
-
-(define mylib (ffi-lib &quot;mylib1.so&quot;))
-
-
-(define isquare
-(get-ffi-obj &quot;isquare&quot;
-        mylib 
-        (_fun _int -&gt; _int)))
-
-(isquare 1000)</code></pre>
+    <h1>computer-power</h1>
+    <p>阅读了这个文本，感觉很有意思</p>
+<p>“这门简单的手艺可以提供即时的反馈和极具诱惑的控制感，这样的后果就是, ‘他们自以为是真正地掌握了一门有着相当力量和重要性的技艺，实则只知其皮毛, 对其实质一无所知’。结果，无论是学生自己，还是他们的教师，都很容易把即时反馈的权力掌握之下的成瘾和败坏误认为是兴趣和使命感，从而放任学生走上无思和无知的冲动歧路”</p>
+<p>这一段确实描绘了一种程序员心理, 拿我自己来说我为什么对计算机兴趣很大(一般意义上的), 反思自身就是因为计算机给了人即时反馈，<br>我们知道在现实生活中我们很少能获得即时的反馈，都需要不断的进行询问或者跟进才可以得到一点点关于进度的信息，并且还没有毫无反馈，<br>而在计算机中你执行任意一个命令，它都是在即时”反馈”的。</p>
+<p>而对系统的控制感就来自于系统执行一个命令后，你可以即时观察到系统行为的变更，你可能是一个运维，你可以通过一个ansable playbook 在成千上万的实例上执行命令<br>你控制了那N多的实例，它们是客体，你是主体，它们是你的星期五，而你就是岛主鲁滨逊，你是野兽，你是主权者，你是那片世界的主宰。</p>
+<p>当你执行完成ansable playbook下班后，你发现你什么都控制不了, 你开上小汽车, 小汽车可能趴窝了，因为大雪导致电池耗尽, 或者你在深南大道上飞驰时，前面一台货拉拉正在联系客户慢腾腾的蠕动<br>你发现你控制不乐任何东西，而在现实中能控制这些的都是公权力，都是传统的不能再传统的暴力了（这恐怕也是现实的控制为何千年不衰的原因)</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QFLQVFpup6dN_DwmHL014Q">朱悦︱半个世纪前的“ChatGPT”：重读开发者的自白书</a></p>
 
   </article>
 </div>
@@ -176,8 +154,8 @@ ffi/unsafe/define)
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://cmonkey.github.com/2013/06/01/racket-on-ffi/";
-    this.page.identifier = 1370100480;
+    this.page.url = "http://cmonkey.github.com/2024/01/31/computer-power/";
+    this.page.identifier = 1706696074;
   };
 
   (function() {
