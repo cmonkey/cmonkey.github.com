@@ -18,17 +18,22 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="link: 来自复杂系统故障的十八条经验  复杂系统本职上都是高风险系统各种备受瞩目的复杂系统都是高风险的系统，这是它们固有的内在属性，尽管风险事故的爆发频度时有高低，导致系统固有高风险的内因却无冲化解，这些风险又催生了各式各样的风险防范措施，进而塑造了形形色色的复杂系统。 复杂系统都对故障严加防范并且行之有效故障招骋的高昂代价促使人们逐渐构筑重重防范措施来抵御故障，其中既包括必要的技术措施，也包">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="complex-systems&#x3D;fault">
 <meta property="og:url" content="http://cmonkey.github.com/2012/09/17/complex-systems-equals-fault/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="link: 来自复杂系统故障的十八条经验  复杂系统本职上都是高风险系统各种备受瞩目的复杂系统都是高风险的系统，这是它们固有的内在属性，尽管风险事故的爆发频度时有高低，导致系统固有高风险的内因却无冲化解，这些风险又催生了各式各样的风险防范措施，进而塑造了形形色色的复杂系统。 复杂系统都对故障严加防范并且行之有效故障招骋的高昂代价促使人们逐渐构筑重重防范措施来抵御故障，其中既包括必要的技术措施，也包">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cmonkey.github.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2012-09-17T03:34:00.000Z">
 <meta property="article:modified_time" content="2023-05-23T10:52:03.847Z">
 <meta property="article:author" content="cmonkey">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cmonkey.github.com/images/redefine-og.webp">
     
     
     <!--- Icon Part-->
@@ -40,164 +45,15 @@
     
     <title>
         
-            complex-systems=fault -
+            complex-systems=fault | Theme Redefine
         
-        Theme Redefine
     </title>
 
     
 <link rel="stylesheet" href="/fonts/Chillax/chillax.css">
 
 
-    
-        <style>
-    :root {
-        --preloader-background-color: #fff;
-        --preloader-text-color: #000;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --preloader-background-color: #202124;
-            --preloader-text-color: #fff;
-        }
-    }
-
-    @media (prefers-color-scheme: light) {
-        :root {
-            --preloader-background-color: #fff;
-            --preloader-text-color: #000;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .ml13 {
-            font-size: 2.6rem !important; /* Adjust this value as needed */
-        }
-    }
-
-    .preloader {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        padding: 12px;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh; /* 'h-screen' is 100% of the viewport height */
-        background-color: var(--preloader-background-color);
-        z-index: 1100; /* 'z-[1100]' sets the z-index */
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    .ml13 {
-        font-size: 3.2rem;
-        /* text-transform: uppercase; */
-        color: var(--preloader-text-color);
-        letter-spacing: -1px;
-        font-weight: 500;
-        font-family: 'Chillax-Variable', sans-serif;
-        text-align: center;
-    }
-
-    .ml13 .word {
-        display: inline-flex;
-        flex-wrap: wrap;
-        white-space: nowrap;
-    }
-
-    .ml13 .letter {
-        display: inline-block;
-        line-height: 1em;
-    }
-</style>
-
-<div class="preloader">
-    
-<script src="/js/libs/anime.min.js"></script>
-
-    <h1 class="ml13">
-        Theme Redefine
-    </h1>
-    <script>
-        var textWrapper = document.querySelector('.ml13');
-        // Split text into words
-        var words = textWrapper.textContent.trim().split(' ');
-
-        // Clear the existing content
-        textWrapper.innerHTML = '';
-
-        // Wrap each word and its letters in spans
-        words.forEach(function(word) {
-            var wordSpan = document.createElement('span');
-            wordSpan.classList.add('word');
-            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
-            textWrapper.appendChild(wordSpan);
-            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
-        });
-
-
-        anime.timeline({loop: true})
-            .add({
-                targets: '.ml13 .letter',
-                translateY: [100,0],
-                translateZ: 0,
-                opacity: [0,1],
-                easing: "easeOutExpo",
-                duration: 1400,
-                delay: (el, i) => 300 + 30 * i
-            }).add({
-            targets: '.ml13 .letter',
-            translateY: [0,-100],
-            opacity: [1,0],
-            easing: "easeInExpo",
-            duration: 1200,
-            delay: (el, i) => 100 + 30 * i
-        });
-
-        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
-
-        // If the theme status is not found in local storage, check the preferred color scheme
-        if (themeStatus === undefined || themeStatus === null) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                themeStatus = 'dark';
-            } else {
-                themeStatus = 'light';
-            }
-        }
-
-        // Now you can use the themeStatus variable in your code
-        if (themeStatus) {
-            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
-            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
-        } else {
-            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
-            document.documentElement.style.setProperty('--preloader-text-color', '#000');
-        }
-
-        window.addEventListener('load', function () {
-            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
-        });
-
-        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
-        hidePreloaderAfterTimeout(5000);
-
-        function hidePreloaderAfterTimeout(delay) {
-            setTimeout(function () {
-                var preloader = document.querySelector('.preloader');
-                preloader.style.opacity = '0';
-                setTimeout(function () {
-                    preloader.style.display = 'none';
-                }, 200);
-            }, delay);
-        }
-    </script>
-</div>
+    <!--- Inject Part-->
     
 
     
@@ -206,27 +62,27 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
     
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
 
     
-<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
 
     <!--- Font Part-->
     
     
     
     
-
-    <!--- Inject Part-->
     
+    
+
     <script id="hexo-configurations">
     window.config = {"hostname":"cmonkey.github.com","root":"/","language":"zh-CN"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":false};
   </script>
@@ -252,30 +108,27 @@
 </head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
+	<div class="progress-bar-container">
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
-
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container">
-
-    <div class="navbar-content">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
         <div class="left">
             
             <a class="logo-title" href="/">
@@ -320,8 +173,8 @@
         </div>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
         <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
@@ -344,6 +197,9 @@
                         
                     </li>
             
+
+            
+            
         </ul>
 
         <div class="statistics flex justify-around my-2.5">
@@ -356,7 +212,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">117</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">118</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -367,40 +223,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">complex-systems=fault</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">complex-systems=fault</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/redefine-avatar.svg">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2012-09-17 11:34</span>
@@ -429,16 +282,16 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>link: <a class="link"   target="_blank" rel="noopener" href="http://www.infoq.com/cn/news/2012/09/how-complex-systems-fail-18" >来自复杂系统故障的十八条经验 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<p>link: <a class="link"   target="_blank" rel="noopener" href="http://www.infoq.com/cn/news/2012/09/how-complex-systems-fail-18" >来自复杂系统故障的十八条经验<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <h3 id="复杂系统本职上都是高风险系统"><a href="#复杂系统本职上都是高风险系统" class="headerlink" title="复杂系统本职上都是高风险系统"></a>复杂系统本职上都是高风险系统</h3><p>各种备受瞩目的复杂系统都是高风险的系统，这是它们固有的内在属性，尽管风险事故的爆发频度时有高低，导致系统固有高风险的内因却无冲化解，这些风险又催生了各式各样的风险防范措施，进而塑造了形形色色的复杂系统。</p>
 <h3 id="复杂系统都对故障严加防范并且行之有效"><a href="#复杂系统都对故障严加防范并且行之有效" class="headerlink" title="复杂系统都对故障严加防范并且行之有效"></a>复杂系统都对故障严加防范并且行之有效</h3><p>故障招骋的高昂代价促使人们逐渐构筑重重防范措施来抵御故障，其中既包括必要的技术措施，也包括多种机构性措施，制度性措施和监管性措施。</p>
 <h3 id="灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪"><a href="#灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪" class="headerlink" title="灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪"></a>灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪</h3><p>重大灾难性事故往往是由多起无足轻重的轻微故障共同导致的系统性的意外事故。这些轻微故障中的每一起都是事故的诱因，但只有当它们叠加在一起时，才会酿成事故。换言之，故障的发生概率比重大系统事故的发生概率要高得多。</p>
@@ -460,11 +313,11 @@
 <h3 id="人们持续不断地营造安全的环境"><a href="#人们持续不断地营造安全的环境" class="headerlink" title="人们持续不断地营造安全的环境"></a>人们持续不断地营造安全的环境</h3><p>无故障运营的背后凝结着人们付出的种种努力，他们想方设法将系统的性能波动控制在可承受范围内。然而系统的运转过程从来都不是一帆风顺的，迫于周遭条件的变化，从业人员必须及时采取措施，不断营造安全的环境。这些措施通常都出自一组经过充分演练的对策集；但有时也会出现新颖的策略组合或完全创新的解决方案。</p>
 <h3 id="无故障运营需要故障处理相关的经验。"><a href="#无故障运营需要故障处理相关的经验。" class="headerlink" title="无故障运营需要故障处理相关的经验。"></a>无故障运营需要故障处理相关的经验。</h3><p>只有真刀真枪地处理过故障的人才能识别出灾难性故障，并成功地将系统的性能波动维系在可承受范围之内。对于具有内在高风险性的系统，运维人员应当以把控系统整体运作情况为主，正确认识到事故的必然性并予以重视。安全性的提升离不开对意外事故有正确认识的运维人员；同时，运维人员也必须清楚地认识到自己采取的措施会如何影响系统，如何令系统逼近或远离极限情况。</p>
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>标题:</strong> complex-systems=fault</li>
         <li><strong>作者:</strong> The Redefine Team</li>
@@ -492,54 +345,48 @@
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2012/10/17/tsung-report/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">tsung-report</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2012/08/25/car/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">怀斯曼《生存手册之顶级驾驶》读书笔记100条</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2012/10/17/tsung-report/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">tsung-report</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2012/08/25/car/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">怀斯曼《生存手册之顶级驾驶》读书笔记100条</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         评论
@@ -558,9 +405,10 @@
           serverURL: 'https://example.example.com',
           lang: 'zh-CN',
           dark: 'body[class~="dark-mode"]',
+          reaction: false,
           requiredMeta: ['nick', 'mail'],
           emoji: [],
-          recaptchaV3Key: "wasd",
+          
           
         });
       }
@@ -578,36 +426,30 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">此页目录</div>
-        <div class="page-title">complex-systems=fault</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E6%9C%AC%E8%81%8C%E4%B8%8A%E9%83%BD%E6%98%AF%E9%AB%98%E9%A3%8E%E9%99%A9%E7%B3%BB%E7%BB%9F"><span class="nav-text">复杂系统本职上都是高风险系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E9%83%BD%E5%AF%B9%E6%95%85%E9%9A%9C%E4%B8%A5%E5%8A%A0%E9%98%B2%E8%8C%83%E5%B9%B6%E4%B8%94%E8%A1%8C%E4%B9%8B%E6%9C%89%E6%95%88"><span class="nav-text">复杂系统都对故障严加防范并且行之有效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%BE%E9%9A%BE%E6%80%A7%E4%BA%8B%E6%95%85%E6%98%AF%E7%94%B1%E5%A4%9A%E8%B5%B7%E6%95%85%E9%9A%9C%E5%85%B1%E5%90%8C%E9%80%A0%E6%88%90%E7%9A%84%E2%80%93%E5%8D%95%E7%82%B9%E6%95%85%E9%9A%9C%E4%B8%8D%E8%B6%B3%E4%BB%A5%E5%85%B4%E9%A3%8E%E4%BD%9C%E6%B5%AA"><span class="nav-text">灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%BD%9C%E4%BC%8F%E7%9D%80%E5%8F%98%E5%8C%96%E5%A4%9A%E7%AB%AF%E7%9A%84%E6%95%85%E9%9A%9C%E7%BB%84%E5%90%88%E3%80%82"><span class="nav-text">复杂系统中潜伏着变化多端的故障组合。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%BD%AC%E6%97%B6%E6%80%BB%E6%98%AF%E5%A4%84%E4%BA%8E%E9%99%8D%E7%BA%A7%E6%A8%A1%E5%BC%8F%E3%80%82"><span class="nav-text">复杂系统运转时总是处于降级模式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%BE%E9%9A%BE%E6%80%BB%E6%98%AF%E8%BF%91%E5%9C%A8%E5%92%AB%E5%B0%BA%E3%80%82"><span class="nav-text">灾难总是近在咫尺。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BA%8B%E5%8F%91%E4%B9%8B%E5%90%8E%E5%B0%86%E4%BA%8B%E6%95%85%E5%BD%92%E5%92%8E%E4%BA%8E%E6%9F%90%E4%B8%80%E2%80%9C%E7%BD%AA%E9%AD%81%E7%A5%B8%E9%A6%96%E2%80%9D%E7%9A%84%E5%81%9A%E6%B3%95%E6%98%AF%E5%AE%8C%E5%85%A8%E4%B8%8D%E5%8F%AF%E5%8F%96%E7%9A%84%E3%80%82"><span class="nav-text">在事发之后将事故归咎于某一“罪魁祸首”的做法是完全不可取的。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%90%8E%E6%88%90%E8%A7%81%E4%BC%9A%E6%89%AD%E6%9B%B2%E4%BA%8B%E6%95%85%E8%AF%84%E5%AE%9A%E4%BA%BA%E5%91%98%E7%9A%84%E8%AE%A4%E7%9F%A5%E3%80%82"><span class="nav-text">事后成见会扭曲事故评定人员的认知。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E4%BA%BA%E5%91%98%E5%88%86%E9%A5%B0%E4%BA%8C%E8%A7%92%EF%BC%9A%E4%BB%96%E4%BB%AC%E6%97%A2%E6%98%AF%E6%95%85%E9%9A%9C%E7%9A%84%E5%A7%8B%E4%BD%9C%E4%BF%91%E8%80%85%EF%BC%8C%E4%B9%9F%E6%98%AF%E6%95%85%E9%9A%9C%E7%9A%84%E9%98%B2%E8%8C%83%E8%80%85%E3%80%82"><span class="nav-text">操作人员分饰二角：他们既是故障的始作俑者，也是故障的防范者。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E4%BA%8B%E4%BA%BA%E7%9A%84%E4%B8%BE%E5%8A%A8%E5%AE%8C%E5%85%A8%E6%98%AF%E5%9C%A8%E5%86%92%E9%99%A9%E3%80%82"><span class="nav-text">当事人的举动完全是在冒险。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A3%8E%E5%8F%A3%E6%B5%AA%E5%B0%96%E4%B8%8A%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%BB%A4%E4%B8%80%E5%88%87%E6%A8%A1%E7%B3%8A%E6%80%A7%E6%B6%88%E5%A4%B1%E6%AE%86%E5%B0%BD%E3%80%82"><span class="nav-text">风口浪尖上的行为令一切模糊性消失殆尽。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E4%B8%9A%E4%BA%BA%E5%91%98%E4%BC%9A%E5%AF%B9%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%B0%83%E6%95%B4%E3%80%82"><span class="nav-text">从业人员会对复杂系统进行调整。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%B8%93%E4%B8%9A%E4%BA%BA%E6%89%8D%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%9B%BF%E3%80%82"><span class="nav-text">复杂系统中的专业人才不断更替。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E5%8C%96%E4%BC%9A%E5%BC%95%E5%85%A5%E6%96%B0%E7%9A%84%E6%95%85%E9%9A%9C%E3%80%82"><span class="nav-text">变化会引入新的故障。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%B5%E5%BE%A1%E6%9C%AA%E6%9D%A5%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%95%88%E6%9E%9C%E5%8F%97%E9%99%90%E4%BA%8E%E4%BA%BA%E4%BB%AC%E7%9C%8B%E5%BE%85%E2%80%9C%E8%82%87%E5%9B%A0%E2%80%9D%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">抵御未来事件的效果受限于人们看待“肇因”的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E6%98%AF%E7%B3%BB%E7%BB%9F%E6%95%B4%E4%BD%93%E7%9A%84%E7%89%B9%E6%80%A7%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%90%84%E9%83%A8%E4%BB%B6%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82"><span class="nav-text">安全性是系统整体的特性，而不是系统中各部件的特性。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E4%BB%AC%E6%8C%81%E7%BB%AD%E4%B8%8D%E6%96%AD%E5%9C%B0%E8%90%A5%E9%80%A0%E5%AE%89%E5%85%A8%E7%9A%84%E7%8E%AF%E5%A2%83"><span class="nav-text">人们持续不断地营造安全的环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%95%85%E9%9A%9C%E8%BF%90%E8%90%A5%E9%9C%80%E8%A6%81%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%82"><span class="nav-text">无故障运营需要故障处理相关的经验。</span></a></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">complex-systems=fault</div>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E6%9C%AC%E8%81%8C%E4%B8%8A%E9%83%BD%E6%98%AF%E9%AB%98%E9%A3%8E%E9%99%A9%E7%B3%BB%E7%BB%9F"><span class="nav-text">复杂系统本职上都是高风险系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E9%83%BD%E5%AF%B9%E6%95%85%E9%9A%9C%E4%B8%A5%E5%8A%A0%E9%98%B2%E8%8C%83%E5%B9%B6%E4%B8%94%E8%A1%8C%E4%B9%8B%E6%9C%89%E6%95%88"><span class="nav-text">复杂系统都对故障严加防范并且行之有效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%BE%E9%9A%BE%E6%80%A7%E4%BA%8B%E6%95%85%E6%98%AF%E7%94%B1%E5%A4%9A%E8%B5%B7%E6%95%85%E9%9A%9C%E5%85%B1%E5%90%8C%E9%80%A0%E6%88%90%E7%9A%84%E2%80%93%E5%8D%95%E7%82%B9%E6%95%85%E9%9A%9C%E4%B8%8D%E8%B6%B3%E4%BB%A5%E5%85%B4%E9%A3%8E%E4%BD%9C%E6%B5%AA"><span class="nav-text">灾难性事故是由多起故障共同造成的–单点故障不足以兴风作浪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%BD%9C%E4%BC%8F%E7%9D%80%E5%8F%98%E5%8C%96%E5%A4%9A%E7%AB%AF%E7%9A%84%E6%95%85%E9%9A%9C%E7%BB%84%E5%90%88%E3%80%82"><span class="nav-text">复杂系统中潜伏着变化多端的故障组合。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%BD%AC%E6%97%B6%E6%80%BB%E6%98%AF%E5%A4%84%E4%BA%8E%E9%99%8D%E7%BA%A7%E6%A8%A1%E5%BC%8F%E3%80%82"><span class="nav-text">复杂系统运转时总是处于降级模式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%BE%E9%9A%BE%E6%80%BB%E6%98%AF%E8%BF%91%E5%9C%A8%E5%92%AB%E5%B0%BA%E3%80%82"><span class="nav-text">灾难总是近在咫尺。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BA%8B%E5%8F%91%E4%B9%8B%E5%90%8E%E5%B0%86%E4%BA%8B%E6%95%85%E5%BD%92%E5%92%8E%E4%BA%8E%E6%9F%90%E4%B8%80%E2%80%9C%E7%BD%AA%E9%AD%81%E7%A5%B8%E9%A6%96%E2%80%9D%E7%9A%84%E5%81%9A%E6%B3%95%E6%98%AF%E5%AE%8C%E5%85%A8%E4%B8%8D%E5%8F%AF%E5%8F%96%E7%9A%84%E3%80%82"><span class="nav-text">在事发之后将事故归咎于某一“罪魁祸首”的做法是完全不可取的。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%90%8E%E6%88%90%E8%A7%81%E4%BC%9A%E6%89%AD%E6%9B%B2%E4%BA%8B%E6%95%85%E8%AF%84%E5%AE%9A%E4%BA%BA%E5%91%98%E7%9A%84%E8%AE%A4%E7%9F%A5%E3%80%82"><span class="nav-text">事后成见会扭曲事故评定人员的认知。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E4%BA%BA%E5%91%98%E5%88%86%E9%A5%B0%E4%BA%8C%E8%A7%92%EF%BC%9A%E4%BB%96%E4%BB%AC%E6%97%A2%E6%98%AF%E6%95%85%E9%9A%9C%E7%9A%84%E5%A7%8B%E4%BD%9C%E4%BF%91%E8%80%85%EF%BC%8C%E4%B9%9F%E6%98%AF%E6%95%85%E9%9A%9C%E7%9A%84%E9%98%B2%E8%8C%83%E8%80%85%E3%80%82"><span class="nav-text">操作人员分饰二角：他们既是故障的始作俑者，也是故障的防范者。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E4%BA%8B%E4%BA%BA%E7%9A%84%E4%B8%BE%E5%8A%A8%E5%AE%8C%E5%85%A8%E6%98%AF%E5%9C%A8%E5%86%92%E9%99%A9%E3%80%82"><span class="nav-text">当事人的举动完全是在冒险。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A3%8E%E5%8F%A3%E6%B5%AA%E5%B0%96%E4%B8%8A%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%BB%A4%E4%B8%80%E5%88%87%E6%A8%A1%E7%B3%8A%E6%80%A7%E6%B6%88%E5%A4%B1%E6%AE%86%E5%B0%BD%E3%80%82"><span class="nav-text">风口浪尖上的行为令一切模糊性消失殆尽。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E4%B8%9A%E4%BA%BA%E5%91%98%E4%BC%9A%E5%AF%B9%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E8%B0%83%E6%95%B4%E3%80%82"><span class="nav-text">从业人员会对复杂系统进行调整。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%B8%93%E4%B8%9A%E4%BA%BA%E6%89%8D%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%9B%BF%E3%80%82"><span class="nav-text">复杂系统中的专业人才不断更替。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E5%8C%96%E4%BC%9A%E5%BC%95%E5%85%A5%E6%96%B0%E7%9A%84%E6%95%85%E9%9A%9C%E3%80%82"><span class="nav-text">变化会引入新的故障。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%B5%E5%BE%A1%E6%9C%AA%E6%9D%A5%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%95%88%E6%9E%9C%E5%8F%97%E9%99%90%E4%BA%8E%E4%BA%BA%E4%BB%AC%E7%9C%8B%E5%BE%85%E2%80%9C%E8%82%87%E5%9B%A0%E2%80%9D%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">抵御未来事件的效果受限于人们看待“肇因”的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E6%98%AF%E7%B3%BB%E7%BB%9F%E6%95%B4%E4%BD%93%E7%9A%84%E7%89%B9%E6%80%A7%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%90%84%E9%83%A8%E4%BB%B6%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82"><span class="nav-text">安全性是系统整体的特性，而不是系统中各部件的特性。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E4%BB%AC%E6%8C%81%E7%BB%AD%E4%B8%8D%E6%96%AD%E5%9C%B0%E8%90%A5%E9%80%A0%E5%AE%89%E5%85%A8%E7%9A%84%E7%8E%AF%E5%A2%83"><span class="nav-text">人们持续不断地营造安全的环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%95%85%E9%9A%9C%E8%BF%90%E8%90%A5%E9%9C%80%E8%A6%81%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%82"><span class="nav-text">无故障运营需要故障处理相关的经验。</span></a></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
@@ -617,6 +459,15 @@
               -
             
             2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 118 篇文章
+                    </span>
+                    
+                </p>
+            
         </div>
         
             <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
@@ -637,7 +488,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
         
@@ -666,95 +517,92 @@
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
-</div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -778,44 +626,42 @@
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -824,10 +670,10 @@
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
@@ -835,20 +681,34 @@
 
 
 
-
-
-<div class="post-scripts" data-swup-reload-script>
-    
-        
-<script src="/js/tools/tocToggle.js" type="module"></script>
-
-<script src="/js/layouts/toc.js" type="module"></script>
-
-<script src="/js/plugins/tabs.js" type="module"></script>
 
     
-</div>
+<script src="/js/build/libs/anime.min.js"></script>
 
 
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
 </body>
+
 </html>

@@ -6,6 +6,7 @@ import initLazyLoad from "./layouts/lazyload.js";
 import initScrollTopBottom from "./tools/scrollTopBottom.js";
 import initLocalSearch from "./tools/localSearch.js";
 import initCopyCode from "./tools/codeBlock.js";
+import initBookmarkNav from "./layouts/bookmarkNav.js";
 
 export const main = {
   themeInfo: {
@@ -16,7 +17,7 @@ export const main = {
   localStorageKey: "REDEFINE-THEME-STATUS",
   styleStatus: {
     isExpandPageWidth: false,
-    isDark: false,
+    isDark: theme.colors.default_mode && theme.colors.default_mode === "dark",
     fontSizeLevel: 0,
     isOpenPageAside: true,
   },
@@ -47,6 +48,8 @@ export const main = {
     initUtils();
     initModeToggle();
     initScrollTopBottom();
+    initBookmarkNav();
+    
     if (
       theme.home_banner.subtitle.text.length !== 0 &&
       location.pathname === config.root
